@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+set -Eeuo pipefail
+
+# {{ if eq .chezmoi.os "linux" }}
+sudo snap install --classic kubectl
+sudo snap install --classic powershell
+# {{ end }}

@@ -2,10 +2,8 @@
 
 Prerequisites: `brew`
 
-## Getting Started
+## Bootstrap
 
 ```shell
-brew install chezmoi
-chezmoi init --apply https://github.com/liamdawson/chezmoi-state.git
-chezmoi git -- remote set-url origin --push git@github.com:/liamdawson/chezmoi-state.git
+curl --proto "=https" --tlsv1.2 -sSf "https://raw.githubusercontent.com/liamdawson/chezmoi-state/master/.bootstrap.sh" | bash
 ```

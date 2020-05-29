@@ -1,0 +1,49 @@
+#!/usr/bin/env bash
+
+set -Eeuo pipefail
+
+# {{ if eq .chezmoi.os "darwin" }}
+brew_casks=(
+  1password-cli
+  alfred
+  aws-vault
+  balenaetcher
+  beekeeper-studio
+  ccmenu
+  dash
+  devhubapp/devhub/devhub
+  dotnet-sdk
+  firefox
+  firefox-developer-edition
+  google-chrome
+  iterm2
+  jetbrains-toolbox
+  joplin
+  keybase
+  microsoft-edge
+  plex
+  plexamp
+  powershell
+  setapp
+  sonos
+  stoplight-studio
+  visual-studio-code
+  visual-studio-code-insiders
+  vmware-fusion
+
+  homebrew/cask-fonts/font-cascadia-mono-pl
+  homebrew/cask-fonts/font-fira-mono
+  homebrew/cask-fonts/font-noto-mono
+  homebrew/cask-fonts/font-noto-sans
+  homebrew/cask-fonts/font-noto-serif
+  homebrew/cask-fonts/font-roboto-mono
+  homebrew/cask-fonts/font-ubuntu
+  homebrew/cask-fonts/font-ubuntumono-nerd-font
+
+  homebrew/cask-drivers/yubico-yubikey-manager
+  homebrew/cask-drivers/yubico-yubikey-piv-manager
+)
+
+brew cask install "${brew_casks[@]}"
+
+# {{ end }}
