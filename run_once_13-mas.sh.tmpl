@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+set -Eeuo pipefail
+
+# {{ if eq .chezmoi.os "darwin" }}
+
+mas_apps=(
+  1333542190 # 1Password 7
+  # TODO: finish list
+)
+
+mas install "${mas_apps[@]}"
+
+# {{ end }}
