@@ -2,4 +2,4 @@
 
 set -eu
 
-code --folder-uri "file://${HOME}/.local/share/chezmoi" --file-uri "file://${HOME}/.config/chezmoi/chezmoi.toml"
+code-insiders --folder-uri "file://${HOME}/.local/share/chezmoi" --file-uri "file://${HOME}/.config/chezmoi/chezmoi.toml"

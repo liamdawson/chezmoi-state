@@ -1,7 +1,14 @@
 [character]
-symbol = ">>"
+symbol = " >"
 error_symbol = "!>"
+vicmd_symbol = " <"
 use_symbol_for_status = true
+
+[aws]
+symbol = "AWS:"
+
+[git_branch]
+symbol = ""
 
 [duration]
 min_time = 10000
