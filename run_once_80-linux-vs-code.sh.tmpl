@@ -2,6 +2,8 @@
 
 set -Eeuo pipefail
 
+## {{ if eq .chezmoi.os "linux" }} Linux-specific formulae
+
 target_install="code-insiders"
 
 if ! [ -f /usr/share/keyrings/packages.microsoft.gpg ]; then
@@ -18,6 +20,4 @@ if ! command -v "$target_install" >/dev/null 2>&1; then
 	sudo apt-get update && sudo apt-get install -y "$target_install"
 fi
 
-# url: https://go.microsoft.com/fwlink/?LinkID=760868
-# insiders: https://go.microsoft.com/fwlink/?LinkID=760865
-# TODO: install VS code by whatever means make the most sense now
+## {{ end }}
