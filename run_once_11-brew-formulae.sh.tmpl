@@ -12,7 +12,6 @@ brew_formulae=(
   convox
   direnv
   docker-machine                      # TODO: fish completions
-  docker-machine-driver-hyperkit      # TODO: macos only
   docker-machine-driver-vmware
   drakew/corgi/corgi                  # Run script chains
   fish
@@ -37,6 +36,7 @@ brew_formulae=(
   shellcheck
   shfmt
   starship                            # cross-shell prompt
+  svn                                 # Used for font installs
   topgrade                            # Update ALL the packages
   vim
   xsv                                 # jq for csv
@@ -67,6 +67,7 @@ brew_formulae=(
 
   ## {{ if eq .chezmoi.os "darwin" }} Macos-specific formulae
 
+  docker-machine-driver-hyperkit
   heroku/brew/heroku
   kubernetes-cli                      # Until it builds in Linuxbrew
   libffi
