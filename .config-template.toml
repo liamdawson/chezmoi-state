@@ -1,0 +1,10 @@
+[data]
+  visual_editor = "/usr/local/bin/code-insiders"
+
+[data.git]
+  signing_key = "0xA0BE84DBE2E93076"
+
+[data.gpg]
+  default_key = "0xA0BE84DBE2E93076"
+  trusted_key = "0xA0BE84DBE2E93076"
+  pinentry = "/usr/local/bin/pinentry-mac"
