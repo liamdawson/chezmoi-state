@@ -1,5 +1,7 @@
 [data]
-  visual_editor = "/usr/local/bin/code-insiders"
+  editor = "/usr/local/bin/vim"
+  visual_editor = "/usr/local/bin/code-insiders -w"
+  code_command = "code-insiders"
 
 [data.git]
   signing_key = "0xA0BE84DBE2E93076"

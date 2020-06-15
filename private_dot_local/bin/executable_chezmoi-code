@@ -1,5 +1,0 @@
-#!/usr/bin/env sh
-
-set -eu
-
-code-insiders --folder-uri "file://${HOME}/.local/share/chezmoi" --file-uri "file://${HOME}/.config/chezmoi/chezmoi.toml"
