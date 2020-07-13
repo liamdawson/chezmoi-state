@@ -1,3 +1,6 @@
+[gpg]
+  recipient = "chezmoi-state@gpg.ldaws.net"
+
 [data]
   editor = "/usr/local/bin/vim"
   visual_editor = "/usr/local/bin/code-insiders -w"
