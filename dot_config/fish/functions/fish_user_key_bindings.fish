@@ -7,6 +7,6 @@ function fish_user_key_bindings -d "Vi-style key bindings, plus some extra fancy
     # alt-l = fancy git log
     bind -M $mode \u00AC 'echo; git-logs; echo; commandline -f repaint;'
     bind -M $mode \c_ '__ld_ghq_cd; commandline -f repaint;'
-    bind -M $mode \x7F '__ld_ghq_code'
+    # bind -M $mode \x7F '__ld_ghq_code'
   end
 end
