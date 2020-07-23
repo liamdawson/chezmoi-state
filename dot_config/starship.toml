@@ -8,7 +8,16 @@ use_symbol_for_status = true
 symbol = "AWS:"
 
 [git_branch]
-symbol = ""
+disabled = true
+
+[git_commit]
+disabled = true
+
+[git_state]
+disabled = true
+
+[git_status]
+disabled = true
 
 [duration]
 min_time = 10000
@@ -18,6 +27,7 @@ disabled = true
 
 [directory]
 fish_style_pwd_dir_length = 1
+truncate_to_repo = false
 
 [hg_branch]
 disabled = true
