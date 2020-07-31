@@ -8,4 +8,6 @@ function wsc
   else
     vim .
   end
+
+  cd -
 end
