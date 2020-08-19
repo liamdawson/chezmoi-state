@@ -3,8 +3,8 @@
 
 [data]
   editor = "/usr/local/bin/vim"
-  visual_editor = "/usr/local/bin/code-insiders -w"
-  code_command = "code-insiders"
+  visual_editor = "/usr/local/bin/code -w"
+  code_command = "code"
 
 [data.git]
   signing_key = "0xA0BE84DBE2E93076"

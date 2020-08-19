@@ -4,6 +4,8 @@ set -Eeuo pipefail
 
 ## {{ if eq .chezmoi.os "linux" }}
 
+# TODO: back to stable
+
 target_install="code-insiders"
 
 if ! [ -f /usr/share/keyrings/packages.microsoft.gpg ]; then
