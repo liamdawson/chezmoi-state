@@ -12,9 +12,12 @@ end
 # 2020-07-14 shellenv broken when used from non-fish parent processes (e.g. topgrade, VS Code, ...)
 if type -q brew
   set -gx HOMEBREW_PREFIX (brew --prefix)
-  set -gx HOMEBREW_CELLAR "$HOMEBREW_PREFIX/Cellar";
-  set -gx HOMEBREW_REPOSITORY "$HOMEBREW_PREFIX/Homebrew";
-  set -q PATH; or set PATH ''; set -gx PATH "$HOMEBREW_PREFIX/bin" "$HOMEBREW_PREFIX/sbin" $PATH;
+  set -gx HOMEBREW_CELLAR "$HOMEBREW_PREFIX/Cellar"
+  set -gx HOMEBREW_REPOSITORY "$HOMEBREW_PREFIX/Homebrew"
   set -q MANPATH; or set MANPATH ''; set -gx MANPATH "$HOMEBREW_PREFIX/share/man" $MANPATH;
   set -q INFOPATH; or set INFOPATH ''; set -gx INFOPATH "$HOMEBREW_PREFIX/share/info" $INFOPATH;
+
+  if not contains "$HOMEBREW_PREFIX/bin" $PATH
+    set -gx PATH "$HOMEBREW_PREFIX/bin" $PATH
+  end
 end
