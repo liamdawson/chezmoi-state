@@ -1,7 +1,10 @@
-solargraph
+debase
 pry
 pry-doc
 pry-rescue
 pry-stack_explorer
-rubocop
+rcodetools
 rspec
+rubocop
+ruby-debug-ide
+solargraph
