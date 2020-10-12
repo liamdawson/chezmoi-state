@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+cast_folder="${HOME}/w/local/casts"
+
+mkdir -p "$cast_folder"
+
+cast_path="${cast_folder}/${1}.cast"
+
+shift
+
+printf "%q " asciinema "$@" "$cast_path"
+echo
+
+asciinema rec "$@" "$cast_path"
