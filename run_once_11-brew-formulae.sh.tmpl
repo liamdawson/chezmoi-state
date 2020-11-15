@@ -6,28 +6,31 @@ brew_formulae=(
   ### Reliably used
 
   adr-tools                           # ADR manipulation
-  ansible
   asciinema                           # Record shell sessions
   awscli
   cfn-lint
   cfssl                               # TLS certificate helper
-  convox
+  chezmoi
   direnv
   docker-machine                      # TODO: fish completions
   docker-machine-driver-vmware
   drakew/corgi/corgi                  # Run script chains
   fish
+  gawk
+  gh                                  # Official GitHub CLI
   git
   gnupg
   hub
   iamy
   jmespath/jmespath/jp
   jq
+  liamdawson/repo/https-cert-info
   minikube
   neofetch                            # Show system information
   node-build
   nodenv
   overmind                            # process manager for Procfile-based applications and tmux
+  packer
   pandoc                              # Used for mermaid, among other things
   peco                                # Fuzzy-finder used by corgi
   pipx
@@ -36,12 +39,16 @@ brew_formulae=(
   rbenv
   rbenv-default-gems
   ripgrep
+  rs/tap/dnstrace
   rsync
   ruby-build
   shellcheck
   shfmt
+  sk                                  # Rust fuzzy-find, used by navi and my ws scripts
   starship                            # cross-shell prompt
   svn                                 # Used for font installs
+  terraform
+  tokei                               # count LoC
   topgrade                            # Update ALL the packages
   vim
   xsv                                 # jq for csv
@@ -50,22 +57,25 @@ brew_formulae=(
 
   ## Experiments
 
-  aws-shell                           # More interactive AWS CLI activity
   cheat                               # interactive cheat sheets
   cloudflare/cloudflare/cloudflared   # TODO: why?
+  dog                                 # command-line DNS client
+  exercism                            # TODO: why?
   fd                                  # A friendlier 'find'
   fork-cleaner                        # TODO: why?
   ghq                                 # Repo manager
-  github/gh/gh                        # Sorta replaces hub
+  hivemind                            # TODO: why?
   httpie                              # Nicer to use than cURL, usually
   hyperfine                           # Benchmarking tool
+  jsonnet                             # TODO: why?
   just                                # Make alternative for scripts
   knqyf263/pet/pet                    # Use code/shell snippets
   kubernetes-helm                     # TODO: why?
   navi                                # TODO: why?
   pastel                              # Work with colours
   rs/tap/dnstrace                     # Convenient DNS debugging
-  sk                                  # Rust fuzzy-find, used by navi
+  sops                                # TODO: why?
+  structurizr-cli                     # "diagrams-as-code" tool
   tanka                               # jsonnet kubectl
   tree                                # Pretty `ls`
   watchexec                           # nodemon alternative
@@ -73,7 +83,8 @@ brew_formulae=(
   ## {{ if eq .chezmoi.os "darwin" }} Macos-specific formulae
 
   docker-machine-driver-xhyve
-  heroku/brew/heroku
+  gnu-sed
+  gnu-tar
   kubernetes-cli                      # Until it builds in Linuxbrew
   libffi
   libyaml
