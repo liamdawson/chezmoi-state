@@ -1,0 +1,10 @@
+set -gx CONVOX_LOCAL disable
+set -gx EDITOR "{{ .editor }}"
+set -gx VISUAL "{{ .visual_editor }}"
+
+# {{ if eq .chezmoi.os "darwin" }} Macos vars
+set -gx AWS_VAULT_PROMPT ykman
+set -gx HOMEBREW_CASK_OPTS --no-quarantine
+# {{ else if eq .chezmoi.os "linux" }} Linux vars
+# TODO: Linux config
+# {{ end }}

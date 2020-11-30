@@ -1,4 +1,4 @@
-if command -v aws-vault >/dev/null
+if type -q aws-vault
   complete -ec aws-vault
 
   # switch based on seeing a `--`

@@ -75,4 +75,3 @@ download_themes() {
 }
 
 main
-

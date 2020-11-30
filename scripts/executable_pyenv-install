@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+
+if command -v xcode-select >/dev/null 2>&1; then
+  # macos
+
+  LDFLAGS="-L$(xcrun --show-sdk-path)/usr/lib" && export LDFLAGS
+
+  # CFLAGS="-I$(brew --prefix openssl)/include -I$(brew --prefix bzip2)/include -I$(brew --prefix readline)/include -I$(xcrun --show-sdk-path)/usr/include" LDFLAGS="-L$(brew --prefix openssl)/lib -L$(brew --prefix readline)/lib -L$(brew --prefix zlib)/lib -L$(brew --prefix bzip2)/lib" pyenv install --patch 3.8.0 < <(curl -sSL https://github.com/python/cpython/commit/8ea6353.patch\?full_index\=1)
+
+  # export SDKROOT="/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk"
+  # # probably temporary?
+  # export SYSTEM_VERSION_COMPAT=1
+  # CFLAGS="-I$(brew --prefix openssl)/include -I$(brew --prefix readline)/include -I$(brew --prefix bzip2)/include -I$(xcrun --show-sdk-path)/usr/include" && export CFLAGS
+  # CPPFLAGS="-I$(brew --prefix zlib)/include" && export CPPFLAGS
+  # LDFLAGS="-L$(brew --prefix openssl)/lib -L$(brew --prefix readline)/lib -L$(brew --prefix zlib)/lib -L$(brew --prefix bzip2)/lib" && export LDFLAGS
+  pyenv install "${@:1}"
+else
+  echo "Not configured for this OS."
+  exit 1
+fi
