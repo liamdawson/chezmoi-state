@@ -5,6 +5,9 @@
 # @raycast.title Switch to Google Meet
 # @raycast.mode silent
 
+# Optional parameters:
+# @raycast.packageName Chezmoi Scripts
+
 # adapted from https://dance.computer.dance/posts/2019/07/finding-open-web-pages-with-alfred.html
 # https://web.archive.org/web/20200617014510/https://dance.computer.dance/posts/2019/07/finding-open-web-pages-with-alfred.html
 
