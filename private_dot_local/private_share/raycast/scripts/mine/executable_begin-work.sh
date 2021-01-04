@@ -8,8 +8,7 @@
 # Optional parameters:
 # @raycast.icon ▶️
 # @raycast.currentDirectoryPath ~
-# @raycast.packageName Raycast Scripts
-# @raycast.packageName Chezmoi Scripts
+# @raycast.packageName Work
 
 apps=(
   "/Applications/Firefox.app"
