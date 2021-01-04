@@ -11,3 +11,4 @@ node_packages=(
 nodenv install -s "$node_version"
 nodenv global "$node_version"
 npm install -g "${node_packages[@]}"
+nodenv rehash || true

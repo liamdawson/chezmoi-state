@@ -2,6 +2,8 @@
 
 set -euo pipefail
 
+# TODO: terminalizer?
+
 cast_folder="${HOME}/w/local/casts"
 
 mkdir -p "$cast_folder"

@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+if git rev-parse --is-inside-work-tree >/dev/null 2>&1; then
+  cd "$(git rev-parse --show-cdup)"
+fi
+
+if [[ -r ".ruby-version" ]] && command -v rbenv >/dev/null 2>&1; then
+  rbenv install -s "$(cat .ruby-version)"
+fi
+
+bundle install
+
+if command -v solargraph >/dev/null 2>&1; then
+  solargraph bundle
+fi
