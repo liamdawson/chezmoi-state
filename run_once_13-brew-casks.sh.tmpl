@@ -5,6 +5,7 @@ set -Eeuo pipefail
 # {{ if eq .chezmoi.os "darwin" }}
 brew_casks=(
   1password-cli
+  adoptopenjdk
   alfred
   aws-vault
   balenaetcher
@@ -60,6 +61,6 @@ brew_casks=(
   homebrew/cask-drivers/yubico-yubikey-piv-manager
 )
 
-brew cask install "${brew_casks[@]}"
+brew install --cask "${brew_casks[@]}"
 
 # {{ end }}
