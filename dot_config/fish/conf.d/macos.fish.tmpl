@@ -1,0 +1,4 @@
+{{ if eq .chezmoi.os "darwin" }}
+# work-around for https://github.com/fish-shell/fish-shell/issues/7511
+function __fish_describe_command; end
+{{ else }}# irrelevant{{ end }}
