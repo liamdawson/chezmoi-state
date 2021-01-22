@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+eval "$(rbenv init - --no-rehash bash)"
+
+for version in $(rbenv versions --bare); do
+  (
+    rbenv shell "$version"
+    bash -c "$@"
+  )
+done

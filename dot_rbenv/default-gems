@@ -6,5 +6,6 @@ pry-stack_explorer
 rcodetools
 rspec
 rubocop
+rubocop-shopify
 ruby-debug-ide
 solargraph
