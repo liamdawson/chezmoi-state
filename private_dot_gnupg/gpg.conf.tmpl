@@ -33,15 +33,13 @@ verify-options show-uid-validity
 # Display all keys and their fingerprints
 with-fingerprint
 # Display key origins and updates
-#with-key-origin
+with-key-origin
 # Cross-certify subkeys are present and valid
 require-cross-certification
 # Disable caching of passphrase for symmetrical ops
 no-symkey-cache
 # Enable smartcard
 use-agent
-# Disable recipient key ID in messages
-throw-keyids
 # Default/trusted key ID to use (helpful with throw-keyids)
 default-key {{ .gpg.default_key }}
 trusted-key {{ .gpg.trusted_key }}
