@@ -10,6 +10,7 @@ brew_formulae=(
   buildkite/cli/bk
   convox
   liamdawson/repo/buildkite_waiter
+  localstack
   plantuml
 
   ## Experiments
