@@ -2,9 +2,8 @@
 
 set -Eeuo pipefail
 
-node_version="14.15.1"
+node_version="14.15.4"
 node_packages=(
-  terminalizer
   typescript
 )
 
