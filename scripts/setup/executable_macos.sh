@@ -6,15 +6,21 @@ cd "$( dirname "${BASH_SOURCE[0]}" )/.."
 
 main() {
   update_macos_settings
-  download_themes
+
+  cat <<EOINFO
+Finished. You may want to run the following:
+
+  killall Dock
+  killall Finder
+  pkill "Touch Bar agent"
+  killall "ControlStrip"
+EOINFO
 }
 
 update_macos_settings() {
   # tap-to-click
   defaults write com.apple.AppleMultitouchTrackpad Clicking -bool true
   defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
-
-  defaults write com.apple.menuextra.battery ShowPercent -string "YES"
 
   # scroll direction
   # defaults write NSGlobalDomain com.apple.swipescrolldirection -bool false
@@ -60,7 +66,19 @@ update_macos_settings() {
   defaults write com.apple.dock show-recents -bool false
   defaults write com.apple.dock tilesize -int 48
   defaults write com.apple.dock autohide -bool true
-  
+  defaults write com.apple.dock autohide-time-modifier -float 0
+
+  # touchbar settings
+  defaults write com.apple.touchbar.agent PresentationModeGlobal functionKeys
+
+  # clock settings
+  defaults write com.apple.menuextra.clock DateFormat -string "EEE d MMM  H:mm"
+  defaults write com.apple.menuextra.clock Show24Hour 1
+
+  # sound settings
+  defaults write -g com.apple.sound.uiaudio.enabled 0
+  defaults write -g com.apple.sound.beep.volume 0
+
   # textedit plain text
   defaults write com.apple.TextEdit RichText -int 0
 
