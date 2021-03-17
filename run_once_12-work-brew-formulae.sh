@@ -2,7 +2,7 @@
 
 set -Eeuo pipefail
 
-## {{ if eq .data.work true }} Work-specific formulae
+## {{ if eq .data.work_machine true }} Work-specific formulae
 brew_formulae=(
   ansible
   aws/tap/aws-sam-cli
