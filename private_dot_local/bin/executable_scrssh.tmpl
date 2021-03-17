@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+ssh-add -e "$SSH_PKCS11_PROVIDER"; ssh-add -s "$SSH_PKCS11_PROVIDER"

@@ -2,9 +2,11 @@
   recipient = "chezmoi-state@gpg.ldaws.net"
 
 [data]
-  editor = "/usr/local/bin/vim"
-  visual_editor = "/usr/local/bin/code -w"
   code_command = "code"
+  editor = "/usr/local/bin/vim"
+  ssh_pkcs11_provider = "/usr/local/lib/ssh-keychain-stub.dylib"
+  visual_editor = "/usr/local/bin/code -w"
+  work_machine = true
 
 [data.git]
   signing_key = "0xA0BE84DBE2E93076"
@@ -12,4 +14,5 @@
 [data.gpg]
   default_key = "0xA0BE84DBE2E93076"
   trusted_key = "0xA0BE84DBE2E93076"
+
   pinentry = "/usr/local/bin/pinentry-mac"
