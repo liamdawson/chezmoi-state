@@ -9,4 +9,4 @@ rubocop
 rubocop-shopify
 ruby-debug-ide
 solargraph
-solargraph-rails --pre
+yard
