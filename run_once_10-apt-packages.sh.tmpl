@@ -5,20 +5,22 @@ set -Eeuo pipefail
 # {{ if eq .chezmoi.os "linux" }}
 # things will be missing
 apt_packages=(
-  arc-theme
-  curl
-  firefox
-  fish
-  fonts-noto-color-emoji
-  fonts-powerline
   git
-  make
-  opensc
-  opensc-pkcs11
-  tilix
-  vim
-  wget
-  zeal
+  # opensc
+  # opensc-pkcs11
+
+  # arc-theme
+  # curl
+  # firefox
+  # fish
+  # fonts-noto-color-emoji
+  # fonts-powerline
+  # git
+  # make
+  # tilix
+  # vim
+  # wget
+  # zeal
 )
 
 sudo apt-get install -y "${apt_packages[@]}"

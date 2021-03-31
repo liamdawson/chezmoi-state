@@ -4,6 +4,9 @@ set -Eeuo pipefail
 
 ## {{ if eq .chezmoi.os "darwin" }}
 
+echo "TODO: determine if navi is still useful"
+exit 0
+
 # maintain the navi cheatsheets in one place
 
 if ! [[ -L "${HOME}/Library/Application Support/navi" ]]; then
