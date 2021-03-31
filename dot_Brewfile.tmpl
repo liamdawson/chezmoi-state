@@ -1,10 +1,46 @@
-{{ if eq .work_machine true }}## Work-specific formulae
+# Combined Brewfile, differs by platform and "work_machine" status.
+{{ if eq .chezmoi.os "darwin" }}
+## Macos-specific formulae
 
-cask "session-manager-plugin"
+brew "choose-gui"
+brew "gnu-sed"
+brew "gnu-tar"
+brew "libffi"
+brew "libyaml"
+brew "mas"
+brew "opensc" # may need to link: false if I don't stick with the ssh-keychain stub
+brew "openssl"
+brew "pinentry-mac"
+brew "readline"
+brew "terminal-notifier"
+brew "xz"
+brew "yubico-piv-tool"
+{{ else if eq .chezmoi.os "linux" }}
+## Linux-specific formulae
+{{ else }}
+## WARNING:
+## Unknown chezmoi.os - skipping OS specific formulae
+{{ end }}
 
-## End work-specific formulae{{ else }}
+{{ if eq .work_machine true }}
+## Work-specific formulae
+
+cask "aws-vault" # cask because it needs an appropriate signature
+cask "session-manager-plugin" # for AWS ECS Exec/other SSM usage with the AWS CLI v2
+
+{{ else }}
 ## Skipping work-specific formulae
 {{ end }}
+
+## Common formulae
+
+brew "gh"
+brew "ghq"
+brew "sk"
+brew "starship"
+brew "fish"
+brew "topgrade"
+brew "ykman"
 
 # tap "aws/tap"
 # tap "buildkite/buildkite"
