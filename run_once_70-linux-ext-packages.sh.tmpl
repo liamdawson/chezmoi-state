@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+set -Eeuo pipefail
+
+## {{ if eq .chezmoi.os "linux" }}
+
+sudo apt-get install -y code 1password
+
+## {{ end }}

@@ -2,7 +2,7 @@
 {{ if eq .chezmoi.os "darwin" }}
 ## Macos-specific formulae
 
-brew "choose-gui"
+brew "fish"
 brew "gnu-sed"
 brew "gnu-tar"
 brew "libffi"
@@ -34,11 +34,15 @@ cask "session-manager-plugin" # for AWS ECS Exec/other SSM usage with the AWS CL
 
 ## Common formulae
 
+brew "chezmoi"
 brew "gh"
 brew "ghq"
+brew "nodenv"
 brew "sk"
 brew "starship"
-brew "fish"
+brew "pyenv"
+brew "rbenv"
+brew "rbenv-default-gems"
 brew "topgrade"
 brew "ykman"
 

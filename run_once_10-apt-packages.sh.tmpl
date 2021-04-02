@@ -5,20 +5,23 @@ set -Eeuo pipefail
 # {{ if eq .chezmoi.os "linux" }}
 # things will be missing
 apt_packages=(
+  curl
   git
+  firefox
+  fish
+  git
+  make
+  tilix
+  vim
+
+  fonts-noto-color-emoji
+  fonts-cascadia-code
   # opensc
   # opensc-pkcs11
-
   # arc-theme
   # curl
-  # firefox
-  # fish
   # fonts-noto-color-emoji
   # fonts-powerline
-  # git
-  # make
-  # tilix
-  # vim
   # wget
   # zeal
 )
