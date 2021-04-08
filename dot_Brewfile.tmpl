@@ -15,6 +15,19 @@ brew "readline"
 brew "terminal-notifier"
 brew "xz"
 brew "yubico-piv-tool"
+
+mas "1Password 7", id: 1333542190
+mas "Affinity Designer", id: 824171161
+mas "Affinity Photo", id: 824183456
+mas "Microsoft Excel", id: 462058435
+mas "Microsoft PowerPoint", id: 462062816
+mas "Microsoft Word", id: 462054704
+mas "OneDrive", id: 823766827
+mas "Slack", id: 803453959
+mas "Telegram", id: 747648890
+mas "Trello", id: 1278508951
+mas "Xcode", id: 497799835
+
 {{ else if eq .chezmoi.os "linux" }}
 ## Linux-specific formulae
 {{ else }}
@@ -228,16 +241,3 @@ brew "ykman"
 # cask "yubico-authenticator"
 # cask "yubico-yubikey-manager"
 # cask "yubico-yubikey-piv-manager"
-# mas "1Password 7", id: 1333542190
-# mas "Affinity Designer", id: 824171161
-# mas "Affinity Photo", id: 824183456
-# mas "Keynote", id: 409183694
-# mas "Microsoft Excel", id: 462058435
-# mas "Microsoft OneNote", id: 784801555
-# mas "Microsoft PowerPoint", id: 462062816
-# mas "Microsoft Word", id: 462054704
-# mas "OneDrive", id: 823766827
-# mas "Slack", id: 803453959
-# mas "Telegram", id: 747648890
-# mas "Trello", id: 1278508951
-# mas "Xcode", id: 497799835
