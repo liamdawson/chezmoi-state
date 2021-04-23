@@ -18,7 +18,7 @@ disabled = true
 [git_status]
 disabled = true
 
-[duration]
+[cmd_duration]
 min_time = 10000
 
 [battery]
