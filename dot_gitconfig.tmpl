@@ -10,10 +10,13 @@
   required = true
 
 [core]
-  pager = "less -FRX"
+  pager = "delta"
   attributesfile = ~/.gitattributes_global
   excludesfile = ~/.gitignore_global
   editor = vim
+
+[interactive]
+  diffFilter = delta --color-only
 
 [color]
   ui = auto
@@ -37,6 +40,11 @@
 
 [init]
   defaultBranch = main
+
+[delta]
+  features = line-numbers hyperlinks
+  hyperlinks-file-link-format = vscode://file/{path}:{line}
+  navigate = true
 
 [alias]
   set-upstream = "!git branch --set-upstream-to="origin/$(git branch --show-current)" "$(git branch --show-current)""

@@ -2,6 +2,8 @@ set -gx CONVOX_LOCAL disable
 set -gx EDITOR "{{ .editor }}"
 set -gx VISUAL "{{ .visual_editor }}"
 set -gx SSH_PKCS11_PROVIDER "{{ .ssh_pkcs11_provider }}"
+set -gx BAT_THEME Dracula
+set -gx DELTA_PAGER "less -FRX"
 
 # {{ if eq .chezmoi.os "darwin" }} Macos vars
 set -gx AWS_VAULT_PROMPT ykman

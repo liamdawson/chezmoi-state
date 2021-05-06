@@ -5,10 +5,11 @@
 brew "fish"
 brew "gnu-sed"
 brew "gnu-tar"
+brew "less"                  # recommended by git-delta
 brew "libffi"
 brew "libyaml"
 brew "mas"
-brew "opensc" # may need to link: false if I don't stick with the ssh-keychain stub
+brew "opensc"                # may need to link: false if I don't stick with the ssh-keychain stub
 brew "openssl"
 brew "pinentry-mac"
 brew "readline"
@@ -48,20 +49,18 @@ cask "session-manager-plugin" # for AWS ECS Exec/other SSM usage with the AWS CL
 ## Common formulae
 
 brew "chezmoi"
+brew "git-delta"             # experiment: better git diffs
 brew "gh"
 brew "ghq"
 brew "nodenv"
+brew "pyenv"
+brew "rbenv-default-gems"
+brew "rbenv"
+brew "saulpw/vd/visidata"    # experiment: tabular data multitool
 brew "sk"
 brew "starship"
-brew "pyenv"
-brew "rbenv"
-brew "rbenv-default-gems"
 brew "topgrade"
 brew "ykman"
-
-## Experiments
-
-brew "saulpw/vd/visidata" # tabular data multitool
 
 # tap "aws/tap"
 # tap "buildkite/buildkite"
