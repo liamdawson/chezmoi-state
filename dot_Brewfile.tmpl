@@ -5,11 +5,11 @@
 brew "fish"
 brew "gnu-sed"
 brew "gnu-tar"
-brew "less"                  # recommended by git-delta
+brew "less"                                                # recommended by git-delta
 brew "libffi"
 brew "libyaml"
 brew "mas"
-brew "opensc"                # may need to link: false if I don't stick with the ssh-keychain stub
+brew "opensc"
 brew "openssl"
 brew "pinentry-mac"
 brew "readline"
@@ -17,12 +17,15 @@ brew "terminal-notifier"
 brew "xz"
 brew "yubico-piv-tool"
 
-cask "onedrive"
+cask "homebrew/cask-drivers/elgato-control-center"         # key light
+cask "homebrew/cask-drivers/sonos"
 cask "homebrew/cask-drivers/synology-drive"
+cask "onedrive"
 
 mas "1Password 7", id: 1333542190
 mas "Affinity Designer", id: 824171161
 mas "Affinity Photo", id: 824183456
+mas "Microsoft To Do", id: 1274495053
 mas "Slack", id: 803453959
 mas "Telegram", id: 747648890
 mas "Trello", id: 1278508951
@@ -38,9 +41,11 @@ mas "Xcode", id: 497799835
 {{ if eq .work_machine true }}
 ## Work-specific formulae
 
-cask "aws-vault" # cask because it needs an appropriate signature
+brew "convox"
+
+cask "aws-vault"                                           # cask because it needs an appropriate signature
 cask "cyberduck"
-cask "session-manager-plugin" # for AWS ECS Exec/other SSM usage with the AWS CLI v2
+cask "session-manager-plugin"                              # for AWS ECS Exec/other SSM usage with the AWS CLI v2
 
 {{ else }}
 ## Skipping work-specific formulae
@@ -48,20 +53,41 @@ cask "session-manager-plugin" # for AWS ECS Exec/other SSM usage with the AWS CL
 
 ## Common formulae
 
+brew "adr-tools"
+brew "ansible"
+brew "aria2"                                               # CLI download manager (incl. torrents)
+brew "asciinema"
+brew "awscli"
+brew "cfn-lint"
+brew "cfssl"
 brew "chezmoi"
-brew "git-delta"             # experiment: better git diffs
+brew "choose-gui"
+brew "direnv"                                              # deliberately not configured, I only invoke it manually
+brew "dog"                                                 # experiment: CLI DNS client
+brew "git-delta"                                           # experiment: better git diffs
 brew "gh"
 brew "ghq"
 brew "nodenv"
 brew "pyenv"
 brew "rbenv-default-gems"
 brew "rbenv"
-brew "saulpw/vd/visidata"    # experiment: tabular data multitool
+brew "saulpw/vd/visidata"                                  # experiment: tabular data multitool
 brew "sk"
 brew "starship"
 brew "topgrade"
 brew "ykman"
 
+#
+# reassess:
+#
+# brew "cmake"
+# brew "docker-machine"
+# brew "docker-machine-driver-vmware"
+# brew "docker-machine-driver-xhyve"
+
+#
+# unsorted:
+#
 # tap "aws/tap"
 # tap "buildkite/buildkite"
 # tap "buildkite/cli"
@@ -79,33 +105,9 @@ brew "ykman"
 # tap "liamdawson/repo"
 # tap "puma/puma"
 # tap "rs/tap"
-# brew "adr-tools"
-# brew "libyaml"
-# brew "openssl@1.1"
-# brew "readline"
-# brew "xz"
-# brew "ansible"
-# brew "aria2"
-# brew "asciinema"
-# brew "aws-shell"
-# brew "awscli"
-# brew "libffi"
-# brew "cfn-lint"
-# brew "cfssl"
-# brew "cheat"
-# brew "chezmoi"
-# brew "choose-gui"
-# brew "cmake"
-# brew "convox"
-# brew "direnv"
-# brew "docker-machine"
-# brew "docker-machine-driver-vmware"
-# brew "docker-machine-driver-xhyve"
-# brew "dog"
 # brew "exercism"
 # brew "exiv2"
 # brew "fd"
-# brew "fish"
 # brew "fork-cleaner"
 # brew "gawk"
 # brew "gh"
