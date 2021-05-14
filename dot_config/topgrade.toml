@@ -3,7 +3,7 @@ cleanup = true
 
 # see Step in https://github.com/r-darwish/topgrade/blob/develop/src/config.rs to find other things to disable
 # nightly is, well, nightly, and I think gems and rbenv aren't mixing well
-disable = ["rustup", "gem", "vscode"]
+disable = ["rustup", "gem"]
 
 # Custom commands
 [commands]
