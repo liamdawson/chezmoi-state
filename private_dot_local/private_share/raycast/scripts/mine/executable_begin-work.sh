@@ -17,6 +17,7 @@ apps=(
   "/Applications/WorkFlowy.app"
   "/Applications/Joplin.app"
   "/Applications/DevHub.app"
+  "/Applications/Microsoft To Do.app"
 )
 
 for app in "${apps[@]}"; do
