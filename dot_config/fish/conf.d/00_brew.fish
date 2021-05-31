@@ -3,21 +3,24 @@ if not type -q brew
 
   for bin_dir in $possible_paths
     if test -x "$bin_dir/brew"
-      set -gx PATH $PATH $bin_dir
+      fish_add_path $bin_dir
       break
     end
   end
 end
 
-# 2020-07-14 shellenv broken when used from non-fish parent processes (e.g. topgrade, VS Code, ...)
 if type -q brew
-  set -gx HOMEBREW_PREFIX (brew --prefix)
-  set -gx HOMEBREW_CELLAR "$HOMEBREW_PREFIX/Cellar"
-  set -gx HOMEBREW_REPOSITORY "$HOMEBREW_PREFIX/Homebrew"
+  set -q HOMEBREW_PREFIX; or set -Ux HOMEBREW_PREFIX (brew --prefix)
+  set -q HOMEBREW_CELLAR; or set -Ux HOMEBREW_CELLAR "$HOMEBREW_PREFIX/Cellar"
+  set -q HOMEBREW_REPOSITORY; or set -Ux HOMEBREW_REPOSITORY "$HOMEBREW_PREFIX/Homebrew"
   set -q MANPATH; or set MANPATH ''; set -gx MANPATH "$HOMEBREW_PREFIX/share/man" $MANPATH;
   set -q INFOPATH; or set INFOPATH ''; set -gx INFOPATH "$HOMEBREW_PREFIX/share/info" $INFOPATH;
 
   if not contains "$HOMEBREW_PREFIX/bin" $PATH
-    set -gx PATH "$HOMEBREW_PREFIX/bin" $PATH
+    fish_add_path --prepend "$HOMEBREW_PREFIX/bin"
+  end
+
+  if not contains "$HOMEBREW_PREFIX/sbin" $PATH
+    fish_add_path --prepend "$HOMEBREW_PREFIX/sbin"
   end
 end
