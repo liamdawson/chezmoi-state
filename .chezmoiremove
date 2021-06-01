@@ -1,3 +1,1 @@
-# moving to numeric prefixes
-.config/fish/conf.d/[a-z]*.fish
 .config/fish/functions/{fish_prompt,git-logs,git-state,nbl,conda}.fish
