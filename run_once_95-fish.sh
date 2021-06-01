@@ -2,6 +2,6 @@
 
 # Abbreviations
 
-abbr --global --add ave "aws-vault exec"
-abbr --global --add bx "bundle exec"
-abbr --global --add dx "direnv exec ."
+abbr --add ave "aws-vault exec"
+abbr --add bx "bundle exec"
+abbr --add dx "direnv exec ."
