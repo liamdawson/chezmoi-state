@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+set -eu
+
+{{ .code_command }} --folder-uri "file://$(chezmoi source-path)" --file-uri "file://$HOME/.config/chezmoi/chezmoi.toml"
