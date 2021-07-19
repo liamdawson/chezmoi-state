@@ -1,4 +1,7 @@
 /README.md
 {{ if ne .chezmoi.os "darwin" }}
 Library/**/*
+scripts/macos/**/*
+{{ end }}{{ if eq .work_machine false }}
+scripts/work/**/*
 {{ end }}
