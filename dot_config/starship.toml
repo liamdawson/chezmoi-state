@@ -34,5 +34,5 @@ disabled = true
 [nix_shell]
 disabled = true
 
-[docker]
+[docker_context]
 disabled = true
