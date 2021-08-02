@@ -33,3 +33,6 @@ disabled = true
 
 [nix_shell]
 disabled = true
+
+[docker]
+disabled = true
