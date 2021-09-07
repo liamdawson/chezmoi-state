@@ -14,8 +14,9 @@ if ! command -v rustup >/dev/null 2>&1; then
 fi
 
 crates=(
-  cargo-udeps
   cargo-edit
+  cargo-outdated
+  cargo-udeps
   evcxr_jupyter
   evcxr_repl
 )
