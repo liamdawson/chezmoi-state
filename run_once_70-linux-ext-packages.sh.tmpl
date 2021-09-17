@@ -6,6 +6,7 @@ set -Eeuo pipefail
 
 packages=(
   1password
+  appimagelauncher
   code
 )
 
@@ -15,6 +16,10 @@ fi
 
 if ! [ -f "/etc/apt/sources.list.d/1password.list" ]; then
     echo 'deb [arch=amd64 signed-by=/usr/share/keyrings/1password.gpg] https://downloads.1password.com/linux/debian edge main' | sudo tee /etc/apt/sources.list.d/1password.list
+fi
+
+if ! [ -f "/etc/apt/sources.list.d/appimagelauncher-team-ubuntu-stable-groovy.list" ]; then
+    sudo add-apt-repository ppa:appimagelauncher-team/stable
 fi
 
 if ! [ -f /usr/share/keyrings/packages.microsoft.gpg ]; then
