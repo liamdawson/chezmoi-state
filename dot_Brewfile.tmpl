@@ -2,6 +2,7 @@
 {{ if eq .chezmoi.os "darwin" }}
 ## Macos-specific formulae
 
+brew "choose-gui"
 brew "fish"
 brew "gnu-sed"
 brew "gnu-tar"
@@ -71,7 +72,6 @@ brew "awscli"
 brew "cfn-lint"
 brew "cfssl"
 brew "chezmoi"
-brew "choose-gui"
 brew "direnv"                                              # deliberately not configured, I only invoke it manually
 brew "dog"                                                 # experiment: CLI DNS client
 brew "git-delta"                                           # experiment: better git diffs
