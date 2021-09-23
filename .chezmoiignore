@@ -3,6 +3,7 @@
 {{ if ne .chezmoi.os "darwin" }}
 Library/**/*
 scripts/macos/**/*
+.finicky.js
 {{ end }}
 
 {{ if ne .work_machine true }}
