@@ -10,6 +10,8 @@
 
 [data.git]
   signing_key = "0xA0BE84DBE2E93076"
+  envato_email = "..."
+  personal_email = "..."
 
 [data.gpg]
   default_key = "0xA0BE84DBE2E93076"

@@ -1,1 +1,6 @@
 .config/fish/functions/{fish_prompt,git-logs,git-state,nbl,conda}.fish
+
+# (re)moved
+.gitconfig
+.gitattributes_global
+.gitignore_global
