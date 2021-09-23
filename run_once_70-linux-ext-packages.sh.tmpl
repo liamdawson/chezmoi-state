@@ -8,6 +8,10 @@ packages=(
   1password
   appimagelauncher
   code
+  containerd.io
+  docker-ce
+  docker-ce-cli
+  docker-compose
   fish
 )
 
@@ -32,12 +36,15 @@ fi
 
 if ! [ -f /etc/apt/sources.list.d/vscode.list ]; then
   sudo sh -c 'echo "deb [arch=amd64 signed-by=/usr/share/keyrings/packages.microsoft.gpg] https://packages.microsoft.com/repos/code stable main" > /etc/apt/sources.list.d/vscode.list'
-  sudo apt-get install -y apt-transport-https
-  sudo apt-get update
 fi
 
 if ! [ -f "/etc/apt/sources.list.d/fish-shell-ubuntu-release-3-${distro_codename}.list" ]; then
   sudo add-apt-repository --yes ppa:fish-shell/release-3
+fi
+
+if ! [ -f "/etc/apt/sources.list.d/docker.list" ]; then
+  curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+  sudo sh -c 'echo "deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" > /etc/apt/sources.list.d/docker.list'
 fi
 
 sudo apt-get update
