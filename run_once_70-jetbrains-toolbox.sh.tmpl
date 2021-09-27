@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+set -Eeuo pipefail
+
+linux_toolbox_url="https://download.jetbrains.com/toolbox/jetbrains-toolbox-1.21.9712.tar.gz"
+
+# {{ if eq .chezmoi.os "linux" }}
+if ! [[ -f "${HOME}/.local/share/JetBrains/Toolbox/bin/jetbrains-toolbox" ]]; then
+  (
+    cd "$(mktemp -d)"
+    curl -fsSL "$linux_toolbox_url" | tar -xz --strip-components=1
+    ./jetbrains-toolbox &
+  )
+fi
+# {{ else if eq .chezmoi.os "darwin" }}
+echo "TODO: macos JetBrains Toolbox installation"
+# {{ end }}
