@@ -19,28 +19,6 @@ brew "terminal-notifier"
 brew "xz"
 brew "yubico-piv-tool"
 
-cask "homebrew/cask-drivers/elgato-control-center"         # key light
-cask "homebrew/cask-drivers/sonos"
-cask "homebrew/cask-drivers/synology-drive"
-
-cask "homebrew/cask-fonts/font-cascadia-mono"
-cask "homebrew/cask-fonts/font-cascadia-mono-pl"           # powerline version for starship etc.
-
-cask "finicky"                                             # open Meet URLs in Chrome automatically
-cask "jupyterlab"                                          # experiment: Jupyter notebooks
-cask "onedrive"
-cask "rectangle"                                           # experiment: window management app
-cask "remarkable"
-
-mas "1Password 7", id: 1333542190
-mas "Affinity Designer", id: 824171161
-mas "Affinity Photo", id: 824183456
-mas "Microsoft To Do", id: 1274495053
-mas "Slack", id: 803453959
-mas "Telegram", id: 747648890
-mas "Trello", id: 1278508951
-mas "Xcode", id: 497799835
-
 {{ else if eq .chezmoi.os "linux" }}
 ## Linux-specific formulae
 {{ else }}
@@ -92,12 +70,31 @@ brew "tfenv"
 brew "topgrade"
 brew "ykman"
 
-#
-# reassess:
-#
-# brew "docker-machine"
-# brew "docker-machine-driver-vmware"
-# brew "docker-machine-driver-xhyve"
+{{ if eq .chezmoi.os "darwin" }}
+# Casks and Macos apps last, because they sometimes require user input
+
+cask "homebrew/cask-drivers/elgato-control-center"         # key light
+cask "homebrew/cask-drivers/sonos"
+cask "homebrew/cask-drivers/synology-drive"
+
+cask "homebrew/cask-fonts/font-cascadia-mono"
+cask "homebrew/cask-fonts/font-cascadia-mono-pl"           # powerline version for starship etc.
+
+cask "finicky"                                             # open Meet URLs in Chrome automatically
+cask "jupyterlab"                                          # experiment: Jupyter notebooks
+cask "onedrive"
+cask "rectangle"                                           # experiment: window management app
+cask "remarkable"
+
+mas "1Password 7", id: 1333542190
+mas "Affinity Designer", id: 824171161
+mas "Affinity Photo", id: 824183456
+mas "Microsoft To Do", id: 1274495053
+mas "Slack", id: 803453959
+mas "Telegram", id: 747648890
+mas "Trello", id: 1278508951
+mas "Xcode", id: 497799835
+{{ end }}
 
 #
 # unsorted:
@@ -124,8 +121,6 @@ brew "ykman"
 # brew "fd"
 # brew "fork-cleaner"
 # brew "gawk"
-# brew "gh"
-# brew "ghq"
 # brew "git"
 # brew "gnu-sed"
 # brew "gnu-tar"
@@ -134,9 +129,7 @@ brew "ykman"
 # brew "helm"
 # brew "hivemind"
 # brew "httpie"
-# brew "hub"
 # brew "hyperfine"
-# brew "iamy"
 # brew "libheif"
 # brew "jq"
 # brew "jsonnet"
@@ -145,14 +138,12 @@ brew "ykman"
 # brew "libmaxminddb"
 # brew "libsodium"
 # brew "localstack"
-# brew "mas"
 # brew "minikube"
 # brew "mitmproxy"
 # brew "mysql@5.6", link: true
 # brew "navi"
 # brew "neofetch"
 # brew "node-build"
-# brew "nodenv"
 # brew "opensc", link: false
 # brew "overmind"
 # brew "packer"
@@ -163,12 +154,9 @@ brew "ykman"
 # brew "pipx"
 # brew "plantuml"
 # brew "postgresql@9.6"
-# brew "pyenv"
 # brew "qt"
 # brew "qt@5"
 # brew "ruby-build"
-# brew "rbenv"
-# brew "rbenv-default-gems"
 # brew "redis"
 # brew "ripgrep"
 # brew "rsync"
