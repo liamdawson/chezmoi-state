@@ -36,3 +36,9 @@ disabled = true
 
 [docker_context]
 disabled = true
+
+[nodejs]
+format = "[\\(node ($version)\\)]($style) "
+
+[ruby]
+format = "[\\(ruby ($version)\\)]($style) "
