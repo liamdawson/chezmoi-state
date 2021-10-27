@@ -14,6 +14,9 @@ disable = ["rustup", "gem"]
 "gi() completions" = "fish -c 'gi update-completions'"
 "chezmoi update" = "chezmoi update"
 
+[linux]
+apt_arguments = "--assume-yes"
+
 # ==============================================================================
 
 # https://raw.githubusercontent.com/r-darwish/topgrade/v6.6.0/config.example.toml
