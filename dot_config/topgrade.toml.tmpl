@@ -3,7 +3,11 @@ cleanup = true
 
 # see Step in https://github.com/r-darwish/topgrade/blob/develop/src/config.rs to find other things to disable
 # nightly is, well, nightly, and I think gems and rbenv aren't mixing well
-disable = ["rustup", "gem"]
+disable = [
+  "rustup",
+  "gem"{{ if eq .chezmoi.os "darwin" }},
+  "gnome_shell_extensions"
+{{ end }}]
 
 # Custom commands
 [commands]
