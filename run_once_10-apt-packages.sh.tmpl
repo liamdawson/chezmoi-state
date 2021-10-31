@@ -6,34 +6,30 @@ set -Eeuo pipefail
 # things will be missing
 apt_packages=(
   curl
-  git
   firefox
   fish
   git
-  make
   tilix
   vim
+  wget
   zeal
 
-  opensc
-  opensc-pkcs11
-  scdaemon
-
-  libssl-dev
-  zlib1g-dev
-
-  fonts-noto-color-emoji
   fonts-cascadia-code
+  fonts-noto-color-emoji
 
   apt-transport-https
-  # opensc
-  # opensc-pkcs11
-  # arc-theme
-  # curl
-  # fonts-noto-color-emoji
-  # fonts-powerline
-  # wget
-  # zeal
+  clang
+  cmake
+  libgtk-3-dev
+  libssl-dev
+  make
+  ninja-build
+  opensc
+  opensc-pkcs11
+  pkg-config
+  scdaemon
+  xz-utils
+  zlib1g-dev
 )
 
 sudo apt-get install -y "${apt_packages[@]}"
