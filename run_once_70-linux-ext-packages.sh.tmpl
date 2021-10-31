@@ -6,6 +6,7 @@ set -Eeuo pipefail
 
 main() {
   install_apt_packages
+  install_snap_packages
 }
 
 install_apt_packages() {
@@ -53,6 +54,16 @@ install_apt_packages() {
 
   sudo apt-get update
   sudo apt-get install -y "${packages[@]}"
+}
+
+install_snap_packages() {
+  local classic_snaps=(
+    powershell
+  )
+
+  for snap in "${classic_snaps[@]}"; do
+    sudo snap install --classic "$snap"
+  done
 }
 
 main
