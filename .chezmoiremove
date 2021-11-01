@@ -4,3 +4,6 @@
 .gitconfig
 .gitattributes_global
 .gitignore_global
+
+## Appears to be fixed
+.config/fish/conf.d/95_macos.fish

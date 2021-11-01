@@ -1,7 +1,0 @@
-{{ if eq .chezmoi.os "darwin" }}
-# work-around for https://github.com/fish-shell/fish-shell/issues/7511
-#
-# still seems problematic as of 2021-06-04 on Macos 11.4
-# e.g. tab completion taking excessively long for a relative script path
-function __fish_describe_command; end
-{{ else }}# irrelevant{{ end }}
