@@ -10,7 +10,7 @@ function main
 end
 
 function configure_android_sdk
-  set -l possible_paths "$HOME/Library/Android/Sdk" "$HOME/Android/Sdk"
+  set -l possible_paths "$HOME/Library/Android/sdk" "$HOME/Android/Sdk"
 
   for sdk_dir in $possible_paths
     if test -d "$sdk_dir"
