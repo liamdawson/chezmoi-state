@@ -6,6 +6,19 @@ function main
   configure_pyenv
   configure_rust
   configure_local_bin
+  configure_android_sdk
+end
+
+function configure_android_sdk
+  set -l possible_paths "$HOME/Library/Android/Sdk" "$HOME/Android/Sdk"
+
+  for sdk_dir in $possible_paths
+    if test -d "$sdk_dir"
+      set -q ANDROID_HOME; or set -Ux ANDROID_HOME $sdk_dir
+
+      break
+    end
+  end
 end
 
 function configure_homebrew
