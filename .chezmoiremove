@@ -5,5 +5,8 @@
 .gitattributes_global
 .gitignore_global
 
+## Moved to ~/scripts/setup/fish.fish
+.config/fish/conf.d/{00_brew.fish,50_golang.fish,50_pyenv.fish,50_rust.fish,55_local-bin.fish}
+
 ## Appears to be fixed
 .config/fish/conf.d/95_macos.fish
