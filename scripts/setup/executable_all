@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+
+set -Eeuo pipefail
+
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
+
+main() {
+  # all_executable_scripts_in_folder "$DIR" | xargs -n1 echo
+
+  for script in $(all_executable_scripts_in_folder "$DIR"); do
+    if ! [ "$(basename "$script")" == "all" ]; then
+      "$script"
+    fi
+  done
+}
+
+all_executable_scripts_in_folder() {
+  # find all executable sh/fish scripts in this directory (specifically)
+  find -X "$1" -type f -maxdepth 1 -perm -500 -iname '*.sh' -or -iname '*.fish' | sort
+}
+
+main
