@@ -17,6 +17,8 @@ gnome_ui_settings() {
   dconf write /org/gnome/desktop/peripherals/touchpad/natural-scroll false
 
   gsettings set org.freedesktop.ibus.panel.emoji hotkey "['<Super>period']"
+  # seems that it has to be done as root? ibus-setup changed it under `sudo gsettings list-recursively``
+  sudo gsettings set org.freedesktop.ibus.panel.emoji hotkey "['<Super>period']"
 }
 
 tilix_config() {
