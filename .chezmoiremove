@@ -4,7 +4,7 @@
 .gitconfig
 .gitattributes_global
 .gitignore_global
-scripts/android-sdk-shell
+scripts/{android-sdk-shell,install-default-ruby-gems}
 scripts/setup/{macos.sh,ubuntu.sh}
 scripts/setup/os
 
