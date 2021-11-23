@@ -2,21 +2,38 @@
 
 set -Eeuo pipefail
 
-DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
+setup_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" >/dev/null 2>&1 && pwd)"
 
-main() {
-  # all_executable_scripts_in_folder "$DIR" | xargs -n1 echo
+script_dirs=(
+  "$setup_dir"
+)
 
-  for script in $(all_executable_scripts_in_folder "$DIR"); do
-    if ! [ "$(basename "$script")" == "all" ]; then
+kernel_name="$(uname -s || true)"
+
+if [[ "$kernel_name" == "Darwin" ]]; then
+  script_dirs+=(
+    "${setup_dir}/macos"
+  )
+elif [[ "$kernel_name" == "Linux" ]]; then
+  script_dirs+=(
+    "${setup_dir}/linux"
+  )
+
+  distro_id="$(lsb_release --id --short || true)"
+
+  if [[ -n "$distro_id" ]]; then
+    script_dirs+=(
+      "${setup_dir}/$(echo "$distro_id" | tr '[:upper:]' '[:lower:]')"
+    )
+  fi
+fi
+
+for dir in "${script_dirs[@]}"; do
+  if [[ -d "$dir" ]]; then
+    echo "Running scripts from $(basename "$dir")"
+
+    for script in $(find "$dir" -maxdepth 1 -type f -perm -500 \( -iname '*.sh' -or -iname '*.fish' \) | sort -n); do
       "$script"
-    fi
-  done
-}
-
-all_executable_scripts_in_folder() {
-  # find all executable sh/fish scripts in this directory (specifically)
-  find -X "$1" -type f -maxdepth 1 -perm -500 -iname '*.sh' -or -iname '*.fish' | sort
-}
-
-main
+    done
+  fi
+done
