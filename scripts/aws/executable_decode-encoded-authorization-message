@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+set -Eeuo pipefail
+
+echo "Paste the message below, then press ^D" >&2
+cat - | aws sts decode-authorization-message --encoded-message "$(cat /dev/stdin)" --query 'DecodedMessage' --output text | jq
