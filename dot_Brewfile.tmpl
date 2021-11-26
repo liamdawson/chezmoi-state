@@ -1,3 +1,7 @@
+cask_args no_quarantine: true
+
+tap "homebrew/cask-versions"
+
 # Combined Brewfile, differs by platform and "work_machine" status.
 {{ if eq .chezmoi.os "darwin" }}
 ## Macos-specific formulae
@@ -20,7 +24,10 @@ brew "terminal-notifier"
 brew "xz"
 brew "yubico-piv-tool"
 
+cask "firefox"
+cask "iterm2"
 cask "visual-studio-code"
+cask "homebrew/cask-versions/firefox-developer-edition"
 
 {{ else if eq .chezmoi.os "linux" }}
 ## Linux-specific formulae
