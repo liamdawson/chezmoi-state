@@ -4,7 +4,7 @@
 [data]
   code_command = "code"
   editor = "/usr/local/bin/vim"
-  ssh_pkcs11_provider = "/usr/local/lib/ssh-keychain-stub.dylib"
+  ssh_pkcs11_provider = "/usr/local/lib/ssh-keychain.dylib"
   visual_editor = "/usr/local/bin/code -w"
   work_machine = true
 
