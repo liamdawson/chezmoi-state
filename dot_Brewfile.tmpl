@@ -1,6 +1,9 @@
 cask_args no_quarantine: true
 
 tap "homebrew/cask-versions"
+tap "saulpw/vd"
+tap "envato/envato-iamy"
+tap "jacobbednarz/cf-vault"
 
 # Combined Brewfile, differs by platform and "work_machine" status.
 {{ if eq .chezmoi.os "darwin" }}
@@ -78,6 +81,7 @@ brew "pyenv"
 brew "rbenv-default-gems"
 brew "rbenv"
 brew "saulpw/vd/visidata"                                  # experiment: tabular data multitool
+brew "shellcheck"
 brew "sk"
 brew "starship"
 brew "structurizr-cli"                                     # experiment: architecture etc. documentation
