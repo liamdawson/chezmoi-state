@@ -3,7 +3,7 @@
 set -Eeuo pipefail
 
 # Tap-to-click
-defaults write com.apple.AppleMultitouchTrackpad Clicking 1
+defaults write com.apple.AppleMultitouchTrackpad Clicking -bool true
 
 # Turn off "natural" trackpad scroll direction
-defaults write -g com.apple.swipescrolldirection 0
+defaults write -g com.apple.swipescrolldirection -bool false
