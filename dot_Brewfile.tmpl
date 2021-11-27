@@ -26,14 +26,6 @@ brew "switchaudio-osx"                                     # used by ~/scripts/w
 brew "terminal-notifier"
 brew "xz"
 brew "yubico-piv-tool"
-
-cask "firefox"
-cask "iterm2"
-cask "visual-studio-code"
-cask "raycast"
-
-cask "homebrew/cask-versions/firefox-developer-edition"
-
 {{ else if eq .chezmoi.os "linux" }}
 ## Linux-specific formulae
 {{ else }}
@@ -49,10 +41,7 @@ brew "envato/envato-iamy/iamy"                             # Envato fork of iamy
 brew "principalmapper"                                     # experiment: quickly evaluate IAM permissions in AWS
 
 cask "aws-vault"                                           # cask because it needs an appropriate signature
-cask "cyberduck"
-cask "google-drive"
 cask "jacobbednarz/cf-vault/cf-vault"
-cask "obs"                                                 # experiment: record how-to etc. videos
 cask "session-manager-plugin"                              # for AWS ECS Exec/other SSM usage with the AWS CLI v2
 
 {{ else }}
@@ -101,12 +90,20 @@ cask "homebrew/cask-drivers/synology-drive"
 cask "homebrew/cask-fonts/font-cascadia-mono"
 cask "homebrew/cask-fonts/font-cascadia-mono-pl"           # powerline version for starship etc.
 
-cask "bartender"                                           # experiment: manage top bar icons
+cask "bartender"                                           # manage top bar icons
 cask "finicky"                                             # open Meet URLs in Chrome automatically
+cask "firefox"
+cask "iterm2"
+cask "jetbrains-toolbox"
+cask "joplin"
 cask "jupyterlab"                                          # experiment: Jupyter notebooks
 cask "onedrive"
-cask "rectangle"                                           # experiment: window management app
+cask "rectangle"                                           # window management app
 cask "remarkable"
+cask "raycast"
+cask "visual-studio-code"
+
+cask "homebrew/cask-versions/firefox-developer-edition"
 
 mas "1Password 7", id: 1333542190
 mas "Affinity Designer", id: 824171161
@@ -116,6 +113,14 @@ mas "Slack", id: 803453959
 mas "Telegram", id: 747648890
 mas "Trello", id: 1278508951
 mas "Xcode", id: 497799835
+
+{{ if eq .work_machine true }}
+# Work-specific Casks/Macos apps
+
+cask "google-drive"
+cask "cyberduck"
+cask "obs"                                                 # experiment: record how-to etc. videos
+{{ end }}
 {{ end }}
 
 #
@@ -241,8 +246,6 @@ mas "Xcode", id: 497799835
 # cask "google-chrome"
 # cask "imageoptim"
 # cask "insomnia"
-# cask "jetbrains-toolbox"
-# cask "joplin"
 # cask "keybase"
 # cask "microsoft-auto-update"
 # cask "microsoft-edge"
