@@ -6,7 +6,7 @@
 .gitignore_global
 scripts/{android-sdk-shell,install-default-ruby-gems}
 scripts/setup/{macos.sh,ubuntu.sh}
-scripts/setup/os
+scripts/setup/*.{fish,sh}
 
 ## Moved to ~/scripts/setup/fish.fish
 .config/fish/conf.d/{00_brew.fish,50_golang.fish,50_pyenv.fish,50_rust.fish,55_local-bin.fish}

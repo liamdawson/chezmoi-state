@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+
+set -Eeuo pipefail
+
+setup_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" >/dev/null 2>&1 && pwd)"
+
+script_dirs=(
+  "${setup_dir}/common"
+)
+
+for dir in "${script_dirs[@]}"; do
+  if [[ -d "$dir" ]]; then
+    echo "Running scripts from $(basename "$dir")"
+
+    for script in $(find "$dir" -maxdepth 1 -type f -perm -500 \( -iname '*.sh' -or -iname '*.fish' \) | sort -n); do
+      echo "== [$(date +%H:%M:%S)] Running $script"
+      "$script"
+    done
+
+    echo "== [$(date +%H:%M:%S)] Finished."
+  fi
+done

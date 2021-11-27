@@ -15,5 +15,12 @@ for version in "${python_versions[@]}"; do
 done
 
 pyenv global "$default_python_version"
+
+if ! command -v pip >/dev/null 2>&1; then
+  if [[ -d "${HOME}/.pyenv/shims" ]]; then
+    export PATH="${HOME}/.pyenv/shims:${PATH}"
+  fi
+fi
+
 pip install "${python_packages[@]}"
 pyenv rehash || true
