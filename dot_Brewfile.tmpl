@@ -1,9 +1,11 @@
 cask_args no_quarantine: true
 
-tap "homebrew/cask-versions"
-tap "saulpw/vd"
+tap "devhubapp/devhub"
 tap "envato/envato-iamy"
+tap "homebrew/cask-versions"
+tap "homebrew/homebrew-cask-drivers"
 tap "jacobbednarz/cf-vault"
+tap "saulpw/vd"
 
 # Combined Brewfile, differs by platform and "work_machine" status.
 {{ if eq .chezmoi.os "darwin" }}
@@ -84,6 +86,7 @@ brew "ykman"
 # Casks and Macos apps last, because they sometimes require user input
 
 cask "homebrew/cask-drivers/elgato-control-center"         # key light
+cask "homebrew/cask-drivers/logitech-g-hub"
 cask "homebrew/cask-drivers/sonos"
 cask "homebrew/cask-drivers/synology-drive"
 
@@ -91,16 +94,23 @@ cask "homebrew/cask-fonts/font-cascadia-mono"
 cask "homebrew/cask-fonts/font-cascadia-mono-pl"           # powerline version for starship etc.
 
 cask "bartender"                                           # manage top bar icons
+cask "cleanshot"
+cask "dash"
+cask "devhub"
+cask "docker"
 cask "finicky"                                             # open Meet URLs in Chrome automatically
 cask "firefox"
+cask "google-chrome"
+cask "istat-menus"
 cask "iterm2"
 cask "jetbrains-toolbox"
 cask "joplin"
 cask "jupyterlab"                                          # experiment: Jupyter notebooks
 cask "onedrive"
+cask "plexamp"
+cask "raycast"
 cask "rectangle"                                           # window management app
 cask "remarkable"
-cask "raycast"
 cask "visual-studio-code"
 
 cask "homebrew/cask-versions/firefox-developer-edition"
@@ -218,7 +228,6 @@ cask "obs"                                                 # experiment: record 
 # brew "rs/tap/dnstrace"
 # cask "1password-cli"
 # cask "adoptopenjdk"
-# cask "alfred"
 # cask "aws-vault"
 # cask "balenaetcher"
 # cask "balsamiq-wireframes"
@@ -243,7 +252,6 @@ cask "obs"                                                 # experiment: record 
 # cask "font-ubuntu"
 # cask "font-ubuntu-mono"
 # cask "gimp"
-# cask "google-chrome"
 # cask "imageoptim"
 # cask "insomnia"
 # cask "keybase"
@@ -259,9 +267,7 @@ cask "obs"                                                 # experiment: record 
 # cask "session-manager-plugin"
 # cask "signal"
 # cask "sizzy"
-# cask "sonos"
 # cask "stoplight-studio"
-# cask "visual-studio-code"
 # cask "wkhtmltopdf"
 # cask "yubico-authenticator"
 # cask "yubico-yubikey-manager"
