@@ -1,3 +1,5 @@
+# Combined Brewfile, differs by platform and "work_machine" status.
+
 cask_args no_quarantine: true
 
 tap "devhubapp/devhub"
@@ -7,8 +9,8 @@ tap "homebrew/homebrew-cask-drivers"
 tap "jacobbednarz/cf-vault"
 tap "saulpw/vd"
 
-# Combined Brewfile, differs by platform and "work_machine" status.
-{{ if eq .chezmoi.os "darwin" }}
+{{- if eq .chezmoi.os "darwin" }}
+
 ## Macos-specific formulae
 
 brew "choose-gui"
@@ -28,14 +30,19 @@ brew "switchaudio-osx"                                     # used by ~/scripts/w
 brew "terminal-notifier"
 brew "xz"
 brew "yubico-piv-tool"
+
 {{ else if eq .chezmoi.os "linux" }}
+
 ## Linux-specific formulae
+
 {{ else }}
+
 ## WARNING:
 ## Unknown chezmoi.os - skipping OS specific formulae
-{{ end }}
 
-{{ if eq .work_machine true }}
+{{ end -}}
+{{- if eq .work_machine true }}
+
 ## Work-specific formulae
 
 brew "convox"
@@ -47,8 +54,10 @@ cask "jacobbednarz/cf-vault/cf-vault"
 cask "session-manager-plugin"                              # for AWS ECS Exec/other SSM usage with the AWS CLI v2
 
 {{ else }}
+
 ## Skipping work-specific formulae
-{{ end }}
+
+{{ end -}}
 
 ## Common formulae
 
@@ -82,7 +91,8 @@ brew "tfenv"
 brew "topgrade"
 brew "ykman"
 
-{{ if eq .chezmoi.os "darwin" }}
+{{- if eq .chezmoi.os "darwin" }}
+
 # Casks and Macos apps last, because they sometimes require user input
 
 cask "homebrew/cask-drivers/elgato-control-center"         # key light
@@ -124,11 +134,12 @@ mas "Telegram", id: 747648890
 mas "Trello", id: 1278508951
 mas "Xcode", id: 497799835
 
-{{ if eq .work_machine true }}
+{{- if eq .work_machine true }}
+
 # Work-specific Casks/Macos apps
 
 cask "google-drive"
 cask "cyberduck"
 cask "obs"                                                 # experiment: record how-to etc. videos
-{{ end }}
+{{ end -}}
 {{ end }}
