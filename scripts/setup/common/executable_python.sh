@@ -2,7 +2,7 @@
 
 set -Eeuo pipefail
 
-default_python_version="3.9.1"
+default_python_version="3.10.0"
 python_versions=(
   "$default_python_version"
 )
