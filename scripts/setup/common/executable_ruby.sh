@@ -2,8 +2,9 @@
 
 set -Eeuo pipefail
 
-default_ruby_version="2.7.2"
+default_ruby_version="2.7.5"
 ruby_versions=(
+  3.1.0
   3.0.3
   2.7.5
   2.6.9
