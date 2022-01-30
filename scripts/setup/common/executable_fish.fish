@@ -7,6 +7,7 @@ function main
   configure_rust
   configure_local_bin
   configure_android_sdk
+  configure_flutter_bin
 end
 
 function configure_android_sdk
@@ -68,6 +69,10 @@ end
 
 function configure_local_bin
   fish_add_path --prepend "$HOME/.local/bin"
+end
+
+function configure_flutter_bin
+  fish_add_path --append "$HOME/.pub-cache/bin"
 end
 
 main
