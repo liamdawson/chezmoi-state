@@ -8,6 +8,13 @@ function main
   configure_local_bin
   configure_android_sdk
   configure_flutter_bin
+  configure_aliases
+end
+
+function configure_aliases
+  abbr --add ave "aws-vault exec"
+  abbr --add bx "bundle exec"
+  abbr --add dx "direnv exec ."
 end
 
 function configure_android_sdk
