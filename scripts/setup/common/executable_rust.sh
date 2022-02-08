@@ -9,6 +9,7 @@ crates=(
   cargo-update
   evcxr_jupyter
   evcxr_repl
+  https-cert-info
   jwt-cli
 )
 
