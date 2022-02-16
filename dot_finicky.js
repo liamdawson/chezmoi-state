@@ -4,7 +4,7 @@ module.exports = {
   defaultBrowser: "Firefox",
   options: {
     // hide from top bar
-    hideIcon: true,
+    hideIcon: false,
     // don't check for updates - should be handled by brew cask updates
     checkForUpdate: false,
   },
