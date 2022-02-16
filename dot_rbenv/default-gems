@@ -2,6 +2,7 @@ pry
 pry-doc
 pry-rescue
 pry-stack_explorer
+rake
 rcodetools
 rspec
 rubocop
