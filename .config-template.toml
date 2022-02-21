@@ -17,4 +17,4 @@
   default_key = "0xA0BE84DBE2E93076"
   trusted_key = "0xA0BE84DBE2E93076"
 
-  pinentry = "/usr/local/bin/pinentry-mac"
+  pinentry = "/opt/homebrew/bin/pinentry-mac"
