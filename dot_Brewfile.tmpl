@@ -2,6 +2,7 @@
 
 cask_args no_quarantine: true
 
+tap "cloudflare/cloudflare"
 tap "devhubapp/devhub"
 tap "envato/envato-iamy"
 tap "homebrew/cask-versions"
@@ -74,6 +75,7 @@ brew "awscli"
 brew "cfn-lint"
 brew "cfssl"
 brew "chezmoi"
+brew "cloudflare/cloudflare/cloudflared"                   # experiment: cloudflare tunnels as an ngrok replacement
 brew "cmake"
 brew "comby"                                               # experiment: quickly update boilerplate across repos?
 brew "direnv" if false                                     # installing direnv enables the fish completions, with no possibility of only invoking manually
