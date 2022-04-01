@@ -6,9 +6,9 @@ apps=(
   "/Applications/iTerm.app"
   "/Applications/Joplin.app"
   "/Applications/Microsoft To Do.app"
-  "/Applications/Plexamp.app"
   "/Applications/Slack.app"
   "/Applications/Trello.app"
+  "/Applications/Postbox.app"
 )
 
 for app in "${apps[@]}"; do
