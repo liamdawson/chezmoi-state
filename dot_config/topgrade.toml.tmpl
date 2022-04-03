@@ -5,9 +5,10 @@ cleanup = true
 # nightly is, well, nightly, and I think gems and rbenv aren't mixing well
 disable = [
   "rustup",
-  "gem"{{ if eq .chezmoi.os "darwin" }},
+  "gem"
+{{- if eq .chezmoi.os "darwin" }},
   "gnome_shell_extensions"
-{{ end }}]
+{{ end -}}]
 
 # Custom commands
 [commands]
