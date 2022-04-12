@@ -3,7 +3,10 @@
 set -Eeuo pipefail
 
 golang_packages=(
-  golang.org/x/tools/cmd/godoc
+  golang.org/x/tools/cmd/godoc@latest
+  github.com/brancz/gojsontoyaml@latest
 )
 
-go get "${golang_packages[@]}"
+for package in "${golang_packages[@]}"; do
+  go install "$package"
+done
