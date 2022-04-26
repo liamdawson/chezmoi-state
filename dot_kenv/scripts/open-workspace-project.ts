@@ -1,4 +1,5 @@
 // Name: Open Workspace Project
+// Description: Open a project via ghq
 
 import "@johnlindquist/kit";
 import { Choice } from "@johnlindquist/kit/types/core";
