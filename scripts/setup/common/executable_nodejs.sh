@@ -2,7 +2,7 @@
 
 set -Eeuo pipefail
 
-node_version="16.14.2"
+node_version="16.15.0"
 node_packages=(
   typescript
 )

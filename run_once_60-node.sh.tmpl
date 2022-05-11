@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+set -Eeuo pipefail
+
+# .Brewfile hash: {{ include "scripts/setup/common/executable_nodejs.sh" | sha256sum }}
+echo "== Running NodeJS common setup script"
+~/scripts/setup/common/nodejs.sh
