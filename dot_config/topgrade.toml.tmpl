@@ -1,11 +1,19 @@
 no_retry = true
 cleanup = true
+display_time = true
 
 # see Step in https://github.com/r-darwish/topgrade/blob/develop/src/config.rs to find other things to disable
+#   rustup                 - manual update step to avoid updating nightly every time
+#   gem                    - I think gems + rbenv haven't mixed well
+#   tlmgr                  - don't want to update TeX all the time when it's installed
+#   gnome_shell_extensions - not relevant on Macos
+#   containers             - fails to update from private ECRs
 # nightly is, well, nightly, and I think gems and rbenv aren't mixing well
 disable = [
   "rustup",
-  "gem"
+  "gem",
+  "tlmgr",
+  "containers"
 {{- if eq .chezmoi.os "darwin" }},
   "gnome_shell_extensions"
 {{ end -}}]
@@ -23,7 +31,7 @@ apt_arguments = "--assume-yes"
 
 # ==============================================================================
 
-# https://raw.githubusercontent.com/r-darwish/topgrade/v6.6.0/config.example.toml
+# https://raw.githubusercontent.com/r-darwish/topgrade/v9.0.1/config.example.toml
 # Don't ask for confirmations
 #assume_yes = true
 
@@ -57,6 +65,9 @@ apt_arguments = "--assume-yes"
 # Do not set the terminal title
 #set_title = false
 
+# Display the time in step titles
+# display_time = true
+
 # Cleanup temporary or old files
 #cleanup = true
 
@@ -69,7 +80,7 @@ apt_arguments = "--assume-yes"
 #]
 
 # Don't pull the predefined git repos
-#predefined_repos = false
+#pull_predefined = false
 
 # Arguments to pass Git when pulling Repositories
 #arguments = "--rebase --autostash"
@@ -89,13 +100,18 @@ apt_arguments = "--assume-yes"
 #greedy_cask = true
 
 #[linux]
-# Arguments to pass yay when updating packages
+# Arch Package Manager to use. Allowed values: autodetect, trizen, paru, yay, pikaur, pacman.
+#arch_package_manager = "pacman"
+# Arguments to pass yay (or paru) when updating packages
 #yay_arguments = "--nodevel"
+#show_arch_news = true
 #trizen_arguments = "--devel"
+#pikaur_arguments = ""
 #enable_tlmgr = true
 #emerge_sync_flags = "-q"
 #emerge_update_flags = "-uDNa --with-bdeps=y world"
 #redhat_distro_sync = false
+#rpm_ostree = false
 
 #[windows]
 # Manually select Windows updates
@@ -106,3 +122,15 @@ apt_arguments = "--assume-yes"
 # to upgrade it. Use this only if you installed Topgrade by using a package
 # manager such as Scoop to Cargo
 #self_rename = true
+
+#[npm]
+# Use sudo if the NPM directory isn't owned by the current user
+#use_sudo = true
+
+#[firmware]
+# Offer to update firmware; if false just check for and display available updates
+#upgrade = true
+
+#[flatpak]
+# Use sudo for updating the system-wide installation
+#use_sudo = true
