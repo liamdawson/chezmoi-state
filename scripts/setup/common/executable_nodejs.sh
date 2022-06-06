@@ -2,13 +2,15 @@
 
 set -Eeuo pipefail
 
-node_version="16.15.0"
+global_node_version="18.2.0"
 node_packages=(
   typescript
 )
 
-nodenv install -s "$node_version"
-nodenv global "$node_version"
+nodenv install -s "$global_node_version"
+nodenv global "$global_node_version"
 npm install -g "${node_packages[@]}"
 nodenv rehash || true
+
+# update pnpm version (due to versions that have failed under topgrade)
 pnpm add -g pnpm
