@@ -1,12 +1,11 @@
-if type -q ws
-  function wsgh
-    ws "$argv"; or return 1
+if status --is-interactive
+  function wsgh --description "Open the GitHub repo URL for a workspace project"
+    set -l parts (string split --max 1 '--' -- "$argv")
+    set -l query $parts[1]
 
-    gh repo view --web
-
-    cd -
+    ws "$query" -- gh repo view --web
   end
 
   complete -ec wsgh
-  complete -c wsgh -xa "(complete -C'ws $argv')"
+  complete -c wsgh -xa '(ghq list 2>/dev/null)'
 end

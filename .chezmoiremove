@@ -1,4 +1,4 @@
-.config/fish/functions/{fish_prompt,git-logs,git-state,nbl,conda}.fish
+.config/fish/functions/{fish_prompt,git-logs,git-state,nbl,conda,wsc}.fish
 
 # (re)moved
 .gitconfig
