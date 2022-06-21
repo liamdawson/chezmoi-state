@@ -1,5 +1,5 @@
-if type -q ghq
-  function ws --description "Switch to a workspace folder"
+if status --is-interactive
+  function ws --description "Run a command in, or switch to, a workspace folder"
     set -l parts (string split --max 1 '--' -- "$argv")
     set -l query $parts[1]
 
@@ -19,5 +19,16 @@ if type -q ghq
   end
 
   complete -ec ws
-  complete -c ws -xa '(ghq list 2>/dev/null)'
+  complete -c ws -n 'not __fish_ws_is_commandline' -xa '(ghq list 2>/dev/null)'
+  complete -c ws -n '__fish_ws_is_commandline' -xa '(__fish_ws_complete_commandline)'
+
+  function __fish_ws_is_commandline
+    string match -q -r '^--$' -- (commandline -opc)
+  end
+
+  function __fish_ws_complete_commandline
+    set cmd_part (string replace --regex '^.*--\B' '' -- (commandline -pc))
+
+    complete "-C$cmd_part"
+  end
 end
