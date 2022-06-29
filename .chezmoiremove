@@ -4,7 +4,8 @@
 .gitconfig
 .gitattributes_global
 .gitignore_global
-scripts/{android-sdk-shell,install-default-ruby-gems}
+scripts/{android-sdk-shell,install-default-ruby-gems,for-each-ruby-version}
+scripts/install/{default-ruby-gems.sh,joplin.sh}
 scripts/setup/{macos.sh,ubuntu.sh}
 scripts/setup/*.{fish,sh}
 

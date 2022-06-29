@@ -3,8 +3,9 @@
 eval "$(rbenv init - --no-rehash bash)"
 
 for version in $(rbenv versions --bare); do
+  echo "Version $version:"
   (
     rbenv shell "$version"
-    bash -c "$@"
+    "$@"
   )
 done
