@@ -8,5 +8,6 @@ rspec
 rubocop
 rubocop-shopify
 ruby-debug-ide
+ruby-lsp
 solargraph
 yard
