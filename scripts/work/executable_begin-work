@@ -1,16 +1,17 @@
 #!/usr/bin/env bash
 
 apps=(
-  "/Applications/DevHub.app"
-  "/Applications/Firefox.app"
-  "/Applications/iTerm.app"
-  "/Applications/Joplin.app"
-  "/Applications/Microsoft To Do.app"
-  "/Applications/Slack.app"
-  "/Applications/Trello.app"
-  "/Applications/Postbox.app"
+	"/Applications/DevHub.app"
+	"/Applications/Firefox.app"
+	"/Applications/iTerm.app"
+	"/Applications/Joplin.app"
+	"/Applications/Microsoft To Do.app"
+	"/Applications/Postbox.app"
+	"/Applications/Slack.app"
+	"/Applications/Trello.app"
+	"/Applications/Visual Studio Code.app"
 )
 
 for app in "${apps[@]}"; do
-  open -g "$app"
+	open -g "$app"
 done
