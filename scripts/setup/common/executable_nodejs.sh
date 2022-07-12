@@ -4,8 +4,8 @@ set -Eeuo pipefail
 
 # first entry is the new global
 target_node_versions=(
-  18.3.0  # current
-  16.15.1 # lts
+  18.5.0  # current
+  16.16.0 # lts
 )
 
 for node_version in "${target_node_versions[@]}"; do
