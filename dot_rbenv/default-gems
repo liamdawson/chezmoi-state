@@ -1,7 +1,4 @@
-pry
-pry-doc
-pry-rescue
-pry-stack_explorer
+clipboard
 rake
 rcodetools
 rspec

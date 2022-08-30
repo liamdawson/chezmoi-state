@@ -1,4 +1,5 @@
 /README.md
+/Gemfile
 
 {{ if ne .chezmoi.os "darwin" }}
 Library/**/*
