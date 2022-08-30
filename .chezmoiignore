@@ -1,5 +1,6 @@
 /README.md
 /Gemfile
+/Gemfile.lock
 
 {{ if ne .chezmoi.os "darwin" }}
 Library/**/*
