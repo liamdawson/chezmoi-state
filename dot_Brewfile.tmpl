@@ -7,7 +7,7 @@ tap "devhubapp/devhub"
 tap "envato/envato-iamy"
 tap "homebrew/cask-versions"
 tap "homebrew/homebrew-cask-drivers"
-tap "jacobbednarz/cf-vault"
+tap "jacobbednarz/tap"
 tap "saulpw/vd"
 
 {{- if eq .chezmoi.os "darwin" }}
@@ -57,7 +57,7 @@ brew "principalmapper"                                     # experiment: quickly
 brew "redis"
 
 cask "aws-vault"                                           # cask because it needs an appropriate signature
-cask "jacobbednarz/cf-vault/cf-vault"
+cask "jacobbednarz/tap/cf-vault"
 cask "session-manager-plugin"                              # for AWS ECS Exec/other SSM usage with the AWS CLI v2
 
 {{ else }}
