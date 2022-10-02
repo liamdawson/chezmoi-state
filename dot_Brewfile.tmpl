@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # Combined Brewfile, differs by platform and "work_machine" status.
 
 cask_args no_quarantine: true
@@ -10,7 +12,7 @@ tap "homebrew/homebrew-cask-drivers"
 tap "jacobbednarz/tap"
 tap "saulpw/vd"
 
-{{- if eq .chezmoi.os "darwin" }}
+# {{- if eq .chezmoi.os "darwin" }}
 
 ## Macos-specific formulae
 
@@ -34,17 +36,17 @@ brew "terminal-notifier"
 brew "xz"
 brew "yubico-piv-tool"
 
-{{ else if eq .chezmoi.os "linux" }}
+# {{ else if eq .chezmoi.os "linux" }}
 
 ## Linux-specific formulae
 
-{{ else }}
+# {{ else }}
 
 ## WARNING:
 ## Unknown chezmoi.os - skipping OS specific formulae
 
-{{ end -}}
-{{- if eq .work_machine true }}
+# {{ end -}}
+# {{- if eq .work_machine true }}
 
 ## Work-specific formulae
 
@@ -60,11 +62,11 @@ cask "aws-vault"                                           # cask because it nee
 cask "jacobbednarz/tap/cf-vault"
 cask "session-manager-plugin"                              # for AWS ECS Exec/other SSM usage with the AWS CLI v2
 
-{{ else }}
+# {{ else }}
 
 ## Skipping work-specific formulae
 
-{{ end -}}
+# {{ end -}}
 
 ## Common formulae
 
@@ -116,7 +118,7 @@ brew "xsv"
 brew "ykman"
 brew "yq"                                                  # experiment: like jq for YAML
 
-{{- if eq .chezmoi.os "darwin" }}
+# {{- if eq .chezmoi.os "darwin" }}
 
 # Casks and Macos apps last, because they sometimes require user input
 
@@ -155,13 +157,14 @@ cask "miro"
 cask "musicbrainz-picard"
 cask "paw"
 cask "plexamp"
-cask "pop"																									# experiment: pairing app (preferred by others)
+cask "pop"	                                               # experiment: pairing app (preferred by others)
 cask "postbox"                                             # experiment: desktop email client
 cask "raycast"
 cask "rectangle-pro"                                       # window management app
 cask "remarkable"
+cask "sanesidebuttons"                                     # experiment: replace my usage of BetterTouchTool?
 cask "signal"
-cask "tuple"																								# experiment: pairing app (preferred by others)
+cask "tuple"	                                             # experiment: pairing app (preferred by others)
 cask "visual-studio-code"
 cask "zoom"
 # cask "devhub"                                            # using custom arm64 build for M1 Macbook
@@ -171,20 +174,18 @@ cask "homebrew/cask-versions/firefox-developer-edition"
 mas "Affinity Designer", id: 824171161
 mas "Affinity Photo", id: 824183456
 mas "Microsoft To Do", id: 1274495053
-# mas "Okta Verify", id: 490179405 # keeps conflicting with something
 mas "Slack", id: 803453959
 mas "Telegram", id: 747648890
 mas "Trello", id: 1278508951
 mas "Xcode", id: 497799835
 
-{{- if eq .work_machine true }}
+# {{- if eq .work_machine true }}
 
 # Work-specific Casks/Macos apps
 
 cask "google-drive"
 cask "cyberduck"
-cask "obs"                                                 # experiment: record how-to etc. videos
+cask "obs" # experiment: record how-to etc. videos
 cask "wireshark"
-{{ end -}}
-{{ end }}
-
+# {{ end -}}
+# {{ end }}
