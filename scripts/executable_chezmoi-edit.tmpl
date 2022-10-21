@@ -2,4 +2,4 @@
 
 set -eu
 
-{{ .code_command }} --folder-uri "file://$(chezmoi source-path)" --file-uri "file://$HOME/.config/chezmoi/chezmoi.toml"
+code --folder-uri "file://$(chezmoi source-path)" --file-uri "file://$HOME/.config/chezmoi/chezmoi.toml"

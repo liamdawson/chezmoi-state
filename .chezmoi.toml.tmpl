@@ -2,16 +2,15 @@
   recipient = "chezmoi-state@gpg.ldaws.net"
 
 [data]
-  code_command = "code"
   editor = "/usr/local/bin/vim"
   ssh_pkcs11_provider = "/usr/lib/ssh-keychain.dylib"
   visual_editor = "/usr/local/bin/code -w"
-  work_machine = true
+  work_machine = {{ promptBool "Is this a work machine?" }}
 
 [data.git]
   signing_key = "0xA0BE84DBE2E93076"
-  envato_email = "..."
-  personal_email = "..."
+  envato_email = {{ promptString "Envato email address" "" | quote }}
+  personal_email = {{ promptString "Personal email address" "" | quote }}
 
 [data.gpg]
   default_key = "0xA0BE84DBE2E93076"
