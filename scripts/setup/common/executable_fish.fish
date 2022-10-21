@@ -1,6 +1,7 @@
 #!/usr/bin/env fish
 
 function main
+    install_fisher
     configure_homebrew
     configure_golang
     configure_pyenv
@@ -10,6 +11,12 @@ function main
     configure_android_sdk
     configure_flutter_bin
     configure_aliases
+end
+
+function install_fisher
+    if not functions -q fisher
+        curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher
+    end
 end
 
 function configure_aliases

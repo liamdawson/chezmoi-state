@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+set -Eeuo pipefail
+
+# ~/scripts/setup/common/fish.fish hash: {{ include "scripts/setup/common/executable_fish.fish" | sha256sum }}
+fish '{{ joinPath .chezmoi.sourceDir "scripts/setup/common/executable_fish.fish" }}'
