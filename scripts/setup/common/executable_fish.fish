@@ -3,6 +3,7 @@
 function main
     install_fisher
     configure_homebrew
+    configure_pnpm
     configure_golang
     configure_pyenv
     configure_python
@@ -94,6 +95,28 @@ end
 
 function configure_flutter_bin
     fish_add_path --append "$HOME/.pub-cache/bin"
+end
+
+function configure_pnpm
+    if type -q pnpm
+        if is_macos
+            set -q PNPM_HOME; or set -Ux PNPM_HOME "$HOME/Library/pnpm"
+        else
+            echo "TODO: configure PNPM path on non-macOS systems"
+            exit 1
+        end
+
+        fish_add_path --append "$PNPM_HOME"
+    end
+end
+
+function is_macos
+    if command -v sw_vers >/dev/null 2>&1
+        test (sw_vers -productName) = macOS
+        return $status
+    end
+
+    return false
 end
 
 main
