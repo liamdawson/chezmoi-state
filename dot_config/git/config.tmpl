@@ -48,5 +48,13 @@
 [alias]
   set-upstream = "!git branch --set-upstream-to="origin/$(git branch --show-current)" "$(git branch --show-current)""
 
+[credential "https://github.com"]
+  helper = 
+  helper = !/usr/bin/env gh auth git-credential
+	
+[credential "https://gist.github.com"]
+  helper = 
+  helper = !/usr/bin/env gh auth git-credential
+
 [includeIf "gitdir:~/w/github.com/envato/"]
   path = ~/.config/git/envato
