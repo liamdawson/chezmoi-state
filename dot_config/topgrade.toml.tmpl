@@ -22,7 +22,8 @@ disable = [
 [commands]
 # shims don't auto-update their paths, apparently?
 # this can also require a pipx reinstall-all when python versions change
-"pyenv rehash" = "pyenv rehash"
+# commented out for now, as I'm not sure how this'll work with asdf
+# "pyenv rehash" = "pyenv rehash"
 "Stable Rust" = "rustup update stable"
 "gi() completions" = "fish -c 'gi update-completions'"
 
