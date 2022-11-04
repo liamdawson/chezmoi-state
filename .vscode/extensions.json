@@ -1,5 +1,3 @@
 {
-    "recommendations": [
-        "casualjim.gotemplate"
-    ]
+	"recommendations": ["golang.go"]
 }

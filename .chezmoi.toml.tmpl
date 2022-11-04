@@ -1,19 +1,31 @@
+{{ $homebrewPrefix := "/home/linuxbrew/.linuxbrew" -}}
+{{ if and (eq .chezmoi.os "darwin") (ne .chezmoi.arch "arm64") -}}
+{{   $homebrewPrefix = "/usr/local" -}}
+{{ else if eq .chezmoi.os "darwin" -}}
+{{   $homebrewPrefix = "/opt/homebrew" -}}
+{{ end -}}
+
+{{ $homebrewBinPath := joinPath $homebrewPrefix "bin" -}}
+
 [gpg]
-  recipient = "chezmoi-state@gpg.ldaws.net"
+	recipient = "chezmoi-state@gpg.ldaws.net"
 
 [data]
-  editor = "/usr/local/bin/vim"
-  ssh_pkcs11_provider = "/usr/lib/ssh-keychain.dylib"
-  visual_editor = "/usr/local/bin/code -w"
-  work_machine = {{ promptBool "Is this a work machine?" }}
+	editor = {{ joinPath $homebrewBinPath "vim" | quote }}
+	ssh_pkcs11_provider = "/usr/lib/ssh-keychain.dylib"
+	visual_editor = {{ printf "%s -w" (joinPath $homebrewBinPath "code") | quote }}
+	work_machine = {{ promptBool "Is this a work machine?" }}
 
-[data.git]
-  signing_key = "0xA0BE84DBE2E93076"
-  envato_email = {{ promptString "Envato email address" "" | quote }}
-  personal_email = {{ promptString "Personal email address" "" | quote }}
+	[data.homebrew]
+		prefix = {{ $homebrewPrefix | quote }}
+		bin = {{ $homebrewBinPath | quote }}
 
-[data.gpg]
-  default_key = "0xA0BE84DBE2E93076"
-  trusted_key = "0xA0BE84DBE2E93076"
+	[data.git]
+		signing_key = "0xA0BE84DBE2E93076"
+		envato_email = {{ promptString "Envato email address" "" | quote }}
+		personal_email = {{ promptString "Personal email address" "" | quote }}
 
-  pinentry = "/opt/homebrew/bin/pinentry-mac"
+	[data.gpg]
+		default_key = "0xA0BE84DBE2E93076"
+		trusted_key = "0xA0BE84DBE2E93076"
+		pinentry = {{ joinPath $homebrewBinPath "pinentry-mac" | quote }}
