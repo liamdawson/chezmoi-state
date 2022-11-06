@@ -3,6 +3,7 @@
 apps=(
 	"/Applications/DevHub.app"
 	"/Applications/Firefox.app"
+	"/Applications/Gather.app"
 	"/Applications/iTerm.app"
 	"/Applications/Joplin.app"
 	"/Applications/Microsoft To Do.app"
@@ -13,5 +14,5 @@ apps=(
 )
 
 for app in "${apps[@]}"; do
-	open -g "$app"
+	open -g "$app" &
 done
