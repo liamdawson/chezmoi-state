@@ -1,6 +1,7 @@
 /README.md
 /Gemfile
 /Gemfile.lock
+key.txt.age
 
 {{ if ne .chezmoi.os "darwin" }}
 Library/**/*

@@ -7,8 +7,9 @@
 
 {{ $homebrewBinPath := joinPath $homebrewPrefix "bin" -}}
 
-[gpg]
-	recipient = "chezmoi-state@gpg.ldaws.net"
+[age]
+  identity = "~/.config/chezmoi/age.key"
+  recipient = "age16650awzwppw8s725pvj8k32nfccyvgssvw5qj2kq9a9tsyxuyspsy7npy5"
 
 [data]
 	editor = {{ joinPath $homebrewBinPath "vim" | quote }}

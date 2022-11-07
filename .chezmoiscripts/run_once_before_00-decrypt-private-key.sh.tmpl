@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+chezmoi_config_dir="${HOME}/.config/chezmoi"
+
+[ -d "$chezmoi_config_dir" ] || mkdir -p "$chezmoi_config_dir"
+
+if [ ! -f "${chezmoi_config_dir}/age.key" ]; then
+	age --decrypt --output "${chezmoi_config_dir}/age.key" "{{ .chezmoi.sourceDir }}/key.txt.age"
+	chmod 600 "${chezmoi_config_dir}/age.key"
+fi
