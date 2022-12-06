@@ -1,0 +1,32 @@
+#!/usr/bin/env bash
+
+set -eu
+
+if [[ $# -lt 2 ]] || [[ $# -gt 3 ]]; then
+	echo "usage: <old PG version> <new PG version> [old data directory]"
+	echo
+	echo "The defaults should work, but you may need to migrate from the deprecated old"
+	echo "data directory in some cases: $(brew --prefix)/var/postgres"
+	exit 1
+fi
+
+old_version="$1"
+new_version="$2"
+
+var_dir="$(brew --prefix)/var"
+
+old_version_path="$(brew --prefix "postgresql@${old_version}")"
+new_version_path="$(brew --prefix "postgresql@${new_version}")"
+
+old_bindir="${old_version_path}/bin"
+new_bindir="${new_version_path}/bin"
+
+old_datadir="${3:-"${var_dir}/postgresql@${old_version}"}"
+# TODO: should this be hardcoded?
+new_datadir="${var_dir}/postgres"
+
+pg_upgrade --old-bindir "$old_bindir" \
+	--new-bindir "$new_bindir" \
+	--old-datadir "$old_datadir" \
+	--new-datadir "$new_datadir" \
+	--jobs "$(($(sysctl -n hw.ncpu) - 1))"
