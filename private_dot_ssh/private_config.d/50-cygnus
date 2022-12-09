@@ -1,0 +1,15 @@
+Host sparrow.cygnus
+	HostName 192.168.2.2
+	ProxyJump jump.cygnus.lan
+
+Host bluebird.cygnus
+	HostName 192.168.2.10
+	ProxyJump jump.cygnus.lan
+
+Host blackbird.cygnus
+	HostName 192.168.2.11
+	ProxyJump jump.cygnus.lan
+
+Host sparrow.cygnus
+	HostName 192.168.2.2
+	ProxyJump jump.cygnus.lan
