@@ -6,8 +6,7 @@ if status --is-interactive
         set -l short_dest (ghq list 2>/dev/null | sk --select-1 --query "$query"); or return 1
         set -l full_dest (ghq list --full-path --exact "$short_dest" 2>/dev/null)
 
-
-        if test (count $parts) -lt 1
+        if test (count $parts) -eq 1
             cd "$full_dest"; or return 2
         else
             pushd "$full_dest"; or return 2
