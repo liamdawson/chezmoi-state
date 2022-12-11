@@ -1,0 +1,5 @@
+Host *
+	IgnoreUnknown AddKeysToAgent,UseKeychain
+	# unfortunately, these don't mean that the PIN for PKCS11Provider will be saved to keychain
+	AddKeysToAgent yes
+	UseKeychain yes
