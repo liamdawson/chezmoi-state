@@ -22,6 +22,7 @@ end
 
 function configure_aliases
     abbr --add ave "aws-vault exec"
+    abbr --add bi "bundle install"
     abbr --add bx "bundle exec"
     abbr --add dx "direnv exec ."
 end
