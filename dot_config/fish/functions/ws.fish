@@ -1,22 +1,36 @@
 if status --is-interactive
     function ws --description "Run a command in, or switch to, a workspace folder"
-        set -l parts (string split --max 1 '--' -- "$argv")
-        set -l query $parts[1]
+        set -f query
+        set -f command
+        set -f processing_command_args false
+
+        for arg in $argv
+            if $processing_command_args
+                set command $command $arg
+            else if test "$arg" = --
+                set processing_command_args true
+            else
+                set query $query $arg
+            end
+        end
 
         set -l short_dest (ghq list 2>/dev/null | sk --select-1 --query "$query"); or return 1
         set -l full_dest (ghq list --full-path --exact "$short_dest" 2>/dev/null)
 
-        if test (count $parts) -eq 1
-            cd "$full_dest"; or return 2
-        else
+        if test (count $command) -gt 0
+            # command mode
             pushd "$full_dest"; or return 2
 
-            "$SHELL" -c $parts[2]
+            echo (string escape -- $command) | "$SHELL"
+
             set -l inner_status $status
 
             popd
 
             return $inner_status
+        else
+            # cd mode
+            cd "$full_dest"; or return 2
         end
     end
 
