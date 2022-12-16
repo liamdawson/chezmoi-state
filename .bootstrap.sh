@@ -28,9 +28,8 @@ if ! command_exists brew; then
   fi
 fi
 
-if ! command_exists chezmoi; then
-  brew install chezmoi
-fi
+command_exists chezmoi || brew install chezmoi
+command_exists age || brew install age
 
 chezmoi init --apply https://github.com/liamdawson/chezmoi-state.git
 chezmoi git -- remote set-url origin --push git@github.com:/liamdawson/chezmoi-state.git
