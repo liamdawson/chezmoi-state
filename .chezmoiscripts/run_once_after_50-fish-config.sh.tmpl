@@ -1,6 +1,24 @@
 #!/usr/bin/env bash
 
+# triggers on chezmoi syntax
+# shellcheck disable=SC2288
+
 set -Eeuo pipefail
+
+if '{{ eq .chezmoi.os "darwin" }}'; then
+	if ! dscl . read "/Users/$(whoami)" UserShell | grep -q fish; then
+
+		shell_path="$(command -v fish)"
+
+		if [[ -x "$shell_path" ]]; then
+			echo "Changing user shell to ${shell_path}:"
+			sudo chsh -s "$(command -v fish)"
+		fi
+	fi
+elif '{{ eq .chezmoi.os "linux" }}'; then
+	# TODO: change shell if unset
+	true
+fi
 
 # ~/scripts/setup/common/fish.fish hash: {{ include "scripts/setup/common/executable_fish.fish" | sha256sum }}
 fish '{{ joinPath .chezmoi.sourceDir "scripts/setup/common/executable_fish.fish" }}'
