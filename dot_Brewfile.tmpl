@@ -16,7 +16,6 @@ tap "saulpw/vd"
 
 ## Macos-specific formulae
 
-brew "choose-gui"
 brew "coreutils"                                           # gprintf etc.
 brew "fish"
 brew "gnu-sed"
@@ -50,11 +49,19 @@ brew "yubico-piv-tool"
 
 ## Work-specific formulae
 
+brew "ansible"
 brew "aws-sso-util"                                        # experiment: AWS SSO profile management
+brew "awscli"
+brew "cfn-lint"
+brew "cfssl"
 brew "cloudflare-wrangler"
+brew "cloudflare/cloudflare/cloudflared"                   # experiment: cloudflare tunnels as an ngrok replacement
 brew "convox"
 brew "envato/envato-iamy/iamy"                             # Envato fork of iamy
 brew "mysql-client"
+brew "packer"
+brew "parliament"                                          # experiment: AWS IAM linter
+brew "postgresql"
 brew "principalmapper"                                     # experiment: quickly evaluate IAM permissions in AWS
 brew "redis"
 
@@ -71,17 +78,12 @@ cask "session-manager-plugin"                              # for AWS ECS Exec/ot
 ## Common formulae
 
 brew "adr-tools"
-brew "asdf"                                                # required for work projects
 brew "age"
-brew "ansible"
 brew "aria2"                                               # CLI download manager (incl. torrents)
 brew "asciinema"
-brew "awscli"
+brew "asdf"                                                # asdf specifically (v.s. rbenv etc.) required for work projects
 brew "brew-gem"
-brew "cfn-lint"
-brew "cfssl"
 brew "chezmoi"
-brew "cloudflare/cloudflare/cloudflared"                   # experiment: cloudflare tunnels as an ngrok replacement
 brew "cmake"
 brew "comby"                                               # experiment: quickly update boilerplate across repos?
 brew "d2"                                                  # experiment: alternative text-to-diagram tool
@@ -100,17 +102,10 @@ brew "mdcat"                                               # experiment: CLI mar
 brew "miller"                                              # experiment: data analysis (e.g. grouped sum on a large CSV)
 brew "mitmproxy"                                           # experiment: local MITM proxying (suggested by hurl)
 brew "mkcert"
-brew "nodenv"
 brew "nss"                                                 # mkcert instructions say to install this if you use Firefox
-brew "packer"
 brew "pandoc"
-brew "parliament"                                          # experiment: AWS IAM linter
 brew "pipx"
-brew "postgresql"
 brew "progress"                                            # experiment: report the progress of coreutils operations (e.g. cp/dd)
-brew "pyenv"
-brew "rbenv-default-gems"
-brew "rbenv"
 brew "ripgrep"
 brew "saulpw/vd/visidata"                                  # experiment: tabular data multitool
 brew "shellcheck"
@@ -138,12 +133,11 @@ cask "homebrew/cask-drivers/yubico-authenticator"
 cask "homebrew/cask-fonts/font-cascadia-mono"
 cask "homebrew/cask-fonts/font-cascadia-mono-pl"           # powerline version for starship etc.
 
-cask "1password"
 cask "1password-cli"
+cask "1password"
 cask "balenaetcher"
 cask "balsamiq-wireframes"
 cask "bartender"                                           # manage top bar icons
-cask "bettertouchtool"                                     # mouse back/forward button remapping
 cask "charles"                                             # debugging proxy
 cask "cleanshot"
 cask "dash"
@@ -151,7 +145,6 @@ cask "docker"
 cask "dotnet-sdk"
 cask "finicky"                                             # open Meet URLs in Chrome automatically
 cask "firefox"
-cask "gather"                                              # experiment: team social stuff
 cask "github"
 cask "google-chrome"
 cask "istat-menus"
@@ -160,22 +153,16 @@ cask "jetbrains-toolbox"
 cask "joplin"
 cask "keybase"
 cask "lens"
-cask "microsoft-office"
-cask "miro"
 cask "musicbrainz-picard"
 cask "paw"
 cask "plexamp"
-cask "pop"	                                               # experiment: pairing app (preferred by others)
-cask "postbox"                                             # experiment: desktop email client
 cask "proxyman"                                            # experiment: Charles proxy alternative
 cask "raycast"
 cask "rectangle-pro"                                       # window management app
 cask "remarkable"
-cask "sanesidebuttons"                                     # experiment: replace my usage of BetterTouchTool?
+cask "sanesidebuttons"                                     # make mouse back/forward buttons work
 cask "signal"
-cask "tuple"	                                             # experiment: pairing app (preferred by others)
 cask "visual-studio-code"
-cask "zoom"
 # cask "devhub"                                            # using custom arm64 build for M1 Macbook
 
 cask "homebrew/cask-versions/firefox-developer-edition"
@@ -193,9 +180,14 @@ mas "Xcode", id: 497799835
 
 # Work-specific Casks/Macos apps
 
-cask "google-drive"
 cask "cyberduck"
-cask "obs" # experiment: record how-to etc. videos
+cask "gather"
+cask "google-drive"
+cask "miro"
+cask "pop"	                                               # experiment: pairing app (preferred by others)
+cask "postbox"                                             # experiment: desktop email client
+cask "tuple"	                                             # experiment: pairing app (preferred by others)
 cask "wireshark"
+cask "zoom"
 # {{ end -}}
 # {{ end }}
