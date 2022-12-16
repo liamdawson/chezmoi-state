@@ -19,10 +19,12 @@ fi
 
 # make sure it's on path
 if ! command_exists brew; then
-  if [[ -d /home/linuxbrew/.linuxbrew/bin ]]; then
-    export PATH="${PATH}:/home/linuxbrew/.linuxbrew/bin"
+	if [[ -d /opt/homebrew/bin ]]; then
+		export PATH="/opt/homebrew/bin:${PATH}"
+  elif [[ -d /home/linuxbrew/.linuxbrew/bin ]]; then
+    export PATH="/home/linuxbrew/.linuxbrew/bin:${PATH}"
   elif [[ -d "$HOME/.linuxbrew/bin" ]]; then
-    export PATH="${PATH}:${HOME}/.linuxbrew/bin"
+    export PATH="${HOME}/.linuxbrew/bin:${PATH}"
   fi
 fi
 
