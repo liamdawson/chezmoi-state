@@ -9,5 +9,4 @@ for app in "${apps[@]}"; do
 done
 
 SwitchAudioSource -s "Arctis Pro Wireless Game"
-# using headset more nowadays
-# SwitchAudioSource -t input -s "C922 Pro Stream Webcam"
+SwitchAudioSource -t input -s "Shure MV7"
