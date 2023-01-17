@@ -11,7 +11,10 @@ module.exports = {
 	handlers: [
 		{
 			match: /^https?:\/\/meet\.google\.com\/.*$/,
-			browser: "Google Chrome",
+			browser: {
+				name: "Google Chrome",
+				profile: "Default",
+			},
 		},
 	],
 };
