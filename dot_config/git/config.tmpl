@@ -56,5 +56,8 @@
   helper = 
   helper = !{{ joinPath .homebrew.bin "gh" | quote }} auth git-credential
 
+[include]
+  path = ~/.config/git/private
+
 [includeIf "gitdir:~/w/github.com/envato/"]
   path = ~/.config/git/envato
