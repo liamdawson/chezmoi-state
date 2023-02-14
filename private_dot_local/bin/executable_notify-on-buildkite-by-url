@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+buildkite_waiter by-url "$1" | apprise
