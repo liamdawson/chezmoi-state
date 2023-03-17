@@ -1,12 +1,18 @@
 #!/usr/bin/env bash
 
 apps=(
-  "/Applications/Elgato Control Center.app"
-  "/Applications/Elgato Stream Deck.app"
+	"/Applications/Elgato Control Center.app"
+	"/Applications/Elgato Stream Deck.app"
 )
 
 for app in "${apps[@]}"; do
-  open -g "$app"
+	# seems like there's a race condition between Stream Deck and Control Center sometimes?
+	# maybe this will avoid the issue?
+	if [[ "$app" = "/Applications/Elgato Stream Deck.app" ]]; then
+		sleep 2
+	fi
+
+	open -g "$app"
 done
 
 SwitchAudioSource -s "Arctis Pro Wireless Game"
