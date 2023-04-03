@@ -13,3 +13,6 @@ indent_style = space
 [*.fish]
 indent_size = 4
 indent_style = space
+
+[docker-compose.yml]
+indent_style = space
