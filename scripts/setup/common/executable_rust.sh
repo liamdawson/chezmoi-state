@@ -3,6 +3,7 @@
 set -Eeuo pipefail
 
 crates=(
+	cross
   cargo-edit
   cargo-outdated
   cargo-udeps
@@ -49,8 +50,14 @@ if ! command -v cargo >/dev/null 2>&1; then
   fi
 fi
 
+if ! command -v cargo-binstall >/dev/null 2>&1; then
+	cargo install cargo-binstall
+	# apparently the pre-built version is better optimized, so get that
+	cargo binstall cargo-binstall --no-confirm --force
+fi
+
 for crate in "${crates[@]}"; do
-  cargo install "$crate"
+  cargo binstall --no-confirm "$crate"
 done
 
 configure_crate_updates
