@@ -4,6 +4,7 @@ set -Eeuo pipefail
 
 crates=(
 	cross
+	cargo-cache
   cargo-edit
   cargo-outdated
   cargo-udeps
