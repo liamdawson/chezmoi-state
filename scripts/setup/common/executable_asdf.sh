@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+asdf plugin-add ansible-base
 asdf plugin-add java
 asdf plugin-add nodejs
 asdf plugin-add postgres
