@@ -15,5 +15,5 @@ for app in "${apps[@]}"; do
 	open -g "$app"
 done
 
-SwitchAudioSource -s "Arctis Pro Wireless Game"
+SwitchAudioSource -s "Sennheiser 3D G4ME1"
 SwitchAudioSource -t input -s "Shure MV7"
