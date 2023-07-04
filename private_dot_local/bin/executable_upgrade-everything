@@ -1,27 +1,27 @@
 #!/usr/bin/env bash
 
-set -eu
+(
+	set -eu
 
-unset PIP_REQUIRE_VIRTUALENV
-command_string=()
+	cd "$HOME"
 
-command_exists() {
-  command -v "$@" >/dev/null 2>&1
-}
+	unset PIP_REQUIRE_VIRTUALENV
+	command_string=()
 
-if command_exists sudo; then
-  sudo -v
-fi
+	command_exists() {
+	  command -v "$@" >/dev/null 2>&1
+	}
 
-if command_exists caffeinate; then
-  command_string+=(
-    caffeinate
-    -imsu
-  )
-fi
+	if command_exists caffeinate; then
+	  command_string+=(
+	    caffeinate
+	    -imsu
+	  )
+	fi
 
-command_string+=(
-  topgrade
+	command_string+=(
+	  topgrade
+	)
+
+	"${command_string[@]}"
 )
-
-"${command_string[@]}"
