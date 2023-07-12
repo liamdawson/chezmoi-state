@@ -1,5 +1,6 @@
-ruby 2.7.6
-nodejs 18.5.0
-python 3.10.0
+java adoptopenjdk-17.0.7+7
+nodejs 18.16.1
+python 3.11.4
+ruby 2.7.8
+terraform 1.5.2
 yarn 1.22.19
-java adoptopenjdk-17.0.6+10
