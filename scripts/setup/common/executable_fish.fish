@@ -91,6 +91,7 @@ function configure_rust
 end
 
 function configure_local_bin
+    fish_add_path --prepend "$HOME/bin"
     fish_add_path --prepend "$HOME/.local/bin"
 end
 
