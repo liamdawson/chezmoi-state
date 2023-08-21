@@ -1,13 +1,10 @@
 #!/usr/bin/env bash
 
 apps=(
-	"/Applications/DevHub.app"
 	"/Applications/Firefox.app"
 	"/Applications/Gather.app"
 	"/Applications/iTerm.app"
-	"/Applications/Joplin.app"
 	"/Applications/Logseq.app"
-	"/Applications/Microsoft To Do.app"
 	"/Applications/Slack.app"
 	"/Applications/Trello.app"
 	"/Applications/Visual Studio Code.app"
