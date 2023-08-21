@@ -48,13 +48,11 @@
 [alias]
   set-upstream = "!git branch --set-upstream-to="origin/$(git branch --show-current)" "$(git branch --show-current)""
 
-[credential "https://github.com"]
+[credential]
   helper = 
-  helper = !{{ joinPath .homebrew.bin "gh" | quote }} auth git-credential
-	
-[credential "https://gist.github.com"]
-  helper = 
-  helper = !{{ joinPath .homebrew.bin "gh" | quote }} auth git-credential
+  helper = /usr/local/share/gcm-core/git-credential-manager
+[credential "https://dev.azure.com"]
+  useHttpPath = true
 
 [include]
   path = ~/.config/git/private
