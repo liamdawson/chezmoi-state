@@ -96,7 +96,9 @@ function configure_local_bin
 end
 
 function configure_flutter_bin
-    fish_add_path --append "$HOME/.pub-cache/bin"
+    if test -d "$HOME/.pub-cache/bin"
+        fish_add_path --append "$HOME/.pub-cache/bin"
+    end
 end
 
 function configure_pnpm
