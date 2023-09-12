@@ -1,0 +1,6 @@
+[tools]
+java = "adoptopenjdk-17.0.8+101"
+nodejs = "20.6.1"
+python = "3.11.5"
+ruby = "3.2.2"
+terraform = "1.5.7"
