@@ -1,6 +1,5 @@
-java adoptopenjdk-17.0.7+7
-nodejs 18.16.1
-python 3.11.4
+java adoptopenjdk-17.0.8+1
+nodejs 20.6.1
+python 3.11.5
 ruby 3.2.2
-terraform 1.5.2
-yarn 1.22.19
+terraform 1.5.7

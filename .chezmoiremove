@@ -1,3 +1,4 @@
+# code: language=ignore
 .config/fish/functions/{fish_prompt,git-logs,git-state,nbl,conda,wsc}.fish
 
 # (re)moved
@@ -8,6 +9,7 @@ scripts/{android-sdk-shell,install-default-ruby-gems,for-each-ruby-version}
 scripts/install/{default-ruby-gems.sh,joplin.sh}
 scripts/setup/{macos.sh,ubuntu.sh}
 scripts/setup/*.{fish,sh}
+dot_config/fish/conf.d/50_asdf.fish
 
 ## Moved to ~/scripts/setup/fish.fish
 .config/fish/conf.d/{00_brew.fish,50_golang.fish,50_pyenv.fish,50_rust.fish,55_local-bin.fish}
