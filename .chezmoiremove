@@ -9,7 +9,8 @@ scripts/{android-sdk-shell,install-default-ruby-gems,for-each-ruby-version}
 scripts/install/{default-ruby-gems.sh,joplin.sh}
 scripts/setup/{macos.sh,ubuntu.sh}
 scripts/setup/*.{fish,sh}
-dot_config/fish/conf.d/50_asdf.fish
+.config/fish/conf.d/50_asdf.fish
+.config/fish/conf.d/55_asdf-java.fish
 .default-python-packages
 
 ## Moved to ~/scripts/setup/fish.fish
