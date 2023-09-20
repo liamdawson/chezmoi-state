@@ -1,0 +1,32 @@
+version: "3"
+services:
+  core:
+    image: docker.io/yuzutech/kroki
+    restart: unless-stopped
+    environment:
+      - KROKI_LISTEN=0.0.0.0:50150
+      - KROKI_SAFE_MODE=unsafe
+      - KROKI_PLANTUML_ALLOW_INCLUDE=true
+
+      - KROKI_BLOCKDIAG_HOST=blockdiag
+      - KROKI_MERMAID_HOST=mermaid
+      - KROKI_BPMN_HOST=bpmn
+      - KROKI_EXCALIDRAW_HOST=excalidraw
+      - KROKI_WIREVIZ_HOST=wireviz
+    ports:
+      - "50150:50150"
+  blockdiag:
+    image: docker.io/yuzutech/kroki-blockdiag
+    restart: unless-stopped
+  mermaid:
+    image: docker.io/yuzutech/kroki-mermaid
+    restart: unless-stopped
+  bpmn:
+    image: docker.io/yuzutech/kroki-bpmn
+    restart: unless-stopped
+  excalidraw:
+    image: docker.io/yuzutech/kroki-excalidraw
+    restart: unless-stopped
+  wireviz:
+    image: docker.io/yuzutech/kroki-wireviz
+    restart: unless-stopped
