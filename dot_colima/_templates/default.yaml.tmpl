@@ -180,7 +180,11 @@ sshConfig: false
 # Colima default behaviour: $HOME and /tmp/colima are mounted as writable.
 # Default: []
 mounts:
-  - location: /opt/ejson
+  - location: "~"
+    writable: true
+  - location: "/tmp/colima"
+    writable: true
+  - location: "/opt/ejson"
     writable: true
 
 # Environment variables for the virtual machine.
