@@ -1,4 +1,12 @@
 {{ $homebrewPrefix := "/home/linuxbrew/.linuxbrew" -}}
+{{ $workMachine := promptBoolOnce . "work_machine" "Is this a work machine?" -}}
+{{ $personalEmail := promptStringOnce .git "personal_email" "Personal email address" -}}
+{{ $envatoEmail := "" -}}
+
+{{ if eq $workMachine true -}}
+{{   $envatoEmail = promptStringOnce .git "envato_email" "Envato email address" -}}
+{{ end -}}
+
 {{ if and (eq .chezmoi.os "darwin") (ne .chezmoi.arch "arm64") -}}
 {{   $homebrewPrefix = "/usr/local" -}}
 {{ else if eq .chezmoi.os "darwin" -}}
@@ -8,14 +16,14 @@
 {{ $homebrewBinPath := joinPath $homebrewPrefix "bin" -}}
 
 [age]
-  identity = "~/.config/chezmoi/age.key"
-  recipient = "age16650awzwppw8s725pvj8k32nfccyvgssvw5qj2kq9a9tsyxuyspsy7npy5"
+	identity = "~/.config/chezmoi/age.key"
+	recipient = "age16650awzwppw8s725pvj8k32nfccyvgssvw5qj2kq9a9tsyxuyspsy7npy5"
 
 [data]
 	editor = {{ joinPath $homebrewBinPath "vim" | quote }}
 	ssh_pkcs11_provider = "/usr/lib/ssh-keychain.dylib"
 	visual_editor = {{ printf "%s -w" (joinPath $homebrewBinPath "code") | quote }}
-	work_machine = {{ promptBool "Is this a work machine?" }}
+	work_machine = {{ $workMachine }}
 
 	[data.homebrew]
 		prefix = {{ $homebrewPrefix | quote }}
@@ -23,8 +31,8 @@
 
 	[data.git]
 		signing_key = "0xA0BE84DBE2E93076"
-		envato_email = {{ promptString "Envato email address" "" | quote }}
-		personal_email = {{ promptString "Personal email address" "" | quote }}
+		envato_email = {{ $envatoEmail | quote }}
+		personal_email = {{ $personalEmail | quote }}
 
 	[data.gpg]
 		default_key = "0xA0BE84DBE2E93076"

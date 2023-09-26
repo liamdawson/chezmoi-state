@@ -1,0 +1,40 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+is_macos='{{ eq .chezmoi.os "darwin" }}'
+is_linux='{{ eq .chezmoi.os "linux" }}'
+
+data_dir="${CHEZMOI_SOURCE_DIR}/.chezmoidata"
+
+cpu_count=""
+memory_bytes=""
+
+if "$is_macos"; then
+  cpu_count="$(sysctl -n hw.logicalcpu)"
+  memory_bytes="$(sysctl -n hw.memsize)"
+elif "$is_linux"; then
+  echo "ERROR: yet to write correct HW vars logic for linux"
+  exit 1
+else
+  echo "ERROR: unknown OS {{ .chezmoi.os }}"
+  exit 1
+fi
+
+memory_gb="$(($memory_bytes / 1024 / 1024 / 1024))"
+
+mkdir -p "$data_dir"
+
+cat <<EOF >"${data_dir}/hw.local.json"
+{
+  "local": {
+    "hw": {
+      "cpu_count": "$cpu_count",
+      "memory": {
+        "b": "$memory_bytes",
+        "gb": "$memory_gb"
+      }
+    }
+  }
+}
+EOF
