@@ -132,7 +132,7 @@ mountInotify: true
 # Options available for host emulation can be checked with: `qemu-system-$(arch) -cpu help`.
 # Instructions are also supported by appending to the cpu type e.g. "qemu64,+ssse3".
 # Default: host
-# cpuType: ""
+cpuType: ""
 
 # For a more general purpose virtual machine, Ubuntu container is optionally provided
 # as a layer on the virtual machine.
@@ -179,7 +179,9 @@ sshConfig: false
 #
 # Colima default behaviour: $HOME and /tmp/colima are mounted as writable.
 # Default: []
-mounts: []
+mounts:
+  - location: /opt/ejson
+    writable: true
 
 # Environment variables for the virtual machine.
 #
