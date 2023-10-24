@@ -1,0 +1,9 @@
+urls:
+  - pover://{{ .pushover.userKey }}@{{ .pushover.apiKey }}
+  - pover://{{ .pushover.userKey }}@{{ .pushover.apiKey }}:
+      tag: push, mobile, pushover
+{{ if eq .chezmoi.os "darwin" }}
+  - macosx://
+  - macosx://:
+      tag: desktop
+{{ end }}

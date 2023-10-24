@@ -1,6 +1,8 @@
 {{ $homebrewPrefix := "/home/linuxbrew/.linuxbrew" -}}
 {{ $workMachine := promptBoolOnce . "work_machine" "Is this a work machine?" -}}
 {{ $personalEmail := promptStringOnce .git "personal_email" "Personal email address" -}}
+{{ $pushoverUserKey := promptStringOnce .pushover "userKey" "Pushover User key" -}}
+{{ $pushoverApiKey := promptStringOnce .pushover "apiKey" "Pushover API key" -}}
 {{ $envatoEmail := "" -}}
 
 {{ if eq $workMachine true -}}
@@ -38,3 +40,7 @@
 		default_key = "0xA0BE84DBE2E93076"
 		trusted_key = "0xA0BE84DBE2E93076"
 		pinentry = {{ joinPath $homebrewBinPath "pinentry-mac" | quote }}
+	
+	[data.pushover]
+		apiKey = {{ $pushoverApiKey | quote }}
+		userKey = {{ $pushoverUserKey | quote }}
