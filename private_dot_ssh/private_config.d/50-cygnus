@@ -3,9 +3,13 @@ Host sparrow.cygnus
 	ProxyJump jump.cygnus.lan
 
 Host blackbird.cygnus
-	HostName 192.168.2.11
+	HostName blackbird
 	ProxyJump jump.cygnus.lan
 
 Host raven.cygnus
-	HostName 192.168.2.12
+	HostName raven
+	ProxyJump jump.cygnus.lan
+
+Host firetail.cygnus
+	HostName firetail
 	ProxyJump jump.cygnus.lan
