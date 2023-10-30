@@ -19,5 +19,9 @@ scripts/setup/*.{fish,sh}
 ## Appears to be fixed
 .config/fish/conf.d/95_macos.fish
 
-# via fisher now
+## via fisher now
 .config/fish/conf.d/70_dracula.fish
+
+## Moved to rtx in the global location (.rtx.toml)
+.tool-versions
+.rtx.toml

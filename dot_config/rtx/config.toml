@@ -1,0 +1,10 @@
+[tools]
+go = "latest"
+java = "lts"
+nodejs = "lts"
+python = "latest"
+ruby = "latest"
+terraform = "latest"
+
+[settings]
+asdf_compat = true

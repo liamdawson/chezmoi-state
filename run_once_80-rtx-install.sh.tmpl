@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+set -Eeuo pipefail
+
+# .tool-versions hash: {{ include "dot_config/rtx/config.toml" | sha256sum }}
+if command -v rtx >/dev/null 2>&1; then
+	rtx install
+	rtx reshim || true
+fi
