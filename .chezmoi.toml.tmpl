@@ -1,17 +1,16 @@
-{{ $homebrewPrefix := "/home/linuxbrew/.linuxbrew" -}}
-{{ $workMachine := promptBoolOnce . "work_machine" "Is this a work machine?" -}}
-{{ $personalEmail := promptStringOnce .git "personal_email" "Personal email address" -}}
-{{ $pushoverUserKey := promptStringOnce .pushover "userKey" "Pushover User key" -}}
-{{ $pushoverApiKey := promptStringOnce .pushover "apiKey" "Pushover API key" -}}
+{{ $workMachine := promptBoolOnce . "workMachine" "Is this a work machine?" -}}
+{{ $personalMachine := promptBoolOnce . "personalMachine" "Is this a personal machine?" -}}
+{{ $personalEmail := promptStringOnce . "emailPersonal" "Personal email address" -}}
+{{ $pushoverUserKey := promptStringOnce . "pushoverUserKey" "Pushover User key" -}}
+{{ $pushoverApiKey := promptStringOnce . "pushoverApiKey" "Pushover API key" -}}
 {{ $envatoEmail := "" -}}
 
 {{ if eq $workMachine true -}}
-{{   $envatoEmail = promptStringOnce .git "envato_email" "Envato email address" -}}
+{{   $envatoEmail = promptStringOnce . "emailEnvato" "Envato email address" -}}
 {{ end -}}
 
-{{ if and (eq .chezmoi.os "darwin") (ne .chezmoi.arch "arm64") -}}
-{{   $homebrewPrefix = "/usr/local" -}}
-{{ else if eq .chezmoi.os "darwin" -}}
+{{ $homebrewPrefix := "/home/linuxbrew/.linuxbrew" -}}
+{{ if eq .chezmoi.os "darwin" -}}
 {{   $homebrewPrefix = "/opt/homebrew" -}}
 {{ end -}}
 
@@ -23,24 +22,19 @@
 
 [data]
 	editor = {{ joinPath $homebrewBinPath "vim" | quote }}
-	ssh_pkcs11_provider = "/usr/lib/ssh-keychain.dylib"
-	visual_editor = {{ printf "%s -w" (joinPath $homebrewBinPath "code") | quote }}
-	work_machine = {{ $workMachine }}
+	emailEnvato = {{ $envatoEmail | quote }}
+	emailPersonal = {{ $personalEmail | quote }}
+	gitSigningKey = "0xA0BE84DBE2E93076"
+	gpgDefaultKey = "0xA0BE84DBE2E93076"
+	gpgPinentry = {{ joinPath $homebrewBinPath "pinentry-mac" | quote }}
+	gpgTrustedKey = "0xA0BE84DBE2E93076"
+	personalMachine = {{ $personalMachine }}
+	pushoverApiKey = {{ $pushoverApiKey | quote }}
+	pushoverUserKey = {{ $pushoverUserKey | quote }}
+	sshPkcs11Provider = "/usr/lib/ssh-keychain.dylib"
+	visualEditor = {{ printf "%s -w" (joinPath $homebrewBinPath "code") | quote }}
+	workMachine = {{ $workMachine }}
 
 	[data.homebrew]
 		prefix = {{ $homebrewPrefix | quote }}
 		bin = {{ $homebrewBinPath | quote }}
-
-	[data.git]
-		signing_key = "0xA0BE84DBE2E93076"
-		envato_email = {{ $envatoEmail | quote }}
-		personal_email = {{ $personalEmail | quote }}
-
-	[data.gpg]
-		default_key = "0xA0BE84DBE2E93076"
-		trusted_key = "0xA0BE84DBE2E93076"
-		pinentry = {{ joinPath $homebrewBinPath "pinentry-mac" | quote }}
-	
-	[data.pushover]
-		apiKey = {{ $pushoverApiKey | quote }}
-		userKey = {{ $pushoverUserKey | quote }}

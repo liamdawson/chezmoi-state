@@ -2,5 +2,5 @@
 
 set -euo pipefail
 
-ssh-add -e "$SSH_PKCS11_PROVIDER" || true
-ssh-add -s "$SSH_PKCS11_PROVIDER"
+ssh-add -e "$sshPkcs11Provider" || true
+ssh-add -s "$sshPkcs11Provider"

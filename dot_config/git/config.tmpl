@@ -1,8 +1,8 @@
 [user]
   useConfigOnly = true
   name = Liam Dawson
-  email = "{{ .git.personal_email }}"
-  signingkey = {{ .git.signing_key }}
+  email = "{{ .emailPersonal }}"
+  signingkey = {{ .gitSigningKey }}
 
 [filter "lfs"]
   clean = git-lfs clean -- %f

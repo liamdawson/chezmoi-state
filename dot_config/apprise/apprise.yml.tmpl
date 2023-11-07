@@ -1,6 +1,6 @@
 urls:
-  - pover://{{ .pushover.userKey }}@{{ .pushover.apiKey }}
-  - pover://{{ .pushover.userKey }}@{{ .pushover.apiKey }}:
+  - pover://{{ .pushoverUserKey }}@{{ .pushoverApiKey }}
+  - pover://{{ .pushoverUserKey }}@{{ .pushoverApiKey }}:
       tag: push, mobile, pushover
 {{ if eq .chezmoi.os "darwin" }}
   - macosx://

@@ -9,6 +9,6 @@ scripts/macos/**/*
 .finicky.js
 {{ end }}
 
-{{ if ne .work_machine true }}
+{{ if ne .workMachine true }}
 scripts/work/**/*
 {{ end }}

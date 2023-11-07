@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-# Combined Brewfile, differs by platform and "work_machine" status.
+# Combined Brewfile, differs by platform and "workMachine" status.
 
 cask_args no_quarantine: true
 
@@ -46,7 +46,7 @@ brew "yubico-piv-tool"
 ## Unknown chezmoi.os - skipping OS specific formulae
 
 # {{ end -}}
-# {{- if eq .work_machine true }}
+# {{- if eq .workMachine true }}
 
 ## Work-specific formulae
 
@@ -176,7 +176,7 @@ mas "Affinity Publisher 2", id: 1606941598
 mas "Microsoft To Do", id: 1274495053
 mas "Xcode", id: 497799835
 
-# {{- if eq .work_machine true }}
+# {{- if eq .workMachine true }}
 
 # Work-specific Casks/Macos apps
 
