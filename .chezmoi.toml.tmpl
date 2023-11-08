@@ -1,20 +1,53 @@
-{{ $workMachine := promptBoolOnce . "workMachine" "Is this a work machine?" -}}
-{{ $personalMachine := promptBoolOnce . "personalMachine" "Is this a personal machine?" -}}
-{{ $personalEmail := promptStringOnce . "emailPersonal" "Personal email address" -}}
-{{ $pushoverUserKey := promptStringOnce . "pushoverUserKey" "Pushover User key" -}}
-{{ $pushoverApiKey := promptStringOnce . "pushoverApiKey" "Pushover API key" -}}
-{{ $envatoEmail := "" -}}
+{{- $workMachine := promptBoolOnce . "workMachine" "Is this a work machine?" }}
+{{- $personalMachine := promptBoolOnce . "personalMachine" "Is this a personal machine?" }}
+{{- $personalEmail := promptStringOnce . "emailPersonal" "Personal email address" }}
+{{- $pushoverUserKey := promptStringOnce . "pushoverUserKey" "Pushover User key" }}
+{{- $pushoverApiKey := promptStringOnce . "pushoverApiKey" "Pushover API key" }}
+{{- $envatoEmail := "" }}
 
-{{ if eq $workMachine true -}}
-{{   $envatoEmail = promptStringOnce . "emailEnvato" "Envato email address" -}}
-{{ end -}}
+{{- if eq $workMachine true }}
+{{-   $envatoEmail = promptStringOnce . "emailEnvato" "Envato email address" }}
+{{- end }}
 
-{{ $homebrewPrefix := "/home/linuxbrew/.linuxbrew" -}}
-{{ if eq .chezmoi.os "darwin" -}}
-{{   $homebrewPrefix = "/opt/homebrew" -}}
-{{ end -}}
+{{- $homebrewPrefix := "/home/linuxbrew/.linuxbrew" }}
+{{- if eq .chezmoi.os "darwin" }}
+{{-   $homebrewPrefix = "/opt/homebrew" }}
+{{- end }}
 
-{{ $homebrewBinPath := joinPath $homebrewPrefix "bin" -}}
+{{- $homebrewBinPath := joinPath $homebrewPrefix "bin" }}
+
+{{- $chassisType := "desktop" }}
+{{- if eq .chezmoi.os "darwin" }}
+{{-   if contains "MacBook" (output "sysctl" "-n" "hw.model") }}
+{{-     $chassisType = "laptop" }}
+{{-   else }}
+{{-     $chassisType = "desktop" }}
+{{-   end }}
+{{- else if eq .chezmoi.os "linux" }}
+{{-   $chassisType = (output "hostnamectl" "--json=short" | mustFromJson).Chassis }}
+{{- end -}}
+
+{{- $osid := .chezmoi.os }}
+{{- if hasKey .chezmoi.osRelease "id" }}
+{{-   $osid = printf "%s-%s" .chezmoi.os .chezmoi.osRelease.id }}
+{{- end -}}
+
+{{- $cpuCores := 1 }}
+{{- $cpuThreads := 1 }}
+{{- if eq .chezmoi.os "darwin" }}
+{{-   $cpuCores = (output "sysctl" "-n" "hw.physicalcpu_max") | trim | atoi }}
+{{-   $cpuThreads = (output "sysctl" "-n" "hw.logicalcpu_max") | trim | atoi }}
+{{- else if eq .chezmoi.os "linux" }}
+{{-   $cpuCores = (output "sh" "-c" "lscpu --online --parse | grep --invert-match '^#' | sort --field-separator=',' --key='2,4' --unique | wc --lines") | trim | atoi }}
+{{-   $cpuThreads = (output "sh" "-c" "lscpu --online --parse | grep --invert-match '^#' | wc --lines") | trim | atoi }}
+{{- end -}}
+
+{{- $totalMem := 1 }}
+{{- if eq .chezmoi.os "darwin" }}
+{{-   $totalMem = (output "bash" "-c" "echo $(($(sysctl -n hw.memsize) / 1024 / 1024 / 1024))") | trim | atoi }}
+{{- else if eq .chezmoi.os "linux" }}
+{{-   $totalMem = (output "sh" "-c" "awk '/MemTotal/ { printf \"%.0f \n\", $2/1024/1024 }' /proc/meminfo") | trim | atoi }}
+{{- end -}}
 
 [age]
 	identity = "~/.config/chezmoi/age.key"
@@ -38,3 +71,10 @@
 	[data.homebrew]
 		prefix = {{ $homebrewPrefix | quote }}
 		bin = {{ $homebrewBinPath | quote }}
+
+	[data.machine]
+		chassisType = {{ $chassisType | quote }}
+		cpuCores = {{ $cpuCores }}
+		cpuThreads = {{ $cpuThreads }}
+		osid = {{ $osid | quote }}
+		totalMem = {{ $totalMem }}
