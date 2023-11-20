@@ -1,0 +1,50 @@
+format="$directory$status$all"
+
+[character]
+success_symbol = "[ \\$](bold green)"
+error_symbol = "[!\\$](bold red)"
+vimcmd_symbol = " <"
+
+[aws]
+symbol = "AWS:"
+
+[git_branch]
+disabled = true
+
+[git_commit]
+disabled = true
+
+[git_state]
+disabled = true
+
+[git_status]
+disabled = true
+
+[cmd_duration]
+min_time = 10000
+
+[battery]
+disabled = true
+
+[directory]
+fish_style_pwd_dir_length = 1
+truncate_to_repo = false
+
+[hg_branch]
+disabled = true
+
+[nix_shell]
+disabled = true
+
+[docker_context]
+disabled = true
+
+[nodejs]
+format = "[\\(node ($version)\\)]($style) "
+
+[ruby]
+format = "[\\(ruby ($version)\\)]($style) "
+
+[status]
+disabled = false
+format = "[$status( SIG$signal_name)]($style) "
