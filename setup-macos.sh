@@ -20,6 +20,7 @@ main() {
   brew "chezmoi"
   brew "age"
   cask "1password"
+  cask "1password-cli"
   cask "iterm2"
   cask "visual-studio-code"
   cask "firefox"
