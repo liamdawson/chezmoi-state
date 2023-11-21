@@ -1,2 +1,6 @@
 .chezmoiscripts/*/**
 !.chezmoiscripts/{{ .chezmoi.os }}/**
+
+{{ if ne .chezmoi.os "windows" -}}
+!.chezmoiscripts/nixish/**
+{{ end -}}

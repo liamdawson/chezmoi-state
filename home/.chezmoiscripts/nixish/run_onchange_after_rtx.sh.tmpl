@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+set -Eeuo pipefail
+
+# rtx/config.toml hash: {{ include "dot_config/rtx/config.toml" | sha256sum }}
+rtx install

@@ -4,5 +4,5 @@ set -Eeuo pipefail
 
 fish -c 'curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source && fisher install jorgebucaran/fisher'
 
-# .Brewfile hash: {{ include "dot_config/private_fish/fish_plugins" | sha256sum }}
+# fish_plugins hash: {{ include "dot_config/private_fish/fish_plugins" | sha256sum }}
 fish -c 'fisher update'
