@@ -1,0 +1,37 @@
+[user]
+  useConfigOnly = true
+  name = Liam Dawson
+  email = "{{ .emailPersonal }}"
+
+[filter "lfs"]
+  clean = git-lfs clean -- %f
+  smudge = git-lfs smudge -- %f
+  process = git-lfs filter-process
+  required = true
+
+[core]
+  pager = "delta"
+  editor = vim
+
+[interactive]
+  diffFilter = delta --color-only
+
+[color]
+  ui = auto
+
+[push]
+  default = current
+
+[commit]
+  verbose = true
+  cleanup = scissors
+
+[merge]
+  ff = only
+
+[pull]
+  ff = only
+
+[ghq]
+  # root = $GOPATH/src
+  root = ~/w/r
