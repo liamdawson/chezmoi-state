@@ -2,6 +2,7 @@
 
 {{/* boolean feature tags */}}
 {{- $personal := promptBoolOnce . "personal" "Include personal secrets" -}}{{/* true if this machine should have personal secrets */}}
+{{- $desk := promptBoolOnce . "desk" "Include config for home desk" -}}{{/* true if this machine is ever used at my desk and should have relevant config/utilities */}}
 {{- "" -}}
 
 {{- $osID := .chezmoi.os -}}
@@ -12,3 +13,4 @@
 [data]
     emailPersonal = {{ $emailPersonal | quote }}
     personal = {{ $personal }}
+    desk = {{ $desk }}

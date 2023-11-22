@@ -19,6 +19,11 @@ brew "sqlite3"
 brew "xz"
 brew "zlib"
 
+#{{ if eq .chezmoi.os "darwin" }}
+# homebrew casks (.chezmoi.os == "darwin")
+#
+
+# apps
 cask "1password-cli"
 cask "1password"
 cask "firefox"
@@ -28,3 +33,13 @@ cask "visual-studio-code"
 
 # fonts
 cask "font-monaspace"
+cask "font-monaspace-nerd-font"
+
+#{{ if .desk }} desk utilities
+
+cask "elgato-control-center"
+cask "elgato-stream-deck"
+
+# end desk utilities {{ else }} skipping desk utilities {{ end }}
+
+# end casks {{ else }} skipping casks {{ end }}
