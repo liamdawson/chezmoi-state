@@ -1,6 +1,7 @@
 {
   "files.associations": {
-    "*.sh.tmpl": "shellscript"
+    "*.sh.tmpl": "shellscript",
+    "*Brewfile.tmpl": "ruby"
   },
   "shellcheck.enableQuickFix": true
 }
