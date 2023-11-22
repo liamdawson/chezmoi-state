@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+set -Eeuo pipefail
+
+# .Brewfile hash: {{ include "dot_Brewfile.tmpl" | sha256sum }}
+if command -v brew >/dev/null 2>&1; then
+    brew bundle check --global || brew bundle install --global
+fi
