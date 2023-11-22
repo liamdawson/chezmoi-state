@@ -3,7 +3,7 @@
 <plist version="1.0">
   <dict>
     <key>Label</key>
-    <string>com.example.CapslockEsc</string>
+    <string>com.ldaws.CapslockEsc</string>
     <key>ProgramArguments</key>
     <array>
       <string>/usr/bin/hidutil</string>
