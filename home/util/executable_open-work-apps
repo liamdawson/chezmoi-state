@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+apps=(
+    "/Applications/Firefox.app"
+    "/Applications/iTerm.app"
+    "/Applications/Logseq.app"
+    "/Applications/Slack.app"
+    "/Applications/Visual Studio Code.app"
+    "/Applications/Microsoft Outlook.app"
+    "/Applications/Keybase.app"
+)
+
+for app in "${apps[@]}"; do
+    open -g "$app" &
+done
