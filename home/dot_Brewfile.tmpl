@@ -3,9 +3,11 @@ tap "homebrew/cask-fonts"
 # utilities
 brew "age"
 brew "chezmoi"
+brew "curl"
 brew "fish"
 brew "ghq"
 brew "git-delta"
+brew "jq"
 brew "rtx"
 brew "starship"
 
@@ -14,6 +16,7 @@ brew "autoconf"
 brew "gcc"
 brew "libyaml"
 brew "openssl"
+brew "gpg"
 brew "pkg-config"
 brew "readline"
 brew "sqlite3"
@@ -28,7 +31,6 @@ brew "zlib"
 cask "1password-cli"
 cask "1password"
 cask "bartender"
-cask "browserosaurus"
 # cask "cleanshot"
 cask "firefox"
 cask "git-credential-manager"
@@ -52,3 +54,12 @@ cask "elgato-stream-deck"
 # end desk utilities {{ else }} skipping desk utilities {{ end }}
 
 # end casks {{ else }} skipping casks {{ end }}
+
+#{{ if eq .chezmoi.os "darwin" }}
+# mac app store apps (.chezmoi.os == "darwin")
+#
+
+mas "Velja", id: 1607635845
+mas "Xcode", id: 497799835
+
+# end mac app store apps {{ else }} skipping mac app store apps {{ end }}
