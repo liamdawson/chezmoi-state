@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+# get root of repo
+state_dir="$(chezmoi git -- rev-parse --show-toplevel)"
+config_path="${HOME}/.config/chezmoi/chezmoi.toml"
+
+code --folder-uri "file://${state_dir}" --file-uri "file://${config_path}"
