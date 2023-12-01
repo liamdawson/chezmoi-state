@@ -1,0 +1,30 @@
+#!/usr/bin/env bash
+
+set -Eeuo pipefail
+
+if ! command -v rtx >/dev/null 2>&1; then
+    echo "expected rtx to be installed"
+    exit 1
+fi
+
+if [ -d "/Library/Java/JavaVirtualMachines" ]; then
+    for version in $(rtx ls --installed --plugin java | awk '{ print $2; }'); do
+        dest_path="/Library/Java/JavaVirtualMachines/${version}.jdk"
+
+        if [[ -r "$dest_path" ]]; then
+            echo "== Link already exists for ${version}"
+            echo
+            continue
+        fi
+
+        echo "== Linking ${version}"
+
+        (
+            set -x
+            sudo mkdir -p "$dest_path"
+            sudo ln -s "$(rtx where "java@${version}")/Contents" "${dest_path}/Contents"
+        )
+
+        echo
+    done
+fi
