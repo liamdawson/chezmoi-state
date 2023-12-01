@@ -7,6 +7,13 @@ apfs_personality="APFSX"
 volume_name="Workspace"
 mountpoint="${HOME}/w"
 
+if [[ -z "${FORCE_CREATE_WORKSPACE_VOLUME:-}" ]]; then
+    echo "This isn't part of my workflow any more, see ADR #2."
+    echo
+    echo "To create the volume anyway, run this script again with FORCE_CREATE_WORKSPACE_VOLUME=1"
+    exit 1
+fi
+
 mkdir -p "$mountpoint"
 
 sudo diskutil apfs addVolume \
