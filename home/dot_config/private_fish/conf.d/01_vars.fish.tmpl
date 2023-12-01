@@ -1,0 +1,15 @@
+# common vars
+set -gx DELTA_PAGER "less -FRX"
+set -gx GOPATH "$HOME/go"
+set -gx CARGO_HOME "$HOME/.cargo"
+set -gx RTX_ASDF_COMPAT "1"
+
+set -gx XDG_CACHE_HOME "$HOME/.cache"
+set -gx XDG_CONFIG_HOME "$HOME/.config"
+set -gx XDG_DATA_HOME "$HOME/.local/share"
+set -gx XDG_STATE_HOME "$HOME/.local/state"
+
+{{- if eq .chezmoi.os "darwin" }}
+# macos vars
+set -gx HOMEBREW_CASK_OPTS --no-quarantine
+{{- end }}
