@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+set -Eeufo pipefail
+
+bundle config build.pg --with-pg-config="$(brew --prefix)/opt/libpq/bin/pg_config"
