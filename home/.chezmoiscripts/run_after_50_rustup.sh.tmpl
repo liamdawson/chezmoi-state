@@ -1,7 +1,0 @@
-#!/usr/bin/env bash
-
-# install rustup
-if ! command -v rustup >/dev/null 2>&1; then
-    curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- --no-modify-path -y
-    fish -c "fish_add_path --prepend '$HOME/.cargo/bin'"
-fi

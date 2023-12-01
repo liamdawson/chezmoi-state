@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+set -Eeufo pipefail
+
+# install rustup
+if ! command -v rustup >/dev/null 2>&1; then
+    rustup-init --no-modify-path -y
+
+    # starting a shell should fix paths universally?
+    fish -c ''
+fi
+
+# rtx/config.toml hash: {{ include "dot_config/rtx/config.toml" | sha256sum }}
+rtx install
+rtx reshim
