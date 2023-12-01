@@ -1,6 +1,9 @@
+cask_args quarantine: false
+
 tap "homebrew/cask-fonts"
 
 # utilities
+brew "adr-tools"
 brew "age"
 brew "chezmoi"
 brew "curl"
@@ -9,14 +12,17 @@ brew "ghq"
 brew "git-delta"
 brew "jq"
 brew "rtx"
+brew "rustup-init"
+brew "sk"
 brew "starship"
 
 # build deps
 brew "autoconf"
 brew "gcc"
+brew "gpg"
+brew "libpq"
 brew "libyaml"
 brew "openssl"
-brew "gpg"
 brew "pkg-config"
 brew "readline"
 brew "sqlite3"
@@ -31,7 +37,7 @@ brew "zlib"
 cask "1password-cli"
 cask "1password"
 cask "bartender"
-# cask "cleanshot"
+cask "shottr" # trial: replace Cleanshot?
 cask "firefox"
 cask "git-credential-manager"
 cask "google-chrome"
