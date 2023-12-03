@@ -1,5 +1,14 @@
 #!/usr/bin/env bash
 
+# Required parameters:
+# @raycast.schemaVersion 1
+# @raycast.title Start work apps
+# @raycast.mode silent
+#
+# Optional parameters:
+# @raycast.packageName Workflows
+# @raycast.icon 🔛
+
 apps=(
     "/Applications/Firefox.app"
     "/Applications/iTerm.app"

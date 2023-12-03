@@ -1,5 +1,14 @@
 #!/usr/bin/env bash
 
+# Required parameters:
+# @raycast.schemaVersion 1
+# @raycast.title Edit chezmoi state
+# @raycast.mode silent
+#
+# Optional parameters:
+# @raycast.packageName Chezmoi
+# @raycast.icon 📝
+
 set -euo pipefail
 
 # get root of repo

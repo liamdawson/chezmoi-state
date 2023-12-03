@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+
+# Required parameters:
+# @raycast.schemaVersion 1
+# @raycast.title Start home desk apps
+# @raycast.mode silent
+#
+# Optional parameters:
+# @raycast.packageName Workflows
+# @raycast.icon 🔛
+
+apps=(
+    "/Applications/Elgato Control Center.app"
+    "/Applications/Elgato Stream Deck.app"
+)
+
+for app in "${apps[@]}"; do
+    open -g "$app" &
+done
