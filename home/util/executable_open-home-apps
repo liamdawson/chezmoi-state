@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+apps=(
+    "/Applications/Elgato Control Center.app"
+    "/Applications/Elgato Stream Deck.app"
+)
+
+for app in "${apps[@]}"; do
+    open -g "$app" &
+done
