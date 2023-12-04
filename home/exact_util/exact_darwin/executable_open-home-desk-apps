@@ -6,7 +6,6 @@
 # @raycast.mode silent
 #
 # Optional parameters:
-# @raycast.packageName Workflows
 # @raycast.icon 🔛
 
 apps=(
