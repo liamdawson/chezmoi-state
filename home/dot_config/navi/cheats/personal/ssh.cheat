@@ -1,0 +1,7 @@
+% ssh, macos
+
+# Add PKCS11 smartcard to ssh-agent
+ssh-add -s /usr/lib/ssh-keychain.dylib
+
+# Remove PKCS11 smartcard from ssh-agent
+ssh-add -e /usr/lib/ssh-keychain.dylib
