@@ -5,6 +5,7 @@ tap "homebrew/cask-fonts"
 # utilities
 brew "adr-tools"
 brew "age"
+brew "awscli"
 brew "chezmoi"
 brew "curl"
 brew "fish"
@@ -28,6 +29,10 @@ brew "readline"
 brew "sqlite3"
 brew "xz"
 brew "zlib"
+
+#{{ if .work }}
+brew "saml2aws" # trial: see if I can get this working?
+# end work formula {{ else }} skipping work formula{{ end }}
 
 #{{ if eq .chezmoi.os "darwin" }}
 # homebrew casks (.chezmoi.os == "darwin")
@@ -65,6 +70,9 @@ cask "elgato-stream-deck"
 # mac app store apps (.chezmoi.os == "darwin")
 #
 
+mas "Affinity Designer", id: 824171161
+mas "Affinity Photo", id: 824183456
+mas "Affinity Publisher", id: 881418622
 mas "Velja", id: 1607635845
 mas "Xcode", id: 497799835
 

@@ -3,6 +3,7 @@
 {{/* boolean feature tags */}}
 {{- $personal := promptBoolOnce . "personal" "Include personal secrets" -}}{{/* true if this machine should have personal secrets */}}
 {{- $desk := promptBoolOnce . "desk" "Include config for home desk" -}}{{/* true if this machine is ever used at my desk and should have relevant config/utilities */}}
+{{- $work := promptBoolOnce . "work" "Include config for work devices" -}}{{/* true if this machine is used as a work device */}}
 {{- "" -}}
 
 {{- $osID := .chezmoi.os -}}
@@ -14,6 +15,7 @@
     emailPersonal = {{ $emailPersonal | quote }}
     personal = {{ $personal }}
     desk = {{ $desk }}
+    work = {{ $work }}
 
 [edit]
     command = "vim"
