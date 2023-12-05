@@ -17,6 +17,7 @@ brew "rtx"
 brew "rustup-init"
 brew "sk"
 brew "starship"
+brew "watchman"
 
 # build deps
 brew "autoconf"
@@ -31,7 +32,7 @@ brew "sqlite3"
 brew "xz"
 brew "zlib"
 
-#{{ if .work }}
+#{{ if .work }} work formula
 brew "saml2aws" # trial: see if I can get this working?
 # end work formula {{ else }} skipping work formula{{ end }}
 
@@ -64,6 +65,10 @@ cask "elgato-control-center"
 cask "elgato-stream-deck"
 
 # end desk utilities {{ else }} skipping desk utilities {{ end }}
+
+#{{ if .work }} work casks
+cask "android-studio"
+# end work casks {{ else }} skipping work casks{{ end }}
 
 # end casks {{ else }} skipping casks {{ end }}
 
