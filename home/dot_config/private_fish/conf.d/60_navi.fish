@@ -1,1 +1,3 @@
-navi widget fish | source
+if type -q navi
+    navi widget fish | source
+end
