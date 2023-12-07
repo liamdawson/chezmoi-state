@@ -1,0 +1,36 @@
+[misc]
+no_retry = true
+cleanup = true
+display_time = true
+skip_notify = true # covered by my command notify shell integration
+pre_sudo = true
+
+# see Step in https://github.com/topgrade-rs/topgrade/blob/master/src/config.rs to find other things to disable
+#   rustup                 - manual update step to avoid updating nightly every time
+#   gem & rubygems         - I think gems + rbenv haven't mixed well
+#   tlmgr                  - don't want to update TeX all the time when it's installed
+#   gnome_shell_extensions - not relevant on Macos
+#   containers             - fails to update from private ECRs
+# nightly is, well, nightly, and I think gems and rbenv aren't mixing well
+disable = [
+  "rustup"
+  ,"gem"
+  ,"ruby_gems"
+  ,"tlmgr"
+  ,"containers"
+{{- if eq .chezmoi.os "darwin" }}
+  ,"gnome_shell_extensions"
+{{ end }}]
+
+# Custom commands
+[commands]
+"Stable Rust" = "rustup update stable"
+"gi() completions" = "fish -c 'gi update-completions'"
+
+# shims don't auto-update their paths, apparently?
+# this can also require a pipx reinstall-all when python versions change
+# commented out for now, as I'm not sure how this'll work with rtx
+# "pyenv rehash" = "pyenv rehash"
+
+[linux]
+apt_arguments = "--assume-yes"
