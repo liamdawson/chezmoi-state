@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+chezmoi_config_dir="${HOME}/.config/chezmoi"
+
+[ -d "$chezmoi_config_dir" ] || mkdir -p "$chezmoi_config_dir"
+
+if [ ! -f "${chezmoi_config_dir}/age.key" ]; then
+	echo "Decrypting state encryption private key..."
+	age --decrypt --output "${chezmoi_config_dir}/age.key" "{{ .chezmoi.sourceDir }}/.state-encryption-key.txt.age"
+	chmod 600 "${chezmoi_config_dir}/age.key"
+
+	echo "Decrypted state encryption private key."
+	echo
+fi

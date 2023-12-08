@@ -8,3 +8,7 @@
 **/darwin/**
 Library/**/*
 {{ end -}}
+
+{{ if ne (get . "work") true }}
+.config/git/work
+{{ end -}}

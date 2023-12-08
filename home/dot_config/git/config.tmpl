@@ -33,5 +33,10 @@
   ff = only
 
 [ghq]
-  # root = $GOPATH/src
   root = ~/w
+  root = $GOPATH/src
+
+{{ if eq (get . "work") true -}}
+[include]
+  path = ~/.config/git/work
+{{ end -}}
