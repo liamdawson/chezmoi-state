@@ -4,7 +4,7 @@ set -Eeufo pipefail
 
 # install rustup
 if ! command -v rustup >/dev/null 2>&1; then
-    rustup-init --no-modify-path -y
+    curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- --no-modify-path -y
 
     # starting a shell should fix paths universally?
     fish -c ''
