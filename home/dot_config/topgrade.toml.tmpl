@@ -11,6 +11,7 @@ pre_sudo = true
 #   tlmgr                  - don't want to update TeX all the time when it's installed
 #   gnome_shell_extensions - not relevant on Macos
 #   containers             - fails to update from private ECRs
+#   vscode                 - noisy, done automatically in-app anyway
 # nightly is, well, nightly, and I think gems and rbenv aren't mixing well
 disable = [
   "rustup"
@@ -18,6 +19,7 @@ disable = [
   ,"ruby_gems"
   ,"tlmgr"
   ,"containers"
+  ,"vscode"
 {{- if eq .chezmoi.os "darwin" }}
   ,"gnome_shell_extensions"
 {{ end }}]
