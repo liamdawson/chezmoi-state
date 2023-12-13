@@ -15,6 +15,9 @@ defaults write -g KeyRepeat -int 2
 # make key repeat work (instead of providing a choice of accents when holding)
 defaults write -g ApplePressAndHoldEnabled -bool false
 
+# set 24hr time
+
+defaults write -g AppleICUForce24HourTime -bool true
 # dock settings
 defaults write com.apple.dock autohide -bool true
 defaults write com.apple.dock tilesize -int 50
