@@ -1,13 +1,5 @@
 #!/usr/bin/env bash
 
-# Required parameters:
-# @raycast.schemaVersion 1
-# @raycast.title Start work apps
-# @raycast.mode silent
-#
-# Optional parameters:
-# @raycast.icon 🔛
-
 apps=(
     "/Applications/Firefox.app"
     "/Applications/iTerm.app"
@@ -16,6 +8,7 @@ apps=(
     "/Applications/Visual Studio Code.app"
     "/Applications/Microsoft Outlook.app"
     "/Applications/Keybase.app"
+    "$@" # extra apps via CLI args
 )
 
 for app in "${apps[@]}"; do

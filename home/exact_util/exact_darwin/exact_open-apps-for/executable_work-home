@@ -2,17 +2,15 @@
 
 # Required parameters:
 # @raycast.schemaVersion 1
-# @raycast.title Start home desk apps
+# @raycast.title Open work & home apps (OHA)
 # @raycast.mode silent
 #
 # Optional parameters:
 # @raycast.icon 🔛
 
-apps=(
+extra_apps=(
     "/Applications/Elgato Control Center.app"
     "/Applications/Elgato Stream Deck.app"
 )
 
-for app in "${apps[@]}"; do
-    open -g "$app" &
-done
+cd "$(dirname "${BASH_SOURCE[0]}")" && ./work "${extra_apps[@]}"

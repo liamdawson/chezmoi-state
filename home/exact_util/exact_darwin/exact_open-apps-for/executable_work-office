@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+# Required parameters:
+# @raycast.schemaVersion 1
+# @raycast.title Open work & office apps (OOA)
+# @raycast.mode silent
+#
+# Optional parameters:
+# @raycast.icon 🔛
+
+cd "$(dirname "${BASH_SOURCE[0]}")" && ./work
