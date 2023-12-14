@@ -2,6 +2,15 @@
 
 set -Eeuo pipefail
 
+if ! command -v fish >/dev/null 2>&1; then
+    echo "error: fish shell is not on path"
+    exit 1
+fi
+
+if ! grep -qe '[/]fish$' /etc/shells; then
+    command -v fish | sudo tee -a /etc/shells
+fi
+
 if [[ "$(uname -s)" = 'Darwin' ]]; then
     if ! dscl . read "/Users/$(whoami)" UserShell | grep -q fish; then
 
@@ -9,10 +18,10 @@ if [[ "$(uname -s)" = 'Darwin' ]]; then
 
         if [[ -x "$shell_path" ]]; then
             echo "Changing user shell to ${shell_path}:"
-            sudo chsh -s "$(command -v fish)" "$(whoami)"
+            chsh -s "$shell_path" "$(whoami)"
         fi
     fi
 else
-    echo "Unknown OS"
+    echo "error: unknown OS"
     exit 1
 fi
