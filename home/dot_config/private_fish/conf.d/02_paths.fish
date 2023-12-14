@@ -6,7 +6,8 @@
 # "everything else"
 fish_add_path --prepend \
     "$HOME/.cargo/bin" \
-    "$GOPATH/bin"
+    "$GOPATH/bin" \
+    "$HOME/Library/Application Support/JetBrains/Toolbox/scripts"
 
 # homebrew bin dirs
 fish_add_path --append --move \
