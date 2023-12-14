@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+# fallback for when rtx isn't initialized in the shell
+if test -d "$HOME/.local/share/rtx/shims"; then
+    export PATH="$HOME/.local/share/rtx/shims/:$PATH"
+fi
+
+if test -e "$HOME/.private_profile"; then
+    # shellcheck disable=SC1091
+    source "$HOME/.private_profile" 
+fi
