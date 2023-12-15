@@ -23,6 +23,9 @@ defaults write com.apple.dock autohide -bool true
 defaults write com.apple.dock tilesize -int 50
 defaults write com.apple.dock "show-recents" -bool false
 
+# turn off quick note hot corner
+defaults write com.apple.dock wvous-br-corner -int 1
+
 defaults write com.apple.systempreferences NSQuitAlwaysKeepsWindows -bool false
 
 # spelling corrections, auto-punctuation etc.
