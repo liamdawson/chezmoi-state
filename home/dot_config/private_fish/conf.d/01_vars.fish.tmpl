@@ -9,6 +9,9 @@ set -gx XDG_CONFIG_HOME "$HOME/.config"
 set -gx XDG_DATA_HOME "$HOME/.local/share"
 set -gx XDG_STATE_HOME "$HOME/.local/state"
 
+set -gx EDITOR "vim"
+set -gx VISUAL "code --wait"
+
 {{- if eq .chezmoi.os "darwin" }}
 # macos vars
 set -gx HOMEBREW_CASK_OPTS --no-quarantine
