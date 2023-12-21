@@ -3,6 +3,7 @@
 set -euo pipefail
 
 packages=(
+    cargo-cache
     cargo-update
 )
 
