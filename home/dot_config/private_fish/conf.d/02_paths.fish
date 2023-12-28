@@ -7,6 +7,7 @@
 fish_add_path --prepend \
     "$HOME/.cargo/bin" \
     "$GOPATH/bin" \
+    "$PNPM_HOME" \
     "$HOME/Library/Application Support/JetBrains/Toolbox/scripts"
 
 # homebrew bin dirs
