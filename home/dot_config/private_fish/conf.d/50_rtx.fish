@@ -1,3 +1,3 @@
-if type -q rtx
-    rtx activate fish | source
+if type -q mise
+    mise activate fish | source
 end
