@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # fallback for when mise isn't initialized in the shell
-if test -d "$HOME/.local/share/mise/shims"; then
+if test -d "$HOME/.local/share/mise/shims" && [[ $PATH != *"$HOME/.local/share/mise/shims"* ]]; then
     export PATH="$HOME/.local/share/mise/shims/:$PATH"
 fi
 
