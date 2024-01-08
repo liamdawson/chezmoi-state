@@ -2,9 +2,13 @@
 
 set -euo pipefail
 
+if ! command -v cargo-binstall >/dev/null 2>&1; then
+    cargo install cargo-binstall
+fi
+
 packages=(
     cargo-cache
     cargo-update
 )
 
-cargo install "${packages[@]}"
+cargo binstall "${packages[@]}"
