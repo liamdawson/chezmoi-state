@@ -49,6 +49,10 @@ brew "zlib"
 # end work formula {{ else }} skipping work formula{{ end }}
 
 #{{ if eq .chezmoi.os "darwin" }}
+# macos formula (.chezmoi.os == "darwin")
+
+brew "terminal-notifier"
+
 # homebrew casks (.chezmoi.os == "darwin")
 #
 
