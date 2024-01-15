@@ -1,8 +1,10 @@
 #!/usr/bin/env bash
 
+set -euo pipefail
+
 # should be sourced - designed to be used with the VSCode Ansible extension (as activate script path)
 
 export PATH="$HOME/.local/share/mise/shims:$PATH"
 
 # shellcheck disable=SC1091
-source "$(pipenv --venv)/bin/activate"
+source "$(python -m pipenv --venv)/bin/activate"
