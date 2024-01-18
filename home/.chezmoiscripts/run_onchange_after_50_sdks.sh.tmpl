@@ -10,6 +10,6 @@ if ! command -v rustup >/dev/null 2>&1; then
     fish -c ''
 fi
 
-# mise/config.toml hash: {{ include "dot_config/mise/config.toml" | sha256sum }}
+# .config/mise/config.toml hash: {{ include "dot_config/mise/config.toml" | sha256sum }}
 mise install
 mise reshim
