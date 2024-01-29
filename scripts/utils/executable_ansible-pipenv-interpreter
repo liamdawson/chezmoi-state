@@ -2,7 +2,7 @@
 
 # should be sourced - designed to be used with the VSCode Ansible extension (as activate script path)
 
-export PATH="$HOME/.local/share/mise/shims/:$PATH"
+export PATH="$HOME/.local/share/mise/shims:$PATH"
 
 # shellcheck disable=SC1091
 source "$(pipenv --venv)/bin/activate"

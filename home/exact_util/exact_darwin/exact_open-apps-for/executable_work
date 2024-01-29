@@ -2,9 +2,6 @@
 
 set -euo pipefail
 
-SHELL="$(dscl . read /Users/ldawson UserShell | awk '{ print $2; }')"
-export SHELL
-
 apps=(
     "/Applications/Firefox.app"
     "/Applications/iTerm.app"
@@ -15,6 +12,8 @@ apps=(
     "/Applications/Keybase.app"
     "$@" # extra apps via CLI args
 )
+
+env > /Users/ldawson/w/tmp/envdebug/env
 
 for app in "${apps[@]}"; do
     open -g "$app" &

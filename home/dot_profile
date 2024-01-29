@@ -2,7 +2,7 @@
 
 # fallback for when mise isn't initialized in the shell
 if test -d "$HOME/.local/share/mise/shims" && [[ $PATH != *"$HOME/.local/share/mise/shims"* ]]; then
-    export PATH="$HOME/.local/share/mise/shims/:$PATH"
+    export PATH="$HOME/.local/share/mise/shims:$PATH"
 fi
 
 if test -e "$HOME/.private_profile"; then

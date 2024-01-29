@@ -1,4 +1,5 @@
-#!/usr/bin/env bash
+#!/usr/bin/env bash -l
+# shellcheck disable=SC2096
 
 # Required parameters:
 # @raycast.schemaVersion 1
@@ -7,6 +8,11 @@
 #
 # Optional parameters:
 # @raycast.icon 🔛
+
+set -euo pipefail
+
+SHELL="$(dscl . read "/Users/$USER" UserShell | awk '{ print $2; }')"
+export SHELL
 
 extra_apps=(
     "/Applications/Elgato Control Center.app"
