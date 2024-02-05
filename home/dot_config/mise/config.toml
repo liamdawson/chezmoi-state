@@ -2,7 +2,7 @@
 bun = "latest"
 go = "latest"
 java = "lts"
-nodejs = "lts"
+nodejs = ["latest", "lts"]
 python = "latest"
 ruby = "latest"
 terraform = "latest"
