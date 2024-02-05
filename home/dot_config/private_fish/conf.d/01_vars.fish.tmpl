@@ -1,14 +1,12 @@
-# common vars
+set -gx CARGO_HOME "$HOME/.cargo"
 set -gx DELTA_PAGER "less -FRX"
 set -gx GOPATH "$HOME/go"
-set -gx CARGO_HOME "$HOME/.cargo"
-
 set -gx PNPM_HOME "$HOME/.local/share/pnpm"
-
 set -gx XDG_CACHE_HOME "$HOME/.cache"
 set -gx XDG_CONFIG_HOME "$HOME/.config"
 set -gx XDG_DATA_HOME "$HOME/.local/share"
 set -gx XDG_STATE_HOME "$HOME/.local/state"
+set -gx MISE_NODE_COREPACK "1"
 
 set -gx EDITOR "vim"
 set -gx VISUAL "code --wait"
