@@ -13,8 +13,6 @@ apps=(
     "$@" # extra apps via CLI args
 )
 
-env > /Users/ldawson/w/tmp/envdebug/env
-
 for app in "${apps[@]}"; do
     open -g "$app" &
 done
