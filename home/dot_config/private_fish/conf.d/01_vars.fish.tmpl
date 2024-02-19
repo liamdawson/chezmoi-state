@@ -15,3 +15,6 @@ set -gx VISUAL "code --wait"
 # macos vars
 set -gx HOMEBREW_CASK_OPTS --no-quarantine
 {{- end }}
+
+# keep failed commands in history just a little longer
+set -g sponge_delay 5
