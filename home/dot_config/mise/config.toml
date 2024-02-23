@@ -6,3 +6,5 @@ nodejs = "lts"
 python = "latest"
 ruby = "latest"
 terraform = "latest"
+
+usage = "latest" # used for mise completions
