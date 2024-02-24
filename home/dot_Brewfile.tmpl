@@ -1,6 +1,7 @@
 cask_args quarantine: false
 
 tap "homebrew/cask-fonts"
+tap "homebrew/cask-versions"
 
 # utilities
 brew "adr-tools"
@@ -95,6 +96,11 @@ cask "elgato-stream-deck"
 cask "android-studio"
 cask "flipper"
 # end work casks {{ else }} skipping work casks{{ end }}
+
+#{{ if not .work }} non-work casks
+cask "firefox-developer-edition"
+# end non-work casks {{ else }} skipping non-work casks{{ end }}
+
 
 # end casks {{ else }} skipping casks {{ end }}
 
