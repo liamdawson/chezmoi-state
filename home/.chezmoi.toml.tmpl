@@ -1,7 +1,7 @@
 {{- $emailPersonal := promptStringOnce . "emailPersonal" "Personal email address" -}}
 
 {{/* boolean feature tags */}}
-{{- $personal := promptBoolOnce . "personal" "Include personal secrets" -}}{{/* true if this machine should have personal secrets */}}
+{{- $personal := promptBoolOnce . "personal" "Include personal secrets" -}}{{/* true if this machine should have personal secrets and apps */}}
 {{- $desk := promptBoolOnce . "desk" "Include config for home desk" -}}{{/* true if this machine is ever used at my desk and should have relevant config/utilities */}}
 {{- $work := promptBoolOnce . "work" "Include config for work devices" -}}{{/* true if this machine is used as a work device */}}
 {{- "" -}}

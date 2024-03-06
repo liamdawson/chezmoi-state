@@ -64,22 +64,23 @@ brew "terminal-notifier"
 cask "1password-cli"
 cask "1password"
 cask "bartender"
-cask "docker"
 cask "firefox"
 cask "git-credential-manager"
 cask "google-chrome"
 cask "iterm2"
 cask "jetbrains-toolbox"
 cask "keybase"
-cask "logseq"
 cask "plexamp"
 cask "raycast"
 cask "reader"
 cask "rectangle-pro"
 cask "shottr"
-cask "signal"
 cask "spotify"
 cask "visual-studio-code"
+
+#{{ if .work}} skipping casks which require special-cased installs on work machines {{ else }}
+cask "docker"
+#{{ end }}
 
 # fonts
 cask "font-monaspace"
@@ -97,10 +98,11 @@ cask "android-studio"
 cask "flipper"
 # end work casks {{ else }} skipping work casks{{ end }}
 
-#{{ if not .work }} non-work casks
+#{{ if .personal }} personal casks
 cask "firefox-developer-edition"
-# end non-work casks {{ else }} skipping non-work casks{{ end }}
-
+cask "logseq"
+cask "signal"
+# end personal casks {{ else }} skipping personal casks{{ end }}
 
 # end casks {{ else }} skipping casks {{ end }}
 
