@@ -1,10 +1,11 @@
-# desired state: 
+# desired state:
 #   ~/bin and ~/.local/bin (user bins) always first
 #   homebrew bin dirs always last
 #   everything else roughly equal in the middle
 
 # "everything else"
 fish_add_path --prepend \
+    "$HOME/.docker/bin" \
     "$HOME/.cargo/bin" \
     "$GOPATH/bin" \
     "$PNPM_HOME" \
