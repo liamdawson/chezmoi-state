@@ -10,9 +10,12 @@ apps=(
     "/Applications/Visual Studio Code.app"
     "/Applications/Microsoft Outlook.app"
     "/Applications/Keybase.app"
+    "$HOME/Applications/Keybase.app"
     "$@" # extra apps via CLI args
 )
 
 for app in "${apps[@]}"; do
-    open -g "$app" &
+    if [ -r "$app" ]; then
+      open -g "$app" &
+    fi
 done
