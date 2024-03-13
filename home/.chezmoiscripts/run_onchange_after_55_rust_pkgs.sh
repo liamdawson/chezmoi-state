@@ -8,6 +8,7 @@ fi
 
 packages=(
     cargo-cache
+    cargo-outdated
     cargo-update
 )
 
