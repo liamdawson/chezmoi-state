@@ -1,0 +1,7 @@
+def admin_optional_cask_args
+#{{ if .work }}
+  { appdir: "~/Applications" }
+#{{ else }}
+  {}
+#{{ end }}
+end
