@@ -8,8 +8,14 @@ fi
 
 packages=(
     cargo-cache
+    cargo-leptos
     cargo-outdated
     cargo-update
+    trunk
 )
 
-cargo binstall "${packages[@]}"
+cargo binstall \
+  --no-confirm \
+  --continue-on-failure \
+  --locked \
+  "${packages[@]}"
