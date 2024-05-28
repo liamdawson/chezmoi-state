@@ -11,6 +11,7 @@ packages=(
     cargo-leptos
     cargo-outdated
     cargo-update
+    leptosfmt
     trunk
 )
 
