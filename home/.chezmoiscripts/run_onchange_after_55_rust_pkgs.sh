@@ -13,6 +13,7 @@ packages=(
     cargo-update
     cargo-watch
     leptosfmt
+    sea-orm-cli
     sqlx-cli
     trunk
 )
