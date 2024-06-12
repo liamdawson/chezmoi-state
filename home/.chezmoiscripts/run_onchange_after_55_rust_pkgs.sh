@@ -12,6 +12,7 @@ packages=(
     cargo-outdated
     cargo-update
     cargo-watch
+    evcxr_repl
     leptosfmt
     sea-orm-cli
     sqlx-cli
