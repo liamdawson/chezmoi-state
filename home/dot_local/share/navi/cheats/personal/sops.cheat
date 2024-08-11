@@ -1,0 +1,4 @@
+% sops
+
+# Create new keypair for SOPS
+age-keygen >>"${HOME}/.config/sops/age/keys.txt" && echo "bash -c 'sops encrypt --age PUBLIC_KEY <(echo \"{}\") > env.enc.yaml'"
