@@ -8,3 +8,6 @@ ruby = "latest"
 terraform = "latest"
 
 usage = "latest" # used for mise completions
+
+[settings]
+experimental = true
