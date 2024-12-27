@@ -1,9 +1,13 @@
+[alias]
+pipelight = "asdf:kogeletey/asdf-pipelight"
+
 [tools]
 bun = "latest"
 deno = "latest"
 go = "latest"
 java = "lts"
 nodejs = "lts"
+pipelight = "latest"
 python = "latest"
 ruby = "latest"
 terraform = "latest"
