@@ -8,14 +8,10 @@ fi
 
 packages=(
     cargo-cache
-    cargo-leptos
     cargo-outdated
     cargo-update
     cargo-watch
     evcxr_repl
-    leptosfmt
-    sea-orm-cli
-    sqlx-cli
     trunk
 )
 
