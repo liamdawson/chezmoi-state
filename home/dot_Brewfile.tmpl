@@ -1,7 +1,8 @@
 cask_args quarantine: false
 
-{{ template "brewfile_helpers.tmpl" . }}
+# {{ template "brewfile_helpers.tmpl" . }}
 
+tap "grishka/grishka"
 tap "peterldowns/tap"
 
 # utilities
@@ -93,6 +94,7 @@ cask "iterm2"
 cask "jetbrains-toolbox"
 cask "keybase", args: admin_optional_cask_args
 cask "lapce", args: admin_optional_cask_args
+cask "neardrop" # trial: share directly from Android if on the same wifi network
 cask "plexamp"
 cask "raycast"
 cask "reader"
