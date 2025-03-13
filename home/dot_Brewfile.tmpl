@@ -88,14 +88,15 @@ cask "anytype", args: admin_optional_cask_args
 cask "archivewebpage", args: admin_optional_cask_args
 cask "bartender"
 cask "firefox"
+cask "firefox@developer-edition"
 cask "ghostty" # trial: iterm2 alternative
 cask "git-credential-manager"
 cask "google-chrome"
 cask "iterm2"
 cask "jetbrains-toolbox"
 cask "keybase", args: admin_optional_cask_args
-cask "lapce", args: admin_optional_cask_args
 cask "neardrop" # trial: share directly from Android if on the same wifi network
+cask "obsidian" # trial: knowledge management
 cask "plexamp"
 cask "raycast"
 cask "reader"
@@ -130,7 +131,7 @@ cask "slack"
 # end work casks {{ else }} skipping work casks{{ end }}
 
 #{{ if .personal }} personal casks
-cask "firefox@developer-edition"
+cask "anki"
 cask "logseq"
 cask "onedrive"
 cask "signal"
