@@ -2,8 +2,6 @@ cask_args quarantine: false
 
 {{ template "brewfile_helpers.tmpl" . }}
 
-tap "homebrew/cask-fonts"
-tap "homebrew/cask-versions"
 tap "peterldowns/tap"
 
 # utilities
@@ -69,7 +67,8 @@ brew "xz"
 brew "zlib"
 
 #{{ if .work }} work formula
-# end work formula {{ else }} skipping work formula{{ end }}
+# end work formula {{ else }} non-work formula
+#{{ end }}
 
 #{{ if eq .chezmoi.os "darwin" }}
 # macos formula (.chezmoi.os == "darwin")
@@ -123,9 +122,8 @@ cask "elgato-stream-deck"
 # end desk utilities {{ else }} skipping desk utilities {{ end }}
 
 #{{ if .work }} work casks
-cask "android-studio"
-cask "flipper"
-cask "session-manager-plugin"
+cask "tuple"
+cask "slack"
 # end work casks {{ else }} skipping work casks{{ end }}
 
 #{{ if .personal }} personal casks

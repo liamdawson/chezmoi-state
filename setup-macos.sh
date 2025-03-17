@@ -15,7 +15,7 @@ main() {
 
   update_macos_settings
 
-  brew bundle --no-lock --file=/dev/stdin <<EOBUNDLE
+  brew bundle --file=/dev/stdin <<EOBUNDLE
   brew "fish"
   brew "chezmoi"
   brew "age"
