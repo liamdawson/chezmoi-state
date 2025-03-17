@@ -11,6 +11,8 @@
 {{-   $osID = printf "%s-%s" .chezmoi.os .chezmoi.osRelease.id -}}
 {{- end -}}
 
+encryption = "age"
+
 [data]
 emailPersonal = {{ $emailPersonal | quote }}
 personal = {{ $personal }}

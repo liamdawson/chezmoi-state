@@ -12,3 +12,14 @@ curl --proto "=https" --tlsv1.2 -sSf "https://raw.githubusercontent.com/liamdaws
 # after reboot
 chezmoi init --apply https://github.com/liamdawson/chezmoi-state.git
 ```
+
+#### Apps to Setup
+
+- [ ] Velja
+- [ ] Raycast
+- [ ] Docker
+- [ ] Elgato software (if applicable)
+- [ ] Bartender
+- [ ] Shottr
+- [ ] Rectangle Pro
+- [ ] Jetbrains Toolbox
