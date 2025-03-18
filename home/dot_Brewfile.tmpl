@@ -3,7 +3,6 @@ cask_args quarantine: false
 # {{ template "brewfile_helpers.tmpl" . }}
 
 tap "grishka/grishka"
-tap "peterldowns/tap"
 
 # utilities
 brew "adr-tools"
@@ -31,16 +30,12 @@ brew "harper" # trial: local grammar tooling for programmers
 brew "hgrep" # trial: "human" grep (builds on ripgrep)
 brew "hurl"
 brew "jq"
-brew "just"
 brew "jwt-cli"
-brew "mailpit", restart_service: :changed
 brew "mergiraf" # trial: syntax-aware merging
-brew "mise"
+brew "mise" if enabled?(:mise) # using asdf at work, with hardcoded assumptions about that and the path
 brew "navi"
-brew "nss" # used by localias
 brew "nushell" # trial: use for scripting
-brew "peterldowns/tap/localias" # trial: puma-dev replacement?
-brew "postgresql@16", link: true
+brew "postgresql@16", link: !work?
 brew "ripgrep"
 brew "shellcheck"
 brew "sk"
@@ -55,6 +50,15 @@ brew "watchman"
 brew "xsv"
 brew "yq"
 
+if personal?
+  tap "peterldowns/tap"
+
+  brew "mailpit", restart_service: :changed
+  brew "just"
+  brew "nss" # used by localias
+  brew "peterldowns/tap/localias" # trial: puma-dev replacement?
+end
+
 # build deps
 brew "autoconf"
 brew "gcc"
@@ -68,86 +72,65 @@ brew "sqlite3"
 brew "xz"
 brew "zlib"
 
-#{{ if .work }} work formula
-# end work formula {{ else }} non-work formula
-#{{ end }}
+if OS.mac?
+  brew "pinentry-mac"
+  brew "terminal-notifier"
 
-#{{ if eq .chezmoi.os "darwin" }}
-# macos formula (.chezmoi.os == "darwin")
+  # apps
+  cask "1password-cli"
+  cask "1password"
+  cask "anytype"
+  cask "bartender"
+  cask "docker"
+  cask "firefox"
+  cask "firefox@developer-edition"
+  cask "ghostty" # trial: iterm2 alternative
+  cask "git-credential-manager"
+  cask "google-chrome"
+  cask "iterm2"
+  cask "jetbrains-toolbox"
+  cask "obsidian" # trial: knowledge management
+  cask "plexamp"
+  cask "raycast"
+  cask "reader"
+  cask "rectangle-pro"
+  cask "shottr"
+  cask "sizzy"
+  cask "spotify"
+  cask "visual-studio-code"
+  cask "zed"
 
-brew "pinentry-mac"
-brew "terminal-notifier"
+  # @todo do font casks work on Linux?
+  cask "font-cascadia-mono-pl"
+  cask "font-cascadia-mono"
+  cask "font-caskaydia-mono-nerd-font"
+  cask "font-monaspace-nerd-font"
+  cask "font-monaspace"
 
-# homebrew casks (.chezmoi.os == "darwin")
-#
+  if desk?
+    cask "elgato-control-center"
+    cask "elgato-stream-deck"
+  end
 
-# apps
-cask "1password-cli"
-cask "1password"
-cask "anytype", args: admin_optional_cask_args
-cask "archivewebpage", args: admin_optional_cask_args
-cask "bartender"
-cask "firefox"
-cask "firefox@developer-edition"
-cask "ghostty" # trial: iterm2 alternative
-cask "git-credential-manager"
-cask "google-chrome"
-cask "iterm2"
-cask "jetbrains-toolbox"
-cask "keybase", args: admin_optional_cask_args
-cask "neardrop" # trial: share directly from Android if on the same wifi network
-cask "obsidian" # trial: knowledge management
-cask "plexamp"
-cask "raycast"
-cask "reader"
-cask "rectangle-pro", args: admin_optional_cask_args
-cask "shottr"
-cask "sizzy", args: admin_optional_cask_args
-cask "spotify"
-cask "visual-studio-code"
-cask "zed", args: admin_optional_cask_args
+  if work?
+    cask "slack"
+    cask "tuple"
+  end
 
-#{{ if .work}} skipping casks which require special-cased installs on work machines {{ else }}
-cask "docker"
-#{{ end }}
+  if personal?
+    cask "anki"
+    cask "archivewebpage"
+    cask "keybase"
+    cask "logseq"
+    cask "neardrop" # trial: share directly from Android if on the same wifi network
+    cask "onedrive"
+    cask "signal"
+  end
 
-# fonts
-cask "font-cascadia-mono-pl"
-cask "font-cascadia-mono"
-cask "font-caskaydia-mono-nerd-font"
-cask "font-monaspace-nerd-font"
-cask "font-monaspace"
-
-#{{ if .desk }} desk utilities
-
-cask "elgato-control-center"
-cask "elgato-stream-deck"
-
-# end desk utilities {{ else }} skipping desk utilities {{ end }}
-
-#{{ if .work }} work casks
-cask "tuple"
-cask "slack"
-# end work casks {{ else }} skipping work casks{{ end }}
-
-#{{ if .personal }} personal casks
-cask "anki"
-cask "logseq"
-cask "onedrive"
-cask "signal"
-# end personal casks {{ else }} skipping personal casks{{ end }}
-
-# end casks {{ else }} skipping casks {{ end }}
-
-#{{ if eq .chezmoi.os "darwin" }}
-# mac app store apps (.chezmoi.os == "darwin")
-#
-
-mas "Affinity Designer", id: 824171161
-mas "Affinity Photo", id: 824183456
-mas "Affinity Publisher", id: 881418622
-mas "reMarkable", id: 1276493162
-mas "Velja", id: 1607635845
-mas "Xcode", id: 497799835
-
-# end mac app store apps {{ else }} skipping mac app store apps {{ end }}
+  mas "Affinity Designer", id: 824171161
+  mas "Affinity Photo", id: 824183456
+  mas "Affinity Publisher", id: 881418622
+  mas "reMarkable", id: 1276493162
+  mas "Velja", id: 1607635845
+  mas "Xcode", id: 497799835
+end

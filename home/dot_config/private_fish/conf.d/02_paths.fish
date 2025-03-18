@@ -5,6 +5,7 @@
 
 # "everything else"
 fish_add_path --prepend \
+    "$HOME/.asdf/bin" \
     "$HOME/.docker/bin" \
     "$HOME/.cargo/bin" \
     "$GOPATH/bin" \

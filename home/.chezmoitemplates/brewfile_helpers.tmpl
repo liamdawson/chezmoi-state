@@ -7,3 +7,10 @@ def admin_optional_cask_args
   {}
 #{{ end }}
 end
+
+def work?; {{ .work }}; end
+def personal?; {{ .personal }}; end
+def desk?; {{ .desk }}; end
+def enabled?(flag) {{ $enableMap := .enable }}
+  { {{ range keys $enableMap | sortAlpha }}{{ . }}: {{ index $enableMap . }},{{ end }} }[flag] || false
+end
