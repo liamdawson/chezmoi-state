@@ -5,12 +5,8 @@ set -euo pipefail
 apps=(
     "/Applications/Firefox.app"
     "/Applications/iTerm.app"
-    "/Applications/Logseq.app"
     "/Applications/Slack.app"
-    "/Applications/Visual Studio Code.app"
-    "/Applications/Microsoft Outlook.app"
-    "/Applications/Keybase.app"
-    "$HOME/Applications/Keybase.app"
+    "${HOME}/Applications/Chrome Apps.localized/Google Meet.app"
     "$@" # extra apps via CLI args
 )
 

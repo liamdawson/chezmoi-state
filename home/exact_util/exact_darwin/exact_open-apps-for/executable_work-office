@@ -15,3 +15,6 @@ SHELL="$(dscl . read "/Users/$USER" UserShell | awk '{ print $2; }')"
 export SHELL
 
 cd "$(dirname "${BASH_SOURCE[0]}")" && ./work
+
+SwitchAudioSource -f cli -t input -s "MacBook Pro Microphone"
+SwitchAudioSource -f cli -t output -s "WF-1000XM4" || SwitchAudioSource -f cli -t output -s "MacBook Pro Speakers"

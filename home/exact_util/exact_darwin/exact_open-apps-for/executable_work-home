@@ -20,3 +20,6 @@ extra_apps=(
 )
 
 cd "$(dirname "${BASH_SOURCE[0]}")" && ./work "${extra_apps[@]}"
+
+SwitchAudioSource -f cli -t input -s "RODECaster Pro II Secondary"
+SwitchAudioSource -f cli -t output -s "RODECaster Pro II Secondary"
