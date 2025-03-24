@@ -3,15 +3,21 @@
 set -euo pipefail
 
 apps=(
-    "/Applications/Firefox.app"
-    "/Applications/iTerm.app"
-    "/Applications/Slack.app"
-    "${HOME}/Applications/Chrome Apps.localized/Google Meet.app"
-    "$@" # extra apps via CLI args
+  "/Applications/Anytype.app"
+  "/Applications/Firefox.app"
+  "/Applications/iTerm.app"
+  "/Applications/Obsidian.app"
+  "/Applications/Slack.app"
+  "/Applications/Trello.app"
+  "/Applications/Visual Studio Code.app"
+
+  "${HOME}/Applications/Chrome Apps.localized/Google Meet.app"
+
+  "$@" # extra apps via CLI args
 )
 
 for app in "${apps[@]}"; do
-    if [ -r "$app" ]; then
-      open -g "$app" &
-    fi
+  if [ -r "$app" ]; then
+    open -g "$app" &
+  fi
 done
