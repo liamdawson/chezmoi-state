@@ -6,10 +6,7 @@ if command -v asdf >/dev/null 2>&1
         set _asdf_shims "$ASDF_DATA_DIR/shims"
     end
 
-    # Do not use fish_add_path (added in Fish 3.2) because it
-    # potentially changes the order of items in PATH
-    if not contains $_asdf_shims $PATH
-        set -gx --prepend PATH $_asdf_shims
-    end
+    # asdf shims need to be at the front of PATH by default
+    fish_add_path --prepend --move "$HOME/.asdf/shims"
     set --erase _asdf_shims
 end
