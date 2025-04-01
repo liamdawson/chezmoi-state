@@ -49,6 +49,9 @@
 [credential "https://github.com"]
   username = liamdawson
 
+[include]
+  path = ~/.config/git/aliases
+
 {{ if eq (get . "work") true -}}
 [include]
   path = ~/.config/git/work
