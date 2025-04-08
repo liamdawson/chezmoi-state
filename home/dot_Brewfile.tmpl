@@ -43,6 +43,7 @@ brew "sops"
 brew "starship"
 brew "static-web-server" # trial: Rust based static web server for local use cases
 brew "topgrade"
+brew "tpm" # trial: tmux plugin manager
 brew "uv" # trial: Python packaging
 brew "vim"
 brew "visidata" # trial: data visualization
@@ -129,10 +130,11 @@ if OS.mac?
     cask "signal"
   end
 
-  mas "Affinity Designer", id: 824171161
-  mas "Affinity Photo", id: 824183456
-  mas "Affinity Publisher", id: 881418622
-  mas "reMarkable", id: 1276493162
-  mas "Velja", id: 1607635845
-  mas "Xcode", id: 497799835
+  # @todo broken as of Macos 15.4
+  # mas "Affinity Designer", id: 824171161
+  # mas "Affinity Photo", id: 824183456
+  # mas "Affinity Publisher", id: 881418622
+  # mas "reMarkable", id: 1276493162
+  # mas "Velja", id: 1607635845
+  # mas "Xcode", id: 497799835
 end
