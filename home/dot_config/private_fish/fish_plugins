@@ -1,5 +1,7 @@
 dracula/fish
-franciscolourenco/done
+# doesn't work properly with ghostty :(
+# @todo investigate OSC code based alternative (but that also involves passthrough in tmux)
+# franciscolourenco/done
 jorgebucaran/replay.fish
 meaningful-ooo/sponge
 patrickf1/colored_man_pages.fish
