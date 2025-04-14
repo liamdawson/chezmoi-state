@@ -11,6 +11,8 @@ curl --proto "=https" --tlsv1.2 -sSf "https://raw.githubusercontent.com/liamdaws
 
 # after reboot
 chezmoi init --apply https://github.com/liamdawson/chezmoi-state.git
+~/.local/share/chezmoi/scripts/finish-setup.sh
+~/.local/share/chezmoi/scripts/darwin/sudo-touch-id.sh
 ```
 
 #### Apps to Setup
