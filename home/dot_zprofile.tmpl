@@ -3,8 +3,3 @@
 if [ -x /opt/homebrew/bin/brew ]; then
   eval "$(/opt/homebrew/bin/brew shellenv)"
 fi
-
-#{{ if not .enable.mise }} mise is not enabled, skipping {{ else }} mise is enabled
-if command -v mise >/dev/null 2>&1; then
-  eval "$(mise activate zsh)"
-fi #{{ end }}

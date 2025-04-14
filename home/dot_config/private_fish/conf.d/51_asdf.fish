@@ -1,5 +1,5 @@
 # ASDF configuration code
-if command -v asdf >/dev/null 2>&1
+if type -q asdf && $LD_CHEZMOI_FEATURE_ASDF
     if test -z $ASDF_DATA_DIR
         set _asdf_shims "$HOME/.asdf/shims"
     else

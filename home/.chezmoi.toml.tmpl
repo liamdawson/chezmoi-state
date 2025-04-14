@@ -19,8 +19,10 @@ personal = {{ $personal }}
 desk = {{ $desk }}
 work = {{ $work }}
 
-  [data.enable]
-  mise = {{ not $work }}
+[data.enable]
+mise = true
+mise_corepack = {{ not $work }}
+asdf = false
 
 [edit]
 command = "vim"

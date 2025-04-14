@@ -7,6 +7,7 @@ tap "grishka/grishka"
 # utilities
 brew "adr-tools"
 brew "age"
+brew "asdf" if enabled?(:asdf)
 brew "awscli"
 brew "boring" # trial: SSH tunnel manager
 brew "chezmoi"
@@ -32,7 +33,7 @@ brew "hurl"
 brew "jq"
 brew "jwt-cli"
 brew "mergiraf" # trial: syntax-aware merging
-brew "mise" if enabled?(:mise) # using asdf at work, with hardcoded assumptions about that and the path
+brew "mise" if enabled?(:mise)
 brew "navi"
 brew "nushell" # trial: use for scripting
 brew "postgresql@16", link: !work?

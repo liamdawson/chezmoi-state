@@ -10,6 +10,7 @@ display_time = true
 #   gnome_shell_extensions - not relevant on Macos
 #   containers             - fails to update from private ECRs
 #   vscode                 - noisy, done automatically in-app anyway
+#   asdf                   - currently errors
 # nightly is, well, nightly, and I think gems and rbenv aren't mixing well
 disable = [
   "rustup"
@@ -18,6 +19,7 @@ disable = [
   ,"tlmgr"
   ,"containers"
   ,"vscode"
+  ,"asdf"
 {{- if eq .chezmoi.os "darwin" }}
   ,"gnome_shell_extensions"
 {{ end }}]

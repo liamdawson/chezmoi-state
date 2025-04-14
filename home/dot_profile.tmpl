@@ -1,14 +1,8 @@
 #!/usr/bin/env bash
 
-# fallback for when asdf isn't initialized in the shell
-if test -d "${ASDF_DATA_DIR:-$HOME/.asdf}/shims" && [[ $PATH != *"${ASDF_DATA_DIR:-$HOME/.asdf}/shims"* ]]; then
-  export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
-fi
-
-#{{ if not .enable.mise }} skipping mise setup {{ else }} fallback for when mise isn't initialized in the shell
 if test -d "$HOME/.local/share/mise/shims" && [[ $PATH != *"$HOME/.local/share/mise/shims"* ]]; then
   export PATH="$HOME/.local/share/mise/shims:$PATH"
-fi # {{ end }}
+fi
 
 if test -e "$HOME/.private_profile"; then
   # shellcheck disable=SC1091

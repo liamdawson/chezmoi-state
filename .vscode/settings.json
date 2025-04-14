@@ -1,8 +1,7 @@
 {
   "files.associations": {
-    "*.sh.tmpl": "shellscript",
-    "*Brewfile.tmpl": "ruby",
-    "*.toml.tmpl": "toml"
+    "*.sh.tmpl": "goshell",
+    "*Brewfile.tmpl": "ruby"
   },
   "shellcheck.enableQuickFix": true
 }
