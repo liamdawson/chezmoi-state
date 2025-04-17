@@ -11,6 +11,7 @@ display_time = true
 #   containers             - fails to update from private ECRs
 #   vscode                 - noisy, done automatically in-app anyway
 #   asdf                   - currently errors
+#   uv                     - installed via brew
 # nightly is, well, nightly, and I think gems and rbenv aren't mixing well
 disable = [
   "rustup"
@@ -20,6 +21,7 @@ disable = [
   ,"containers"
   ,"vscode"
   ,"asdf"
+  ,"brew"
 {{- if eq .chezmoi.os "darwin" }}
   ,"gnome_shell_extensions"
 {{ end }}]
