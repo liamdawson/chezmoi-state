@@ -1,34 +1,33 @@
 function brew-postupdate-info --description "Describe brew formula/casks listed after update"
-    argparse --ignore-unknown c/cask -- $argv
-    or return
+    set -f parts (fish_clipboard_paste | string join " " | string replace "\n" "   " | string split --max=1 "==> New Casks")
 
-    set -f filtered false
-    set -f brew_args
+    set -f formula (string trim -- (string split --right --max=1 "==> New Formulae" -- $parts[1])[-1])
+    set -f formula (string split --no-empty -- " " $formula)
 
-    if test (count $argv) -gt 0
-        set -f targets (string split --no-empty ' ' -- $argv)
-    else
-        set -f targets (fish_clipboard_paste | string split --no-empty ' ')
+    set -f casks (string trim -- $parts[2])[-1]
+    set -f casks (string split --no-empty -- " " $casks)
+    set -f casks (string match --invert --regex -- '^font[-]' $casks)
+
+    if test (count $formula) -gt 0
+        echo
+        echo =======
+        echo Formula
+        echo =======
+        echo
+        brew info --formula $formula
+        echo
     end
 
-    if set -q _flag_cask
-        set -f brew_args --cask
-        set -l prev_count (count $targets)
-        set -f targets (string match --invert --regex -- '^font[-]' $targets)
-        if test (count $targets) -ne "$prev_count"
-            set -f filtered true
-        end
-    end
-
-    brew info $brew_args $targets
-
-    if test "$filtered" = true
+    if test (count $casks) -gt 0
         echo
+        echo =====
+        echo Casks
+        echo =====
         echo
-        echo "(Filtered some input entries)"
+        brew info --cask $casks
+        echo
     end
 end
 
 complete -ec brew-postupdate-info
 complete -c brew-postupdate-info --no-files
-complete -c brew-postupdate-info --short-option c --long-option cask -d "Treat arguments as casks"
