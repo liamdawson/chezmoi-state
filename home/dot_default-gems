@@ -2,6 +2,6 @@ htmlbeautifier
 rbs
 rubocop
 rubocop-shopify
+ruby-debug-ide
 ruby-lsp
 solargraph
-
