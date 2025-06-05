@@ -11,6 +11,7 @@ apps=(
   "/Applications/Slack.app"
   "/Applications/Trello.app"
   "/Applications/Visual Studio Code.app"
+  "/Applications/Zen.app"
 
   "${HOME}/Applications/Chrome Apps.localized/Google Meet.app"
 
