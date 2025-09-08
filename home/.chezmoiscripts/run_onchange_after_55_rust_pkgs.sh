@@ -17,7 +17,6 @@ packages=(
   cargo-update
   cargo-watch
   evcxr_repl
-  trunk
 )
 
 cargo binstall \
