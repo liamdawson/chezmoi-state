@@ -37,7 +37,7 @@ brew "mise" if enabled?(:mise)
 brew "mk" # trial: rrapper for auto-detecting build and test commands in a repository
 brew "navi"
 brew "nushell" # trial: use for scripting
-brew "postgresql@16", link: !work?
+brew "postgresql@16"
 brew "ripgrep"
 brew "shellcheck"
 brew "shfmt"
@@ -106,7 +106,6 @@ if OS.mac?
   cask "spotify"
   cask "visual-studio-code"
   cask "zed"
-  cask "zen" # trial: arc-like open source browser built on Firefox
 
   # @todo do font casks work on Linux?
   cask "font-cascadia-mono-pl"
@@ -122,8 +121,7 @@ if OS.mac?
 
   if work?
     cask "google-drive"
-    cask "slack"
-    cask "tuple"
+    cask "slack" if work?
   end
 
   if personal?
