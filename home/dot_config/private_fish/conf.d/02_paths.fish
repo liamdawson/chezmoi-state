@@ -7,7 +7,6 @@
 fish_add_path --global --prepend \
     "$HOME/.docker/bin" \
     "$HOME/.cargo/bin" \
-    "$GOPATH/bin" \
     "$PNPM_HOME" \
     "$HOME/.cache/.bun/bin" \
     "$HOME/Library/Application Support/JetBrains/Toolbox/scripts"
