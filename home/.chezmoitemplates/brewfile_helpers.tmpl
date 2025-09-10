@@ -14,3 +14,7 @@ def desk?; {{ .desk }}; end
 def enabled?(flag) {{ $enableMap := .enable }}
   { {{ range keys $enableMap | sortAlpha }}{{ . }}: {{ index $enableMap . }},{{ end }} }[flag] || false
 end
+
+def trial(_reason)
+  yield
+end

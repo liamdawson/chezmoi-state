@@ -78,6 +78,11 @@ brew "xz"
 brew "zlib"
 
 if OS.mac?
+  trial "Docker Desktop alternative for work" do
+    brew "colima"
+    brew "docker"
+  end
+
   brew "pinentry-mac"
   brew "switchaudio-osx"
   brew "terminal-notifier"
@@ -88,7 +93,7 @@ if OS.mac?
   cask "alienator88-sentinel" # trial: gatekeeper utils (e.g. unquarantine app)
   cask "anytype"
   cask "bartender"
-  cask "docker-desktop"
+  cask "docker-desktop" unless work?
   cask "firefox"
   cask "firefox@developer-edition"
   cask "ghostty" # trial: iterm2 alternative
