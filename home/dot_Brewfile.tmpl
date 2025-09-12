@@ -81,6 +81,9 @@ if OS.mac?
   trial "Docker Desktop alternative for work" do
     brew "colima"
     brew "docker"
+    brew "docker-buildx"
+    brew "docker-compose"
+    brew "docker-credential-helper"
   end
 
   brew "pinentry-mac"
@@ -92,6 +95,7 @@ if OS.mac?
   cask "1password"
   cask "alienator88-sentinel" # trial: gatekeeper utils (e.g. unquarantine app)
   cask "anytype"
+  cask "aws-vault-binary" if work?
   cask "bartender"
   cask "docker-desktop" unless work?
   cask "firefox"
@@ -140,10 +144,10 @@ if OS.mac?
   end
 
   # @todo broken as of Macos 15.4
-  # mas "Affinity Designer", id: 824171161
-  # mas "Affinity Photo", id: 824183456
-  # mas "Affinity Publisher", id: 881418622
-  # mas "reMarkable", id: 1276493162
-  # mas "Velja", id: 1607635845
+  mas "Affinity Designer", id: 824171161
+  mas "Affinity Photo", id: 824183456
+  mas "Affinity Publisher", id: 881418622
+  mas "reMarkable", id: 1276493162
+  mas "Velja", id: 1607635845
   # mas "Xcode", id: 497799835
 end

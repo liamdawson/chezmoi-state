@@ -23,6 +23,7 @@ work = {{ $work }}
 mise = true
 mise_corepack = true
 asdf = false
+colima = {{ and $work (eq .chezmoi.os "darwin") }}
 
 [edit]
 command = "vim"
