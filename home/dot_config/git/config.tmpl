@@ -1,9 +1,3 @@
-[user]
-  useConfigOnly = true
-  name = Liam Dawson
-  email = "{{ .emailPersonal }}"
-  signingkey = 0xA0BE84DBE2E93076
-
 [init]
   defaultBranch = main
 
@@ -51,10 +45,15 @@
 [include]
   path = ~/.config/git/aliases
 
+[include]
+  path = ~/.config/git/ids/personal/82049d196df75d4204b5e8c2166de5d197ae2610
+
 {{ if eq (get . "work") true -}}
 [include]
   path = ~/.config/git/work
 {{ end -}}
 
+{{ if eq (get . "personal") true -}}
 [include]
-  path = ~/.config/git/other
+  path = ~/.config/git/personal
+{{ end -}}

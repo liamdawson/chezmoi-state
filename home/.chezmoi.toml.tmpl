@@ -1,5 +1,3 @@
-{{- $emailPersonal := promptStringOnce . "emailPersonal" "Personal email address" -}}
-
 {{/* boolean feature tags */}}
 {{- $personal := promptBoolOnce . "personal" "Include personal secrets" -}}{{/* true if this machine should have personal secrets and apps */}}
 {{- $desk := promptBoolOnce . "desk" "Include config for home desk" -}}{{/* true if this machine is ever used at my desk and should have relevant config/utilities */}}
@@ -14,7 +12,6 @@
 encryption = "age"
 
 [data]
-emailPersonal = {{ $emailPersonal | quote }}
 personal = {{ $personal }}
 desk = {{ $desk }}
 work = {{ $work }}
