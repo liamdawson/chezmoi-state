@@ -1,3 +1,7 @@
 [alias]
   rhh  = "reset --hard HEAD"
   rhoh = "reset --hard origin/HEAD"
+
+  root-path = "rev-parse --show-toplevel"
+
+  exclude-idea = "!bash -c 'cd \"$(git root-path)\" && echo '/.idea/' >> .git/info/exclude'"
