@@ -53,6 +53,7 @@ brew "vim"
 brew "visidata" # trial: data visualization
 brew "watchman"
 brew "xsv"
+brew "ykman"
 brew "yq"
 
 if personal?
@@ -95,7 +96,7 @@ if OS.mac?
   cask "1password"
   cask "alienator88-sentinel" # trial: gatekeeper utils (e.g. unquarantine app)
   cask "anytype"
-  cask "aws-vault-binary" if work?
+  cask "aws-vault-binary" if enabled?(:aws_vault)
   cask "bartender"
   cask "docker-desktop" unless work?
   cask "firefox"
@@ -114,7 +115,8 @@ if OS.mac?
   cask "sizzy"
   cask "spotify"
   cask "visual-studio-code"
-  cask "zed"
+  cask "yubico-authenticator"
+  cask "zed" # trial: editor option
 
   # @todo do font casks work on Linux?
   cask "font-cascadia-mono-pl"
