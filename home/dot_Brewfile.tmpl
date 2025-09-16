@@ -9,6 +9,7 @@ brew "adr-tools"
 brew "age"
 brew "asdf" if enabled?(:asdf)
 brew "awscli"
+brew "aws-vault" if enabled?(:aws_vault)
 brew "boring" # trial: SSH tunnel manager
 brew "chezmoi"
 brew "coreutils"
@@ -96,7 +97,6 @@ if OS.mac?
   cask "1password"
   cask "alienator88-sentinel" # trial: gatekeeper utils (e.g. unquarantine app)
   cask "anytype"
-  cask "aws-vault-binary" if enabled?(:aws_vault)
   cask "bartender"
   cask "docker-desktop" unless work?
   cask "firefox"
