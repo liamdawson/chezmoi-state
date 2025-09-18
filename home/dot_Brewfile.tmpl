@@ -7,9 +7,7 @@ tap "grishka/grishka"
 # utilities
 brew "adr-tools"
 brew "age"
-brew "asdf" if enabled?(:asdf)
 brew "awscli"
-brew "aws-vault" if enabled?(:aws_vault)
 brew "boring" # trial: SSH tunnel manager
 brew "chezmoi"
 brew "coreutils"
@@ -34,9 +32,8 @@ brew "hurl"
 brew "jq"
 brew "jwt-cli"
 brew "mergiraf" # trial: syntax-aware merging
-brew "mise" if enabled?(:mise)
+brew "mise"
 brew "mk" # trial: rrapper for auto-detecting build and test commands in a repository
-brew "navi"
 brew "nushell" # trial: use for scripting
 brew "postgresql@16"
 brew "ripgrep"
@@ -56,15 +53,6 @@ brew "watchman"
 brew "xsv"
 brew "ykman"
 brew "yq"
-
-if personal?
-  tap "peterldowns/tap"
-
-  brew "mailpit", restart_service: :changed
-  brew "just"
-  brew "nss" # used by localias
-  brew "peterldowns/tap/localias" # trial: puma-dev replacement?
-end
 
 # build deps
 brew "autoconf"
@@ -101,7 +89,6 @@ if OS.mac?
   cask "docker-desktop" unless work?
   cask "firefox"
   cask "firefox@developer-edition"
-  cask "ghostty" # trial: iterm2 alternative
   cask "git-credential-manager"
   cask "google-chrome"
   cask "iterm2"
@@ -122,33 +109,35 @@ if OS.mac?
   cask "font-cascadia-mono-pl"
   cask "font-cascadia-mono"
   cask "font-caskaydia-mono-nerd-font"
-  cask "font-monaspace-nerd-font"
+  cask "font-monaspice-nerd-font"
   cask "font-monaspace"
-
-  if desk?
-    cask "elgato-control-center"
-    cask "elgato-stream-deck"
-  end
-
-  if work?
-    cask "google-drive"
-    cask "slack" if work?
-  end
-
-  if personal?
-    cask "anki"
-    cask "archivewebpage"
-    cask "keybase"
-    cask "logseq"
-    cask "neardrop" # trial: share directly from Android if on the same wifi network
-    cask "onedrive"
-    cask "signal"
-  end
 
   mas "Affinity Designer 2", id: 1616831348
   mas "Affinity Photo 2", id: 1616822987
   mas "Affinity Publisher 2", id: 1606941598
   mas "reMarkable", id: 1276493162
   mas "Velja", id: 1607635845
-  # mas "Xcode", id: 497799835
+end
+
+if personal? && OS.mac?
+  cask "anki"
+  cask "archivewebpage"
+  cask "keybase"
+  cask "logseq"
+  cask "neardrop" # trial: share directly from Android if on the same wifi network
+  cask "onedrive"
+  cask "signal"
+end
+
+if desk? && OS.mac?
+  cask "elgato-control-center"
+  cask "elgato-stream-deck"
+end
+
+if work?
+  brew "aws-vault"
+  brew "fjira"
+
+  cask "google-drive"
+  cask "slack"
 end
