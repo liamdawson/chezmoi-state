@@ -4,18 +4,28 @@ format = "$status$shell$directory$all"
 palette = "dracula"
 
 [character]
-success_symbol = "[\\$](bold green)"
-error_symbol = "[\\$](bold red)"
-vimcmd_symbol = "<"
+success_symbol = "[\\$](green)"
+error_symbol = "[\\$](red)"
+vimcmd_symbol = "[<](green)"
 
 [directory]
 truncate_to_repo = true
+style = "cyan"
+
+# should show "rebasing" etc., hopefully without large performance impacts?
+[git_state]
+disabled = false
 
 # can still add 100ms+ to prompt
-[git_state]
+[git_status]
 disabled = true
 
-[git_status]
+# too long
+[git_branch]
+disabled = true
+
+# keeps showing colima
+[docker_context]
 disabled = true
 
 [status]
@@ -23,8 +33,9 @@ disabled = false
 format = "[$status( SIG$signal_name)]($style) "
 
 [cmd_duration]
-format = '\[[⏱ $duration]($style)\]'
-min_time = 5000
+format = '[\($duration\)]($style)'
+min_time = 3000
+style = "pink"
 
 #{{ if not .work }} skipping work config {{ else }} work config {{ joinPath .chezmoi.sourceDir ".files/encrypted_work-starship-section.age" | include | decrypt | trim | printf "\n%s\n" }}# end work config {{ end }}
 
