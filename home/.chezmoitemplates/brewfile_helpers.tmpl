@@ -1,13 +1,3 @@
-helpers {{/* this line is commented on include */}}
-
-def admin_optional_cask_args
-#{{ if .work }}
-  { appdir: "~/Applications" }
-#{{ else }}
-  {}
-#{{ end }}
-end
-
 def work?; {{ .work }}; end
 def personal?; {{ .personal }}; end
 def desk?; {{ .desk }}; end
@@ -15,6 +5,10 @@ def enabled?(flag) {{ $enableMap := .enable }}
   { {{ range keys $enableMap | sortAlpha }}{{ . }}: {{ index $enableMap . }},{{ end }} }[flag] || false
 end
 
-def trial(_reason)
-  yield
+def trial(_reason, **kwargs)
+  if block_given?
+    yield
+  else
+    true
+  end
 end

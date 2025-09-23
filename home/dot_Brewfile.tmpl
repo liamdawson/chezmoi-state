@@ -1,6 +1,6 @@
 cask_args quarantine: false
 
-# {{ template "brewfile_helpers.tmpl" . }}
+# helpers{{printf "\n"}}{{ template "brewfile_helpers.tmpl" . }}
 
 tap "grishka/grishka"
 
@@ -30,6 +30,7 @@ brew "harper" # trial: local grammar tooling for programmers
 brew "hgrep" # trial: "human" grep (builds on ripgrep)
 brew "hurl"
 brew "jq"
+brew "jqp" if trial "jq TUI playground"
 brew "jwt-cli"
 brew "mergiraf" # trial: syntax-aware merging
 brew "mise"
