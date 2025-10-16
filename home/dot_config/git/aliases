@@ -1,6 +1,8 @@
 [alias]
+  frboh = "!git fetch && git rboh"
   rhh  = "reset --hard HEAD"
   rhoh = "reset --hard origin/HEAD"
+  rboh = "rebase origin/HEAD"
 
   root-path = "rev-parse --show-toplevel"
 
