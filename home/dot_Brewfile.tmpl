@@ -69,12 +69,14 @@ brew "xz"
 brew "zlib"
 
 if OS.mac?
-  trial "Docker Desktop alternative for work" do
-    brew "colima"
+  trial "Docker Desktop alternatives for work" do
+    # brew "colima"
     brew "docker"
     brew "docker-buildx"
     brew "docker-compose"
     brew "docker-credential-helper"
+
+    cask "finch"
   end
 
   brew "pinentry-mac"
