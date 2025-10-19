@@ -2,8 +2,9 @@
 
 completion_commands=(
   "asdf completion fish"
-  "mise completion fish"
   "docker completion fish"
+  "finch completion fish"
+  "mise completion fish"
 )
 
 mkdir -p "${XDG_DATA_HOME}/fish/vendor_completions.d/"
