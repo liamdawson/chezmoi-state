@@ -7,50 +7,52 @@ tap "grishka/grishka"
 # utilities
 brew "adr-tools"
 brew "age"
+brew "ast-grep" if trial "fast and polyglot tool for code structural search, lint, rewriting at large scale"
+brew "comby" if trial "a tool for searching and changing code structure"
 brew "awscli"
-brew "boring" # trial: SSH tunnel manager
+brew "boring" if trial "SSH tunnel manager"
 brew "cfn-lint"
 brew "chezmoi"
 brew "coreutils"
 brew "curl"
-brew "dasel" # trial: jq/yq replacement?
+brew "dasel" if trial "jq/yq replacement?"
 brew "fish"
-brew "funzzy" # trial: watch files and run actions on change (Rust based, YAML config file support)
+brew "funzzy" if trial "watch files and run actions on change (Rust based, YAML config file support)"
 brew "gh"
 brew "ghq"
 brew "git-delta"
 brew "git-filter-repo"
-brew "git-ignore" # trial: gitignore.io local client
+brew "git-ignore" if trial "gitignore.io local client"
 brew "git-recent"
 brew "git-trim"
-brew "git-workspace" # trial: ghq alternative?
+brew "git-workspace" if trial "ghq alternative?"
 brew "git"
 brew "hadolint"
-brew "harlequin" # trial: tui DB client
-brew "harper" # trial: local grammar tooling for programmers
-brew "hgrep" # trial: "human" grep (builds on ripgrep)
+brew "harlequin" if trial "tui DB client"
+brew "harper" if trial "local grammar tooling for programmers"
+brew "hgrep" if trial "'human' grep (builds on ripgrep)"
+brew "httptap" if trial "HTTP request visualizer with timing breakdown"
 brew "hurl"
 brew "jq"
 brew "jqp" if trial "jq TUI playground"
 brew "jwt-cli"
-brew "mergiraf" # trial: syntax-aware merging
+brew "mergiraf"
 brew "mise"
-brew "mk" # trial: rrapper for auto-detecting build and test commands in a repository
-brew "nushell" # trial: use for scripting
+brew "mk" if trial "wrapper for auto-detecting build and test commands in a repository"
+brew "nushell" if trial "use for scripting"
 brew "postgresql@16"
 brew "ripgrep"
 brew "shellcheck"
 brew "shfmt"
 brew "sk"
 brew "sops"
-brew "qman" # trial: modern man page viewer
+brew "qman" if trial "modern man page viewer"
 brew "starship"
-brew "static-web-server" # trial: Rust based static web server for local use cases
+brew "static-web-server" if trial "Rust based static web server for local use cases"
 brew "topgrade"
-brew "tpm" # trial: tmux plugin manager
-brew "uv" # trial: Python packaging
+brew "uv" if trial "Python packaging"
 brew "vim"
-brew "visidata" # trial: data visualization
+brew "visidata" if trial "data visualization"
 brew "watchman"
 brew "xsv"
 brew "ykman"
@@ -87,7 +89,8 @@ if OS.mac?
   # apps
   cask "1password-cli"
   cask "1password"
-  cask "alienator88-sentinel" # trial: gatekeeper utils (e.g. unquarantine app)
+  cask "affinity"
+  cask "alienator88-sentinel" if trial "gatekeeper utils (e.g. unquarantine app)"
   cask "anytype"
   cask "bartender"
   cask "docker-desktop" unless work?
@@ -97,7 +100,7 @@ if OS.mac?
   cask "google-chrome"
   cask "iterm2"
   cask "jetbrains-toolbox"
-  cask "obsidian" # trial: knowledge management
+  cask "obsidian" if trial "knowledge management"
   cask "plexamp"
   cask "raycast"
   cask "reader"
@@ -107,7 +110,6 @@ if OS.mac?
   cask "spotify"
   cask "visual-studio-code"
   cask "yubico-authenticator"
-  cask "zed" # trial: editor option
 
   # @todo do font casks work on Linux?
   cask "font-cascadia-mono-pl"
@@ -129,7 +131,7 @@ if personal? && OS.mac?
   cask "archivewebpage"
   cask "keybase"
   cask "logseq"
-  cask "neardrop" # trial: share directly from Android if on the same wifi network
+  cask "neardrop" if trial "share directly from Android if on the same wifi network"
   cask "onedrive"
   cask "signal"
 end
