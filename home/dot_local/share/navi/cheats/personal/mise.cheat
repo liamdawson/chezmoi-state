@@ -1,0 +1,12 @@
+% mise
+
+# Start a local Postgres server
+mise exec postgres@<version> -- pg_ctl start -l server.log -o '-p <port>'
+
+$ version: mise list postgres | awk '{ print $2; }'
+$ port: echo '5432'
+
+# Stop local Postgres server
+mise exec postgres@<version> -- pg_ctl stop
+
+$ version: mise list postgres | awk '{ print $2; }'

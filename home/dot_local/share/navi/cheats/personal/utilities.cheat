@@ -1,0 +1,6 @@
+% Utilities
+
+# What's using TCP port
+lsof -iTCP:<port> -sTCP:LISTEN -P -n
+
+$ port: echo '3000'
