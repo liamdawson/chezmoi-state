@@ -19,7 +19,8 @@ set -gx VISUAL "code --wait"
 
 {{- if eq .chezmoi.os "darwin" }}
 # macos vars
-set -gx HOMEBREW_CASK_OPTS --no-quarantine
+# seems like failing casks will be straight up banned from Homebrew in future
+# set -gx HOMEBREW_CASK_OPTS --no-quarantine
 {{- end }}
 
 # keep failed commands in history just a little longer
