@@ -1,0 +1,4 @@
+% golang
+
+# Clear golangci-lint cache
+golangci-lint cache clean
