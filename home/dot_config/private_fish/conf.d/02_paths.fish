@@ -6,6 +6,7 @@
 # "everything else"
 fish_add_path --global --prepend \
     "$HOME/.docker/bin" \
+    "$HOME/src/go/bin" \
     "$HOME/.cargo/bin" \
     "$PNPM_HOME" \
     "$HOME/.cache/.bun/bin" \
