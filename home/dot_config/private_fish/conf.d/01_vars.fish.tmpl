@@ -1,4 +1,5 @@
 set -gx CARGO_HOME "$HOME/.cargo"
+set -gx GOPATH "$HOME/src/go"
 set -gx DELTA_PAGER "less -FRX"
 set -gx PNPM_HOME "$HOME/.local/share/pnpm"
 set -gx XDG_CACHE_HOME "$HOME/.cache"
@@ -24,6 +25,6 @@ set -gx VISUAL "code --wait"
 {{- end }}
 
 # keep failed commands in history just a little longer
-set -g sponge_delay 5
+set -g sponge_delay 10
 # keep ctrl-c'd commands in history
 set sponge_successful_exit_codes 0 127 130
