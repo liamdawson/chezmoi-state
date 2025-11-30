@@ -26,5 +26,5 @@ set -gx VISUAL "code --wait"
 
 # keep failed commands in history just a little longer
 set -g sponge_delay 10
-# keep ctrl-c'd commands in history
-set sponge_successful_exit_codes 0 127 130
+# keep ctrl-c'd commands in history, plus 141 = SIGPIPE
+set sponge_successful_exit_codes 0 127 130 141
