@@ -1,5 +1,5 @@
 # desired state:
-#   ~/bin and ~/.local/bin (user bins) always first
+#   ~/bin and ~/.local/bin (user bins) always first - see 49_user_paths.fish
 #   homebrew bin dirs always last
 #   everything else roughly equal in the middle
 
@@ -18,7 +18,4 @@ fish_add_path --global --append --move \
     "$HOME/.linuxbrew/bin" \
     /opt/homebrew/bin
 
-# user bins
-fish_add_path --global --prepend --move \
-    "$HOME/.local/bin" \
-    "$HOME/bin"
+# user bins added later to avoid homebrew moving in front
