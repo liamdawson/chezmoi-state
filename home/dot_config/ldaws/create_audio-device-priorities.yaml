@@ -1,0 +1,5 @@
+# SwitchAudioSource -f json -a
+outputs:
+  - "Macbook": "BuiltInSpeakerDevice"
+inputs:
+  - "Macbook": "BuiltInMicrophoneDevice"
