@@ -1,5 +1,4 @@
 set -gx CARGO_HOME "$HOME/.cargo"
-set -gx GOPATH "$HOME/src/go"
 set -gx DELTA_PAGER "less -FRX"
 set -gx PNPM_HOME "$HOME/.local/share/pnpm"
 set -gx XDG_CACHE_HOME "$HOME/.cache"
@@ -9,6 +8,10 @@ set -gx XDG_STATE_HOME "$HOME/.local/state"
 {{ if .enable.colima }}set -gx COLIMA_HOME "$HOME/.colima"{{ end }}
 {{ if .enable.mise_corepack }}set -gx MISE_NODE_COREPACK "1"{{ end }}
 {{ if .enable.aws_vault }}set -gx AWS_VAULT_PROMPT "ykman"{{ end }}
+
+set -gx GOPATH "$HOME/src/go"
+set -gx MISE_GO_SET_GOBIN false
+set -gx MISE_GO_SET_GOROOT false
 
 # chezmoi configured features {{ $enableMap := .enable }}
 {{ range keys $enableMap | sortAlpha -}}
