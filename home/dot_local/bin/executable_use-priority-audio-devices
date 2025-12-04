@@ -1,0 +1,18 @@
+#!/usr/bin/env fish
+
+function switch-audio-devices -d "Switch audio devices"
+  set -f current_input_devices (SwitchAudioSource -t input -a)
+  set -f current_output_devices (SwitchAudioSource -t output -a)
+
+  for input in (yq '.inputs[]' ~/.config/ldaws/audio-device-priorities.yaml)
+    if contains $input -- $current_input_devices
+      SwitchAudioSource -t input -s $input; and break
+    end
+  end
+
+  for output in (yq '.outputs[]' ~/.config/ldaws/audio-device-priorities.yaml)
+    if contains $output -- $current_output_devices
+      SwitchAudioSource -t output -s $output; and break
+    end
+  end
+end
