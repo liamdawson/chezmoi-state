@@ -1,4 +1,5 @@
 _ld*
+mise.local.toml # used for local config, this should not be committed to source control - https://mise.jdx.dev/configuration.html 
 
 # Created by <https://www.gitignore.io/api/linux,macos,windows>
 

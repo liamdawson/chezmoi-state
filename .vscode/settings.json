@@ -1,7 +1,8 @@
 {
   "files.associations": {
     "*.sh.tmpl": "goshell",
-    "*Brewfile.tmpl": "ruby"
+    "*Brewfile.tmpl": "ruby",
+    "**/home/dot_config/git/ignore": "ignore",
   },
   "shellcheck.enableQuickFix": true
 }
