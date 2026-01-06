@@ -8,6 +8,8 @@ python = "latest"
 ruby = "latest"
 terraform = "latest"
 
+"aqua:golangci/golangci-lint" = "latest"
+
 usage = "latest" # used for mise completions
 
 [settings]

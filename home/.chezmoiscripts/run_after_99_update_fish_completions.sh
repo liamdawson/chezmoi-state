@@ -5,8 +5,6 @@ completion_commands=(
   "docker completion fish"
   "finch completion fish"
   "mise completion fish"
-  "golangci-lint completion fish"
-  "golangci-lint-v2 completion fish"
 )
 
 mkdir -p "${XDG_DATA_HOME}/fish/vendor_completions.d/"
