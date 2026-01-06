@@ -1,6 +1,7 @@
 _ld*
 # used for local config, this should not be committed to source control - https://mise.jdx.dev/configuration.html 
 mise.local.toml 
+fnox.local.toml
 
 # Created by <https://www.gitignore.io/api/linux,macos,windows>
 
