@@ -1,0 +1,17 @@
+\set QUIET ON
+
+\set ON_ERROR_ROLLBACK interactive
+\set COMP_KEYWORD_CASE upper
+\set HISTFILE ~/.local/var/lib/psql/history-:HOST-:DBNAME
+\set HISTSIZE 5000
+\set HISTCONTROL ignoredups
+\set ECHO_HIDDEN ON
+
+\pset pager off
+\pset null ∅
+
+\timing
+\encoding unicode
+\x auto
+
+\set QUIET OFF
