@@ -12,6 +12,7 @@
 
 \timing
 \encoding unicode
+\pset linestyle unicode
 \x auto
 
 \set QUIET OFF
