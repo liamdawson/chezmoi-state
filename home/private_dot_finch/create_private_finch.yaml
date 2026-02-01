@@ -3,3 +3,4 @@ memory: 6GiB
 rosetta: true
 vmType: vz
 dockercompat: true
+
