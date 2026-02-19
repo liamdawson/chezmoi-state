@@ -2,6 +2,7 @@
 bun = "latest"
 deno = "latest"
 go = "latest"
+hk = "latest"
 java = "lts"
 nodejs = "lts"
 python = "latest"
@@ -13,4 +14,4 @@ terraform = "latest"
 usage = "latest" # used for mise completions
 
 [settings]
-idiomatic_version_file_enable_tools = ["ruby", "python", "node"]
+idiomatic_version_file_enable_tools = ["ruby", "python", "node", "go"]
