@@ -3,7 +3,6 @@
 completion_commands=(
   "asdf completion fish"
   "docker completion fish"
-  "finch completion fish"
   "mise completion fish"
   "hk completion fish"
 )
