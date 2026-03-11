@@ -1,13 +1,2 @@
 [alias]
-  frboh = "!git fetch && git rboh"
-  rhh  = "reset --hard HEAD"
-  rhoh = "reset --hard origin/HEAD"
-  rboh = "rebase origin/HEAD"
-
-  pf = "push --force-with-lease"
-
-  allc = "!bash -c 'git add \"$(git root-path)\" && git commit'"
-
-  root-path = "rev-parse --show-toplevel"
-
   exclude-idea = "!bash -c 'cd \"$(git root-path)\" && echo '/.idea/' >> .git/info/exclude'"
