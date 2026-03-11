@@ -41,7 +41,6 @@
 
 [absorb]
   autoStageIfNothingStaged = true
-  fixupTargetAlwaysSHA = true
 
 [credential "https://github.com"]
   username = liamdawson

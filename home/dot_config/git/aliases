@@ -4,6 +4,8 @@
   rhoh = "reset --hard origin/HEAD"
   rboh = "rebase origin/HEAD"
 
+  pf = "push --force-with-lease"
+
   root-path = "rev-parse --show-toplevel"
 
   exclude-idea = "!bash -c 'cd \"$(git root-path)\" && echo '/.idea/' >> .git/info/exclude'"
