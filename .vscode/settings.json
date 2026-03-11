@@ -3,6 +3,8 @@
     "*.sh.tmpl": "goshell",
     "*Brewfile.tmpl": "ruby",
     "**/home/dot_config/git/ignore": "ignore",
+    "dot_vimrc": "Vimscript",
+    "dot_ideavimrc": "Vimscript"
   },
   "shellcheck.enableQuickFix": true
 }

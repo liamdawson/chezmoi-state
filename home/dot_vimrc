@@ -1,0 +1,18 @@
+call plug#begin()
+
+" TODO: work out how I cope without s (or remap)
+" Plug 'justinmk/vim-sneak'
+Plug 'machakann/vim-highlightedyank'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-sensible'
+Plug 'tpope/vim-surround'
+
+call plug#end()
+
+let mapleader=" "
+
+set scrolloff=5
+set incsearch
+
+nnoremap "ce :e ~/.vimrc<CR>
+nnoremap "cr :source ~/.vimrc<CR>
