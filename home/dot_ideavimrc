@@ -16,22 +16,20 @@ xnoremap <Space> <Nop>
 nnoremap <Space> <Nop>
 let mapleader = " "
 
-""" edit ideavimrc config instead of vimrc
-nnoremap "ce :e ~/.ideavimrc<CR>
-nnoremap "cr :source ~/.ideavimrc<CR>
+nnoremap "cie :e ~/.ideavimrc<CR>
+nnoremap "cir :source ~/.ideavimrc<CR>
 
 nnoremap <leader>z <Action>(ToggleDistractionFreeMode)
-nnoremap <leader>t <Action>(ActivateTerminalToolWindow)
 
 """ Potentially useful binds?
 nnoremap ge :action GotoNextError<CR>
 nnoremap gE :action GotoPreviousError<CR>
 
 nnoremap <leader>gt :action GotoTest<CR>
-nnoremap <leader>u :action FindUsages<CR>
+nnoremap <leader>gu :action FindUsages<CR>
 
-map <Leader>sv <Action>(SplitVertically)
-map <Leader>sh <Action>(SplitHorizontally)
+map <leader>sv <Action>(SplitVertically)
+map <leader>sh <Action>(SplitHorizontally)
 map <leader>sx <Action>(CloseContent)
 map <leader>ss <Action>(UnsplitAll)
 map <leader>sm <Action>(MaximizeEditorInSplit)
