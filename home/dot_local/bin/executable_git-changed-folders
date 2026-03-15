@@ -1,0 +1,40 @@
+#!/usr/bin/env fish
+# vim: set ft=fish:
+
+argparse --max-args=0 h/help c/collapse -- $argv
+or return
+
+if set -q _flag_help
+    echo "usage: git-changed-folders [-h|--help] [-c|--collapse]"
+    exit 0
+end
+
+set folders
+
+for file in (git status --untracked-files=all --porcelain | cut -d' ' -f2)
+    set folders $folders (dirname "$file")
+end
+
+set folders (printf '%s\n' $folders | sort | uniq)
+
+if set -q _flag_collapse
+    set collapsed_folders
+
+    for f in $folders
+        set -l matched false
+        for compf in $folders
+            if string match --quiet --regex '^'(string escape --style=regex -- $compf)'.' -- $f
+                set matched true
+                break
+            end
+        end
+
+        if not test $matched = true
+            set collapsed_folders $collapsed_folders $f
+        end
+    end
+
+    set folders $collapsed_folders
+end
+
+printf '%s\n' $folders
