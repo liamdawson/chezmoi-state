@@ -5,4 +5,4 @@ begin
     for f in (git-changed-folders --collapse)
         echo "$f/..."
     end
-end | tr '\n' ' ' | xargs go test --failfast
+end | tr '\n' ' ' | xargs go test $argv
