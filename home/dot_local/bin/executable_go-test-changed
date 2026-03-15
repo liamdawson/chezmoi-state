@@ -1,0 +1,8 @@
+#!/usr/bin/env fish
+# vim: set ft=fish:
+
+begin
+    for f in (git-changed-folders --collapse)
+        echo "$f/..."
+    end
+end | tr '\n' ' ' | xargs go test --failfast
