@@ -6,7 +6,9 @@ export GOPATH="$HOME/src/go"
 
 packages=(
   github.com/air-verse/air@latest
+  github.com/bokwoon95/wgo@latest
   github.com/Dobefu/gofutz@latest
+  github.com/mitranim/gow@latest
   github.com/nao1215/gup@latest
   github.com/okzk/go-lambda-runner@latest
   golang.org/x/perf/cmd/benchstat@latest
