@@ -6,6 +6,9 @@ abbr --add gfrhoh -- "git fetch && git reset --hard origin/HEAD"
 abbr --add grboh -- "git rebase origin/HEAD"
 abbr --add gfrboh -- "git fetch && git rebase origin/HEAD"
 
+abbr --add grsb -- "git rebase --autosquash (git merge-base --fork-point main)"
+abbr --add grib -- "git rebase --interactive (git merge-base --fork-point main)"
+
 abbr --add gca -- "git commit --amend"
 
 abbr --add gpf -- "git push --force-with-lease"
