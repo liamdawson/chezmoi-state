@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+# (S)ystem (M)anagement (T)ool - upgrade
+
+set -euo pipefail
+
+# until topgrade supports step specific "assume yes" flags
+# see https://github.com/topgrade-rs/topgrade/issues/2088
+export HOMEBREW_NO_ASK=1
+
+# try to avoid pausing on sudo requests
+sudo -v
+
+if ! topgrade; then
+    echo "status: $?"
+    # ignore the error in sponge
+    exit 127
+fi
