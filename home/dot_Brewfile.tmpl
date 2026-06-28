@@ -1,6 +1,4 @@
-cask_args quarantine: false
-
-# helpers{{printf "\n"}}{{ template "brewfile_helpers.tmpl" . }}
+# helpers{{printf "\n"}}{{ template "brewfile/helpers.tmpl" . }}
 
 tap "grishka/grishka"
 
@@ -89,9 +87,7 @@ brew "xz"
 brew "zlib"
 
 if OS.mac?
-  trial "Docker Desktop alternatives for work" do
-    cask "rancher"
-  end if work?
+  #{{ template "brewfile/macos/docker_provider.tmpl" .docker.provider }}
 
   brew "pinentry-mac"
   brew "switchaudio-osx"
@@ -103,7 +99,6 @@ if OS.mac?
   cask "affinity"
   cask "anytype"
   cask "bartender"
-  cask "docker-desktop" unless work?
   cask "dot"
   cask "firefox"
   cask "firefox@developer-edition"

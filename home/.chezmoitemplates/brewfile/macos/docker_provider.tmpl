@@ -1,0 +1,13 @@
+# Docker provider
+{{- if eq . "socktainer" }}
+  brew "container"
+  brew "socktainer"
+{{ else if eq . "rancher-desktop" }}
+  cask "rancher"
+{{ else if eq . "docker-desktop" }}
+  cask "docker-desktop"
+{{ else if eq . "" }}
+{{ else }}
+  {{ fail (cat "Unknown Docker provider" (quote .)) }}
+{{- end }}
+## End Docker provider
