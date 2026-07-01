@@ -17,3 +17,8 @@ Library/**/*
 {{/* {{ if ne (get . "personal") true }}
 .config/git/personal
 {{ end -}} */}}
+
+{{ if not (get .enable "claude_under_protest") }}
+.local/share/claude/**/*
+.claude/**/*
+{{ end -}}

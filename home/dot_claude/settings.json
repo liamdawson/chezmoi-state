@@ -1,0 +1,16 @@
+{
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "\"$HOME\"/.local/share/claude/hooks/pre-tool-use.sh"
+          }
+        ]
+      }
+    ]
+  },
+  "theme": "auto"
+}
