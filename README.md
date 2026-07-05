@@ -17,6 +17,8 @@ chezmoi init --apply https://github.com/liamdawson/chezmoi-state.git
 
 #### Apps to Setup
 
+(see `scripts/darwin/setup/apps.sh`)
+
 - [ ] Velja
 - [ ] Raycast
 - [ ] Docker

@@ -3,7 +3,6 @@
 tap "grishka/grishka"
 
 # utilities
-brew "adr-tools"
 brew "age"
 brew "ast-grep" if trial "fast and polyglot tool for code structural search, lint, rewriting at large scale"
 brew "awscli"
@@ -73,6 +72,12 @@ brew "xan" if trial "CSV magician"
 brew "xsv"
 brew "ykman"
 brew "yq"
+
+if trial "ADR tool in Rust"
+  brew "adrs"
+else
+  brew "adr-tools"
+end
 
 # build deps
 brew "autoconf"
