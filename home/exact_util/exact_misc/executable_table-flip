@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+rhs="┻━┻"
+
+if [[ $# -gt 0 ]]; then
+  # https://medium.com/@jhkuperus/table-flip-everything-157d7dec9589
+  rhs="$(echo "$*" | rev | tr 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!?' 'ɐqɔpǝɟɓɥᴉſʞןɯuodbɹsʇnʌʍxʎzꓯꓭↃꓷƎℲ⅁ΗIᒋꓘ⅂ꟽNOꓒÒꓤSꓕꓵꓥꤵX⅄Z¡¿')"
+fi
+
+echo "(╯°□°）╯︵ $rhs"
