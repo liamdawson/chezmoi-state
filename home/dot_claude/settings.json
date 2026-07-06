@@ -6,7 +6,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "\"$HOME\"/.local/share/claude/hooks/pre-tool-use.sh"
+            "command": "\"$HOME\"/util/misc/claude/hooks/pre-tool-use.sh"
           }
         ]
       }
