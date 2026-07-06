@@ -9,3 +9,8 @@ if status is-interactive
 
     source ~/.iterm2_shell_integration.fish
 end
+
+# BEGIN tirith-hook v1
+tirith init --shell fish | source
+# END tirith-hook
+
