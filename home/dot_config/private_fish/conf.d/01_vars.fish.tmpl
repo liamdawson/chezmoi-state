@@ -24,5 +24,7 @@ set -gx VISUAL "code --wait"
 set -g sponge_delay 10
 # keep ctrl-c'd commands in history, plus 141 = SIGPIPE
 set sponge_successful_exit_codes 0 127 130 141
-# and allow for some expected other failures
-set --global --append sponge_filters sponge_custom_filter_expected_failures
+
+# custom sponge filter allowing for specific failures
+set -ge sponge_filters
+set -g sponge_filters sponge_custom_filter
