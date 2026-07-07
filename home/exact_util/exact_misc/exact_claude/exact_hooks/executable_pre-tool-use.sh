@@ -38,7 +38,7 @@ main() {
     echo '```'
     echo
     echo "Outcome:"
-  } >> "$logfile"
+  } >>"$logfile"
 
   for tool in "${relatively_safe_tools[@]}"; do
     if [ "$tool_name" = "$tool" ]; then
@@ -49,11 +49,12 @@ main() {
 
   prompt_message="Claude is calling tool $tool_name_original with the following input:\n\n$(echo "$tool_input" | jq -r ".")\n\nPress esc to allow, or enter to deny."
   case "$tool_name" in
-    bash)
-      cmdline="$(echo "$tool_input" | jq -r ".command")"
-      description="$(echo "$tool_input" | jq -r ".description")"
+  bash)
+    cmdline="$(echo "$tool_input" | jq -r ".command")"
+    description="$(echo "$tool_input" | jq -r ".description")"
 
-      prompt_message="bash:\n$description\n\n$cmdline";;
+    prompt_message="bash:\n$description\n\n$cmdline"
+    ;;
   esac
 
   if dialog -t "Claude PreToolUse Hook" --message "$prompt_message" --button1text "Allow" --button2text "Deny"; then
@@ -63,9 +64,18 @@ main() {
     statusout="$?"
 
     if [ "$statusout" -eq 2 ]; then
-      # actually want the "success" output to be a failure case to prevent accidental approvals via pressing enter
       log "Rejected by user input."
-      echo "Blocked: rejected by the user. Ask for more guidance." >&2
+
+      {
+        case "$tool_name" in
+        "edit")
+          echo "Blocked: rejected by the user - did they ask you to make this change?"
+          ;;
+        *)
+          echo "Blocked: rejected by the user. Ask for next steps."
+          ;;
+        esac
+      } >&2
       exit 2
     fi
 
@@ -76,7 +86,7 @@ main() {
 }
 
 log() {
-  echo "$@" >> "$logfile"
+  echo "$@" >>"$logfile"
 }
 
 main "$@"
