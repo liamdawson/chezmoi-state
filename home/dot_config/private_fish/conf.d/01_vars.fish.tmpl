@@ -20,13 +20,9 @@ set -gx LD_CHEZMOI_FEATURE_{{ upper . }} {{ index $enableMap . | quote }}
 set -gx EDITOR "vim"
 set -gx VISUAL "code --wait"
 
-{{- if eq .chezmoi.os "darwin" }}
-# macos vars
-# seems like failing casks will be straight up banned from Homebrew in future
-# set -gx HOMEBREW_CASK_OPTS --no-quarantine
-{{- end }}
-
 # keep failed commands in history just a little longer
 set -g sponge_delay 10
 # keep ctrl-c'd commands in history, plus 141 = SIGPIPE
 set sponge_successful_exit_codes 0 127 130 141
+# and allow for some expected other failures
+set --global --append sponge_filters sponge_custom_filter_expected_failures
