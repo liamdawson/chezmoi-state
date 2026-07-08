@@ -13,7 +13,10 @@ function ws --description "Run a command in, or switch to, a workspace folder"
         end
     end
 
-    set -l short_dest (ghq list 2>/dev/null | sk --select-1 --query "$query"); or return 1
+    set -x SKIM_DEFAULT_OPTIONS --no-mouse --no-multi --highlight-line --keep-right
+    # @todo https://github.com/skim-rs/skim/issues/1108
+    set -x --append SKIM_DEFAULT_OPTIONS --algo=frizbee
+    set -l short_dest (ghq list 2>/dev/null | sk --scheme path --select-1 --query "$query"); or return 1
     set -l full_dest (ghq list --full-path --exact "$short_dest" 2>/dev/null)
 
     if test (count $command) -gt 0
