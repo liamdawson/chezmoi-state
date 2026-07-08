@@ -6,4 +6,4 @@ function wsidea --description "Open a workspace folder using IntelliJ IDEA"
 end
 
 complete -ec wsidea
-complete -c wsidea -xa '(ghq list 2>/dev/null)'
+complete -c wsidea -xa '(__ghq_projects)'

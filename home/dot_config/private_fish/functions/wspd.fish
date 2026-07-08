@@ -6,4 +6,4 @@ function wspd --description "Print the full path to a workspace folder"
 end
 
 complete -ec wspd
-complete -c wspd -xa '(ghq list 2>/dev/null)'
+complete -c wspd -xa '(__ghq_projects)'

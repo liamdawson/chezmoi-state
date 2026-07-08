@@ -12,4 +12,4 @@ function wscode --description "Open a workspace folder using VS Code"
 end
 
 complete -ec wscode
-complete -c wscode -xa '(ghq list 2>/dev/null)'
+complete -c wscode -xa '(__ghq_projects)'

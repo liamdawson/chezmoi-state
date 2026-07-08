@@ -6,4 +6,4 @@ function wsgh --description "Open the GitHub repo URL for a workspace project"
 end
 
 complete -ec wsgh
-complete -c wsgh -xa '(ghq list 2>/dev/null)'
+complete -c wsgh -xa '(__ghq_projects)'

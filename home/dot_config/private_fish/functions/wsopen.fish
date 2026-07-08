@@ -6,4 +6,4 @@ function wsopen --description "Open the directory (in GUI) for a workspace proje
 end
 
 complete -ec wsopen
-complete -c wsopen -xa '(ghq list 2>/dev/null)'
+complete -c wsopen -xa '(__ghq_projects)'

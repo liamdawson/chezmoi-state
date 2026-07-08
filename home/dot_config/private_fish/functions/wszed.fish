@@ -6,4 +6,4 @@ function wszed --description "Open a workspace folder using Zed"
 end
 
 complete -ec wszed
-complete -c wszed -xa '(ghq list 2>/dev/null)'
+complete -c wszed -xa '(__ghq_projects)'

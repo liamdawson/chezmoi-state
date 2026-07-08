@@ -34,7 +34,7 @@ function ws --description "Run a command in, or switch to, a workspace folder"
 end
 
 complete -ec ws
-complete -c ws -n 'not __fish_ws_is_commandline' -xa '(ghq list 2>/dev/null)'
+complete -c ws -n 'not __fish_ws_is_commandline' -xa '(__ghq_projects)'
 complete -c ws -n __fish_ws_is_commandline -xa '(__fish_ws_complete_commandline)'
 
 function __fish_ws_is_commandline
