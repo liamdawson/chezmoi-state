@@ -41,7 +41,7 @@
 
 [ghq]
   root = $GOPATH/src
-  root = ~/src
+  root = ~/src/w
 
 [absorb]
   autoStageIfNothingStaged = true
