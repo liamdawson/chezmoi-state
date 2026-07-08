@@ -4,7 +4,9 @@ Date: 2023-12-01
 
 ## Status
 
-Accepted
+Superseded
+
+Superseded by [3. Use a case sensitive src volume](0003-use-a-case-sensitive-src-volume.md)
 
 ## Context
 

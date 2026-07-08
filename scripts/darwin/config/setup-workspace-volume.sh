@@ -7,6 +7,11 @@ apfs_personality="APFSX"
 volume_name="src"
 mountpoint="${HOME}/src"
 
+if test -e "$mountpoint"; then
+    echo "$mountpoint already exists!"
+    exit 1
+fi
+
 mkdir -p "$mountpoint"
 
 sudo diskutil apfs addVolume \
