@@ -5,6 +5,7 @@ fnox.local.toml
 hk.local.pkl
 
 CLAUDE.local.md
+**/.claude/worktrees
 
 # Created by <https://www.gitignore.io/api/linux,macos,windows>
 
