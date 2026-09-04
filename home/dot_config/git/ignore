@@ -1,6 +1,8 @@
 _ld*
 # used for local config, this should not be committed to source control - https://mise.jdx.dev/configuration.html 
 mise.local.toml 
+mise/conf.d/*.local.toml
+.mise/conf.d/*.local.toml
 fnox.local.toml
 hk.local.pkl
 

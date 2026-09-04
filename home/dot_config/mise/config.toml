@@ -17,4 +17,5 @@ usage = "latest" # used for mise completions
 [settings]
 experimental = true
 idiomatic_version_file_enable_tools = ["ruby", "python", "node", "go"]
+idiomatic_version_file_ignore_minimum_versions = true
 ruby = { compile = false }
