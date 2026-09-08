@@ -39,8 +39,8 @@ require-cross-certification
 # Disable caching of passphrase for symmetrical ops
 no-symkey-cache
 # Default/trusted key ID to use (helpful with throw-keyids)
-default-key 0xA0BE84DBE2E93076
-trusted-key 0xA0BE84DBE2E93076
+default-key {{ .gpg.defaultKey }}
+trusted-key {{ .gpg.trustedKey }} 
 # Keyserver URL
 keyserver hkps://keys.openpgp.org
 # Verbose output

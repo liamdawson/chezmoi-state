@@ -5,7 +5,11 @@
 
 {{- $dockerProviderChoices := list "docker-desktop" "rancher-desktop" "socktainer" -}}
 {{- $dockerProvider := promptChoiceOnce . "docker.provider" "Docker provider" $dockerProviderChoices -}}
-{{- "" -}}
+{{/* end feature tags */}}
+
+{{- $gpgAssumedKeyId := "0xA0BE84DBE2E93076" -}}
+{{- $gpgDefaultKey := promptStringOnce . "gpg.defaultKey" "Default GPG key" $gpgAssumedKeyId -}}
+{{- $gpgTrustedKey := promptStringOnce . "gpg.trustedKey" "Trusted GPG key" $gpgAssumedKeyId -}}
 
 {{- $osID := .chezmoi.os -}}
 {{- if (and (eq .chezmoi.os "linux") (hasKey .chezmoi.osRelease "id")) -}}
@@ -27,7 +31,11 @@ aws_vault = {{ $work }}
 claude_under_protest = {{ $work }}
 
 [data.docker]
-provider = {{$dockerProvider | quote}}
+provider = {{ $dockerProvider | quote }}
+
+[data.gpg]
+defaultKey = {{ $gpgDefaultKey | quote }}
+trustedKey = {{ $gpgTrustedKey | quote }}
 
 [edit]
 command = "vim"
